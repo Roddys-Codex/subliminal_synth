@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a56517664104d9a99f3a6d897ed3b2, type: 3}
+  m_Name: MIDISoundFontSettings
+  m_EditorClassIdentifier: 
+  defaultSoundFont: {fileID: 0}
+  android: {fileID: 0}
+  ios: {fileID: 0}
+  wsa: {fileID: 0}
+  windows: {fileID: 0}
+  osx: {fileID: 0}
+  linux: {fileID: 0}
