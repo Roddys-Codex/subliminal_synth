@@ -8,9 +8,15 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Audio_Test_Scene.unity
     guid: 3a42cc896f1d0418aa68d6fde81aa190
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/AudioHelm/Demos/BouncyBalls.unity
+    guid: 6a222acdd7f33af448fcd4625cb10914
   - enabled: 1
-    path: Assets/Foriero Store/Others/MIDIUnified/Examples/Audio Sync/Audio Sync.unity
-    guid: c4e584edad8b04cadb16319fbb012da9
+    path: Assets/Audio_Test_Fix.unity
+    guid: d2f15bbf15ffd419980250136936a779
   m_configObjects:
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}

@@ -1,1 +1,0 @@
-Just install MIDIUnified package and you should be good to go on all editor and player platforms.
