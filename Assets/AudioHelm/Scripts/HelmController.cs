@@ -510,5 +510,6 @@ namespace AudioHelm
             if (Time.timeSinceLevelLoad > UPDATE_WAIT)
                 UpdateAllParameters();
         }
+        
     }
 }

@@ -1,0 +1,68 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a8ce712b77844955b0c89345e46e1ae, type: 3}
+  m_Name: MIDISynthSettings
+  m_EditorClassIdentifier: 
+  threaded: 1
+  sleep: 2
+  active: 1
+  wwise: 0
+  android:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+  ios:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+    soundBank: 0
+  osx:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+  linux:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+  win:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+  wsa:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
+  webgl:
+    outputSampleRateDivider: 1
+    polyphony: 64
+    channels: 16
+    preinit: 0
+    volume: 1
+    synthesizer: 3
