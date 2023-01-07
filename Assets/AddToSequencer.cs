@@ -20,7 +20,7 @@ public class AddToSequencer : MonoBehaviour, IPointerClickHandler
         //int note = synth.noteNames[noteName];
         float sixteenthNote = synth.getSixteenthTime() * 8.0f;
         
-        synth.addSixteenthNote(synth.cNote, (positionInSequencer*synth.getSixteenthTime()), sixteenthNote);
+        //synth.addSixteenthNote(synth.cNote, (positionInSequencer*synth.getSixteenthTime()), sixteenthNote);
                 
 
         
