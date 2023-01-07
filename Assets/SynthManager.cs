@@ -10,6 +10,7 @@ public class SynthManager : MonoBehaviour
 
     public HelmController helmController;
     public HelmSequencer sequencer;
+    public AudioHelmClock audioHelmClock;
     public int sequencerPosition;
 
     // Start is called before the first frame update
@@ -17,6 +18,7 @@ public class SynthManager : MonoBehaviour
     {
         helmController = GetComponent<HelmController>();
         sequencer = GetComponent<HelmSequencer>();
+        audioHelmClock = GetComponent<AudioHelmClock>();
     }
 
     // Update is called once per frame

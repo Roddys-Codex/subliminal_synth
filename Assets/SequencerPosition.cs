@@ -3,32 +3,44 @@ using System.Collections.Generic;
 using AudioHelm;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class SequencerPosition : MonoBehaviour, IPointerClickHandler
 {
     public int sequencerPosition;
     public int positionObjectNumber;
     public GameObject gameObject;
+    public GameObject noteSliderObject;
     public bool noteActive = false;
     SynthManager synthManager;
     MeshRenderer renderer;
-    Note currentObjectNote;
+    public Note currentObjectNote;
+    Slider noteSlider;
+    private int noteValue;
 
     // Start is called before the first frame update
     void Start()
     {
+        noteSliderObject.SetActive(false);
         synthManager = gameObject.GetComponent<SynthManager>();
         renderer = GetComponent<MeshRenderer>();
+        noteSlider = noteSliderObject.GetComponent<Slider>();
+        synthManager.audioHelmClock.Reset();
+        noteSlider.onValueChanged.AddListener(delegate { setNoteValue(); });
+        noteValue = (int)noteSlider.value;
+        //currentObjectNote = new Note();
     }
 
     // Update is called once per frame
     void Update()
     {
-        sequencerPosition = synthManager.sequencerPosition;
+        currentObjectNote.note = noteValue;
 
+        sequencerPosition = synthManager.sequencerPosition;
         if(sequencerPosition == positionObjectNumber)
         {
-            if(noteActive==true)
+
+            if (noteActive==true)
             {
                 
             } else
@@ -36,6 +48,7 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
                 StartCoroutine(ChangeColor(Color.magenta, true));
             }
         }
+
     }
 
     //IEnumerator PositionColourChange(MeshRenderer source, float duration)
@@ -64,7 +77,7 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
     private IEnumerator ChangeColor(Color color, bool returnToOriginalColour)
     {
         renderer.material.color = color;
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.04f);
         if(returnToOriginalColour == true)
         {
             renderer.material.color = Color.white;
@@ -78,14 +91,38 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         {
             noteActive = true;
             renderer.material.color = Color.cyan;
-            currentObjectNote = synthManager.sequencer.AddNote(60, positionObjectNumber, positionObjectNumber + 1, 1) ;
+            synthManager.sequencer.AddNote(noteValue, positionObjectNumber, positionObjectNumber + 1, 1) ;
+            //List<Note> newNotes = new List<Note>();
+            //Note note = new Note();/
+            //note.note = noteValue;
+            //newNotes.Add(note);
+
+            //synthManager.sequencer.allNotes[noteValue].notes = newNotes;
         } else
         {
             noteActive = false;
             renderer.material.color = Color.white;
-            synthManager.sequencer.RemoveNote(currentObjectNote);
+            synthManager.sequencer.RemoveNotesContainedInRange(noteValue, positionObjectNumber, positionObjectNumber + 1); 
         }
-        
-       
+
+        StartCoroutine(showPopUpSlider());
     }
+
+    private IEnumerator showPopUpSlider()
+    {
+        noteSliderObject.SetActive(true);
+        yield return new WaitForSeconds(8.0f);
+        noteSliderObject.SetActive(false);
+    }
+
+    public void setNoteValue()
+    {
+       
+            synthManager.sequencer.RemoveNotesContainedInRange(noteValue, positionObjectNumber, positionObjectNumber + 1);
+            noteValue = (int)noteSlider.value;
+            synthManager.sequencer.AddNote(noteValue, positionObjectNumber, positionObjectNumber + 1, 1);
+
+        //synthManager.sequencer.NotifyNoteKeyChanged(this.currentObjectNote, noteValue);
+    }
+
 }
