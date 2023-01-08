@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using AudioHelm;
 using ForieroEngine.Extensions;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,7 +10,8 @@ public class ParameterChange : MonoBehaviour
 {
     /// <summary> The mesh render. </summary>
     private RectTransform m_RectTransform;
-    public AudioHelm.HelmController helmController;
+    public GameObject controllerObject;
+    private HelmController helmController;
     public NRKernal.NRInput nRInput;
     public int note = 60;
     private Slider slider;
@@ -19,6 +21,7 @@ public class ParameterChange : MonoBehaviour
     void Awake()
     {
         //m_RectTransform = transform.GetComponent<RectTransform>();
+        helmController = controllerObject.GetComponent<HelmController>();
         slider = GetComponent<Slider>();
         slider.onValueChanged.AddListener(delegate { UpdateParameter(); });
     }

@@ -117,12 +117,12 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
 
     public void setNoteValue()
     {
-       
-            synthManager.sequencer.RemoveNotesContainedInRange(noteValue, positionObjectNumber, positionObjectNumber + 1);
-            noteValue = (int)noteSlider.value;
-            synthManager.sequencer.AddNote(noteValue, positionObjectNumber, positionObjectNumber + 1, 1);
-
-        //synthManager.sequencer.NotifyNoteKeyChanged(this.currentObjectNote, noteValue);
+            if(noteActive == true)
+            {
+                synthManager.sequencer.RemoveNotesContainedInRange(noteValue, positionObjectNumber, positionObjectNumber + 1);
+                noteValue = (int)noteSlider.value;
+                synthManager.sequencer.AddNote(noteValue, positionObjectNumber, positionObjectNumber + 1, 1);
+            }
     }
 
 }
