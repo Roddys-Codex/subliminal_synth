@@ -50,33 +50,39 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         sequencerPosition = synthManager.sequencerPosition;
         if(sequencerPosition == positionObjectNumber)
         {
-            previousNoteActive = previousSequencerPosition.noteActive;
-            if(previousNoteActive==true)
-            {
-                Debug.Log("Midi Off sent");
-                var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
-                var deviceNames = new string[deviceIds.Length];
+            var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+            var deviceNames = new string[deviceIds.Length];
+            MidiManager.Instance.SendMidiNoteOff(deviceIds[0], 0, 0, 60, 127);
+            Debug.Log("Midi Off sent");
+            previousNoteActive = false;
 
-                for (var i = 0; i < deviceIds.Length; i++)
-                {
-                    deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
-                    MidiManager.Instance.SendMidiNoteOff(deviceIds[0], 0, 0, 60, 127);
-                    Debug.Log("MidiNoteOffSent");
-                }
-            }
+            //if(previousNoteActive==true)
+            //{
+                
+                
+
+            //    //for (var i = 0; i < deviceIds.Length; i++)
+            //    //{
+            //        //deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
+                    
+                
+            //        //Debug.Log("MidiNoteOffSent");
+            //    //}
+            //}
 
             if (noteActive==true)
             {
-                Debug.Log("Midi On note pressed");
-                var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
-                var deviceNames = new string[deviceIds.Length];
 
-                for (var i = 0; i < deviceIds.Length; i++)
-                {
-                    deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
+                Debug.Log("Midi On note pressed");
+                deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+                deviceNames = new string[deviceIds.Length];
+
+                //for (var i = 0; i < deviceIds.Length; i++)
+                //{
+                    //deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
                     MidiManager.Instance.SendMidiNoteOn(deviceIds[0], 0, 0, 60, 127);
                     Debug.Log("MidiNoteSent");
-                }
+                //}
 
             } else
             {

@@ -141,11 +141,11 @@ namespace jp.kshoji.unity.midi.sample
             var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
             var deviceNames = new string[deviceIds.Length];
 
-            for (var i = 0; i < deviceIds.Length; i++)
-            {
-                deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
+            //for (var i = 0; i < deviceIds.Length; i++)
+            //{
+                //deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
                 MidiManager.Instance.SendMidiNoteOn(deviceIds[deviceIdIndex], 0, (int)channel, (int)noteNumber, (int)velocity);
-            }
+            //}
             
         }
 

@@ -918,7 +918,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralAD3ADB1E85A6C38D684E4035B0868BEC0D570082
 IL2CPP_EXTERN_C String_t* _stringLiteralADBC8C73492F48F977F5DA3318100F99C21EC255;
 IL2CPP_EXTERN_C String_t* _stringLiteralAF328A367664132D5F1F88E4414913611863BAD0;
 IL2CPP_EXTERN_C String_t* _stringLiteralB3235EDFF03F9C8F8E6C334544F461ECA53C7D75;
-IL2CPP_EXTERN_C String_t* _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D;
 IL2CPP_EXTERN_C String_t* _stringLiteralB7E2F4EBCB860A40A3559BBB595862B7FB0147E6;
 IL2CPP_EXTERN_C String_t* _stringLiteralB9B0A34896DAB572428553AD70D838992D00A79C;
 IL2CPP_EXTERN_C String_t* _stringLiteralBA6E6D11141F56380F67E9CC4397937726D00004;
@@ -935,8 +934,6 @@ IL2CPP_EXTERN_C String_t* _stringLiteralD289A15F06D391673864A3B5CEDBFF42865743C1
 IL2CPP_EXTERN_C String_t* _stringLiteralD31F238E2BFDF2B26F149401362C247796BED93E;
 IL2CPP_EXTERN_C String_t* _stringLiteralD4907E39FE4FF570895C33D20317132A9A774C76;
 IL2CPP_EXTERN_C String_t* _stringLiteralD867E76467A8786756E403A41C7228243157C065;
-IL2CPP_EXTERN_C String_t* _stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32;
-IL2CPP_EXTERN_C String_t* _stringLiteralDBB92F0C54C16A44A2BDF4092A885911E290D52F;
 IL2CPP_EXTERN_C String_t* _stringLiteralDE5E1C4033B57477AC022B43C9BA1A80BEC51C04;
 IL2CPP_EXTERN_C String_t* _stringLiteralE22C0785E978944D94718355038A5D1251517FE5;
 IL2CPP_EXTERN_C String_t* _stringLiteralE33342EFBAEDB90FF8E569577ECD9358271111C2;
@@ -5394,10 +5391,6 @@ inline StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Enumerable_ToArra
 {
 	return ((  StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* (*) (RuntimeObject*, const RuntimeMethod*))Enumerable_ToArray_TisRuntimeObject_mA54265C2C8A0864929ECD300B75E4952D553D17D_gshared)(___source0, method);
 }
-// System.String jp.kshoji.unity.midi.MidiManager::GetDeviceName(System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MidiManager_GetDeviceName_m0B84549F9544B482C66DC436CE4DC87ECD3DB3D9 (MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* __this, String_t* ___deviceId0, const RuntimeMethod* method) ;
-// System.String System.String::Concat(System.String,System.String,System.String,System.String)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method) ;
 // System.Void jp.kshoji.unity.midi.MidiManager::SendMidiNoteOff(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MidiManager_SendMidiNoteOff_mF586F90E8281916C67F286FDAD580C9D2A50162B (MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* __this, String_t* ___deviceId0, int32_t ___group1, int32_t ___channel2, int32_t ___note3, int32_t ___velocity4, const RuntimeMethod* method) ;
 // System.Void jp.kshoji.unity.midi.MidiManager::SendMidiNoteOn(System.String,System.Int32,System.Int32,System.Int32,System.Int32)
@@ -6382,6 +6375,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Format_mFB7DA489BD99F4670881
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BitConverter_ToString_m5F1B0DD98D477249671A51379388B4A09B35B420 (ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___value0, const RuntimeMethod* method) ;
 // System.String System.String::Replace(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Replace_mABDB7003A1D0AEDCAE9FF85E3DFFFBA752D2A166 (String_t* __this, String_t* ___oldValue0, String_t* ___newValue1, const RuntimeMethod* method) ;
+// System.String System.String::Concat(System.String,System.String,System.String,System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m093934F71A9B351911EE46311674ED463B180006 (String_t* ___str00, String_t* ___str11, String_t* ___str22, String_t* ___str33, const RuntimeMethod* method) ;
+// System.String jp.kshoji.unity.midi.MidiManager::GetDeviceName(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* MidiManager_GetDeviceName_m0B84549F9544B482C66DC436CE4DC87ECD3DB3D9 (MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* __this, String_t* ___deviceId0, const RuntimeMethod* method) ;
 // System.Void System.Random::.ctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random__ctor_m151183BD4F021499A98B9DE8502DAD4B12DD16AC (Random_t79716069EDE67D1D7734F60AE402D0CA3FB6B4C8* __this, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Rect::.ctor(System.Single,System.Single,System.Single,System.Single)
@@ -7903,18 +7900,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SequencerPosition_Update_mD6AE64686866EE
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral034078B2F08ACB4ADB3577BEEECCD28EDDA38595);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralA3B010CFC7469658192439575CC076C76DFF21FD);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralDBB92F0C54C16A44A2BDF4092A885911E290D52F);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralE33342EFBAEDB90FF8E569577ECD9358271111C2);
 		s_Il2CppMethodInitialized = true;
 	}
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
-	int32_t V_2 = 0;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_3 = NULL;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_4 = NULL;
-	int32_t V_5 = 0;
 	{
 		// currentObjectNote.note = noteValue;
 		Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* L_0 = __this->___currentObjectNote_13;
@@ -7931,204 +7920,89 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SequencerPosition_Update_mD6AE64686866EE
 		int32_t L_5 = __this->___positionObjectNumber_5;
 		if ((!(((uint32_t)L_4) == ((uint32_t)L_5))))
 		{
-			goto IL_0151;
+			goto IL_00cc;
 		}
 	}
 	{
-		// previousNoteActive = previousSequencerPosition.noteActive;
-		SequencerPosition_tE16F3C839D3E0A1F7A56FAF8EFD685B225AF948C* L_6 = __this->___previousSequencerPosition_17;
+		// var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
+		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_6;
+		L_6 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
 		NullCheck(L_6);
-		bool L_7 = L_6->___noteActive_10;
-		__this->___previousNoteActive_18 = L_7;
-		// if(previousNoteActive==true)
-		bool L_8 = __this->___previousNoteActive_18;
-		if (!L_8)
-		{
-			goto IL_00bc;
-		}
-	}
-	{
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_7;
+		L_7 = MidiManager_get_DeviceIdSet_mF30843003259CA39A8204D579B7674D7B7DF1967(L_6, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8;
+		L_8 = Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194(L_7, Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194_RuntimeMethod_var);
+		V_0 = L_8;
+		// var deviceNames = new string[deviceIds.Length];
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_9 = V_0;
+		NullCheck(L_9);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_10 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_9)->max_length)));
+		// MidiManager.Instance.SendMidiNoteOff(deviceIds[0], 0, 0, 60, 127);
+		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_11;
+		L_11 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = V_0;
+		NullCheck(L_12);
+		int32_t L_13 = 0;
+		String_t* L_14 = (L_12)->GetAt(static_cast<il2cpp_array_size_t>(L_13));
+		NullCheck(L_11);
+		MidiManager_SendMidiNoteOff_mF586F90E8281916C67F286FDAD580C9D2A50162B(L_11, L_14, 0, 0, ((int32_t)60), ((int32_t)127), NULL);
 		// Debug.Log("Midi Off sent");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralE33342EFBAEDB90FF8E569577ECD9358271111C2, NULL);
-		// var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
-		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_9;
-		L_9 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		NullCheck(L_9);
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_10;
-		L_10 = MidiManager_get_DeviceIdSet_mF30843003259CA39A8204D579B7674D7B7DF1967(L_9, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_11;
-		L_11 = Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194(L_10, Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194_RuntimeMethod_var);
-		V_0 = L_11;
-		// var deviceNames = new string[deviceIds.Length];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_12 = V_0;
-		NullCheck(L_12);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_13 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_12)->max_length)));
-		V_1 = L_13;
-		// for (var i = 0; i < deviceIds.Length; i++)
-		V_2 = 0;
-		goto IL_00b6;
-	}
-
-IL_0073:
-	{
-		// deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_14 = V_1;
-		int32_t L_15 = V_2;
-		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_16;
-		L_16 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_17 = V_0;
-		int32_t L_18 = V_2;
-		NullCheck(L_17);
-		int32_t L_19 = L_18;
-		String_t* L_20 = (L_17)->GetAt(static_cast<il2cpp_array_size_t>(L_19));
-		NullCheck(L_16);
-		String_t* L_21;
-		L_21 = MidiManager_GetDeviceName_m0B84549F9544B482C66DC436CE4DC87ECD3DB3D9(L_16, L_20, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_22 = V_0;
-		int32_t L_23 = V_2;
-		NullCheck(L_22);
-		int32_t L_24 = L_23;
-		String_t* L_25 = (L_22)->GetAt(static_cast<il2cpp_array_size_t>(L_24));
-		String_t* L_26;
-		L_26 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_21, _stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32, L_25, _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D, NULL);
-		NullCheck(L_14);
-		ArrayElementTypeCheck (L_14, L_26);
-		(L_14)->SetAt(static_cast<il2cpp_array_size_t>(L_15), (String_t*)L_26);
-		// MidiManager.Instance.SendMidiNoteOff(deviceIds[0], 0, 0, 60, 127);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_27;
-		L_27 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_28 = V_0;
-		NullCheck(L_28);
-		int32_t L_29 = 0;
-		String_t* L_30 = (L_28)->GetAt(static_cast<il2cpp_array_size_t>(L_29));
-		NullCheck(L_27);
-		MidiManager_SendMidiNoteOff_mF586F90E8281916C67F286FDAD580C9D2A50162B(L_27, L_30, 0, 0, ((int32_t)60), ((int32_t)127), NULL);
-		// Debug.Log("MidiNoteOffSent");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
-		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralDBB92F0C54C16A44A2BDF4092A885911E290D52F, NULL);
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_31 = V_2;
-		V_2 = ((int32_t)il2cpp_codegen_add(L_31, 1));
-	}
-
-IL_00b6:
-	{
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_32 = V_2;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_33 = V_0;
-		NullCheck(L_33);
-		if ((((int32_t)L_32) < ((int32_t)((int32_t)(((RuntimeArray*)L_33)->max_length)))))
-		{
-			goto IL_0073;
-		}
-	}
-
-IL_00bc:
-	{
+		// previousNoteActive = false;
+		__this->___previousNoteActive_18 = (bool)0;
 		// if (noteActive==true)
-		bool L_34 = __this->___noteActive_10;
-		if (!L_34)
+		bool L_15 = __this->___noteActive_10;
+		if (!L_15)
 		{
-			goto IL_013e;
+			goto IL_00b9;
 		}
 	}
 	{
 		// Debug.Log("Midi On note pressed");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteral034078B2F08ACB4ADB3577BEEECCD28EDDA38595, NULL);
-		// var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+		// deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
 		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_35;
-		L_35 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		NullCheck(L_35);
-		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_36;
-		L_36 = MidiManager_get_DeviceIdSet_mF30843003259CA39A8204D579B7674D7B7DF1967(L_35, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_37;
-		L_37 = Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194(L_36, Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194_RuntimeMethod_var);
-		V_3 = L_37;
-		// var deviceNames = new string[deviceIds.Length];
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_38 = V_3;
-		NullCheck(L_38);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_39 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_38)->max_length)));
-		V_4 = L_39;
-		// for (var i = 0; i < deviceIds.Length; i++)
-		V_5 = 0;
-		goto IL_0136;
-	}
-
-IL_00ed:
-	{
-		// deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_40 = V_4;
-		int32_t L_41 = V_5;
-		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_42;
-		L_42 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_43 = V_3;
-		int32_t L_44 = V_5;
-		NullCheck(L_43);
-		int32_t L_45 = L_44;
-		String_t* L_46 = (L_43)->GetAt(static_cast<il2cpp_array_size_t>(L_45));
-		NullCheck(L_42);
-		String_t* L_47;
-		L_47 = MidiManager_GetDeviceName_m0B84549F9544B482C66DC436CE4DC87ECD3DB3D9(L_42, L_46, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_48 = V_3;
-		int32_t L_49 = V_5;
-		NullCheck(L_48);
-		int32_t L_50 = L_49;
-		String_t* L_51 = (L_48)->GetAt(static_cast<il2cpp_array_size_t>(L_50));
-		String_t* L_52;
-		L_52 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_47, _stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32, L_51, _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D, NULL);
-		NullCheck(L_40);
-		ArrayElementTypeCheck (L_40, L_52);
-		(L_40)->SetAt(static_cast<il2cpp_array_size_t>(L_41), (String_t*)L_52);
+		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_16;
+		L_16 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
+		NullCheck(L_16);
+		HashSet_1_tEFC6605F7DE53F71946C33FD371E53C3100F2178* L_17;
+		L_17 = MidiManager_get_DeviceIdSet_mF30843003259CA39A8204D579B7674D7B7DF1967(L_16, NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_18;
+		L_18 = Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194(L_17, Enumerable_ToArray_TisString_t_m3B23EE2DD15B2996E7D2ECA6E74696DA892AA194_RuntimeMethod_var);
+		V_0 = L_18;
+		// deviceNames = new string[deviceIds.Length];
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_19 = V_0;
+		NullCheck(L_19);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_20 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_19)->max_length)));
 		// MidiManager.Instance.SendMidiNoteOn(deviceIds[0], 0, 0, 60, 127);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_53;
-		L_53 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_54 = V_3;
-		NullCheck(L_54);
-		int32_t L_55 = 0;
-		String_t* L_56 = (L_54)->GetAt(static_cast<il2cpp_array_size_t>(L_55));
-		NullCheck(L_53);
-		MidiManager_SendMidiNoteOn_m3B5167AE192A4285F8029AD6EFB95B8F277EE7AF(L_53, L_56, 0, 0, ((int32_t)60), ((int32_t)127), NULL);
+		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_21;
+		L_21 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_22 = V_0;
+		NullCheck(L_22);
+		int32_t L_23 = 0;
+		String_t* L_24 = (L_22)->GetAt(static_cast<il2cpp_array_size_t>(L_23));
+		NullCheck(L_21);
+		MidiManager_SendMidiNoteOn_m3B5167AE192A4285F8029AD6EFB95B8F277EE7AF(L_21, L_24, 0, 0, ((int32_t)60), ((int32_t)127), NULL);
 		// Debug.Log("MidiNoteSent");
-		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
 		Debug_Log_m87A9A3C761FF5C43ED8A53B16190A53D08F818BB(_stringLiteralA3B010CFC7469658192439575CC076C76DFF21FD, NULL);
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_57 = V_5;
-		V_5 = ((int32_t)il2cpp_codegen_add(L_57, 1));
-	}
-
-IL_0136:
-	{
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_58 = V_5;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_59 = V_3;
-		NullCheck(L_59);
-		if ((((int32_t)L_58) < ((int32_t)((int32_t)(((RuntimeArray*)L_59)->max_length)))))
-		{
-			goto IL_00ed;
-		}
-	}
-	{
 		return;
 	}
 
-IL_013e:
+IL_00b9:
 	{
 		// StartCoroutine(ChangeColor(Color.magenta, true));
-		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_60;
-		L_60 = Color_get_magenta_mE31C432891E0B3D23C8FB03CB3A38A60E7F52A9A_inline(NULL);
-		RuntimeObject* L_61;
-		L_61 = SequencerPosition_ChangeColor_m40554A2D77C1BFA4CBA4EF8F52388241C2A7FEFE(__this, L_60, (bool)1, NULL);
-		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_62;
-		L_62 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_61, NULL);
+		Color_tD001788D726C3A7F1379BEED0260B9591F440C1F L_25;
+		L_25 = Color_get_magenta_mE31C432891E0B3D23C8FB03CB3A38A60E7F52A9A_inline(NULL);
+		RuntimeObject* L_26;
+		L_26 = SequencerPosition_ChangeColor_m40554A2D77C1BFA4CBA4EF8F52388241C2A7FEFE(__this, L_25, (bool)1, NULL);
+		Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B* L_27;
+		L_27 = MonoBehaviour_StartCoroutine_m4CAFF732AA28CD3BDC5363B44A863575530EC812(__this, L_26, NULL);
 	}
 
-IL_0151:
+IL_00cc:
 	{
 		// }
 		return;
@@ -32317,13 +32191,9 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MidiSampleScene_sendMidiOnEvent_m04731AD
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var);
 		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral034078B2F08ACB4ADB3577BEEECCD28EDDA38595);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D);
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32);
 		s_Il2CppMethodInitialized = true;
 	}
 	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_0 = NULL;
-	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
-	int32_t V_2 = 0;
 	{
 		// Debug.Log("Midi On note pressed");
 		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
@@ -32342,68 +32212,19 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void MidiSampleScene_sendMidiOnEvent_m04731AD
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_3 = V_0;
 		NullCheck(L_3);
 		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)SZArrayNew(StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248_il2cpp_TypeInfo_var, (uint32_t)((int32_t)(((RuntimeArray*)L_3)->max_length)));
-		V_1 = L_4;
-		// for (var i = 0; i < deviceIds.Length; i++)
-		V_2 = 0;
-		goto IL_0075;
-	}
-
-IL_0027:
-	{
-		// deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_5 = V_1;
-		int32_t L_6 = V_2;
-		il2cpp_codegen_runtime_class_init_inline(MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B_il2cpp_TypeInfo_var);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_7;
-		L_7 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8 = V_0;
-		int32_t L_9 = V_2;
-		NullCheck(L_8);
-		int32_t L_10 = L_9;
-		String_t* L_11 = (L_8)->GetAt(static_cast<il2cpp_array_size_t>(L_10));
-		NullCheck(L_7);
-		String_t* L_12;
-		L_12 = MidiManager_GetDeviceName_m0B84549F9544B482C66DC436CE4DC87ECD3DB3D9(L_7, L_11, NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_13 = V_0;
-		int32_t L_14 = V_2;
-		NullCheck(L_13);
-		int32_t L_15 = L_14;
-		String_t* L_16 = (L_13)->GetAt(static_cast<il2cpp_array_size_t>(L_15));
-		String_t* L_17;
-		L_17 = String_Concat_m093934F71A9B351911EE46311674ED463B180006(L_12, _stringLiteralD99605E29810F93D7DAE4EFBB764C41AF4E80D32, L_16, _stringLiteralB3F14BF976EFD974E34846B742502C802FABAE9D, NULL);
-		NullCheck(L_5);
-		ArrayElementTypeCheck (L_5, L_17);
-		(L_5)->SetAt(static_cast<il2cpp_array_size_t>(L_6), (String_t*)L_17);
 		// MidiManager.Instance.SendMidiNoteOn(deviceIds[deviceIdIndex], 0, (int)channel, (int)noteNumber, (int)velocity);
-		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_18;
-		L_18 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_19 = V_0;
-		int32_t L_20 = __this->___deviceIdIndex_29;
-		NullCheck(L_19);
-		int32_t L_21 = L_20;
-		String_t* L_22 = (L_19)->GetAt(static_cast<il2cpp_array_size_t>(L_21));
-		float L_23 = __this->___channel_30;
-		float L_24 = __this->___noteNumber_31;
-		float L_25 = __this->___velocity_32;
-		NullCheck(L_18);
-		MidiManager_SendMidiNoteOn_m3B5167AE192A4285F8029AD6EFB95B8F277EE7AF(L_18, L_22, 0, il2cpp_codegen_cast_double_to_int<int32_t>(L_23), il2cpp_codegen_cast_double_to_int<int32_t>(L_24), il2cpp_codegen_cast_double_to_int<int32_t>(L_25), NULL);
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_26 = V_2;
-		V_2 = ((int32_t)il2cpp_codegen_add(L_26, 1));
-	}
-
-IL_0075:
-	{
-		// for (var i = 0; i < deviceIds.Length; i++)
-		int32_t L_27 = V_2;
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_28 = V_0;
-		NullCheck(L_28);
-		if ((((int32_t)L_27) < ((int32_t)((int32_t)(((RuntimeArray*)L_28)->max_length)))))
-		{
-			goto IL_0027;
-		}
-	}
-	{
+		MidiManager_t79AF1E623136D3AAA879EBDC5CA47411EA56B23B* L_5;
+		L_5 = MidiManager_get_Instance_m136B594F2026EDD78290FC27FE45D6FA4A9923F0(NULL);
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6 = V_0;
+		int32_t L_7 = __this->___deviceIdIndex_29;
+		NullCheck(L_6);
+		int32_t L_8 = L_7;
+		String_t* L_9 = (L_6)->GetAt(static_cast<il2cpp_array_size_t>(L_8));
+		float L_10 = __this->___channel_30;
+		float L_11 = __this->___noteNumber_31;
+		float L_12 = __this->___velocity_32;
+		NullCheck(L_5);
+		MidiManager_SendMidiNoteOn_m3B5167AE192A4285F8029AD6EFB95B8F277EE7AF(L_5, L_9, 0, il2cpp_codegen_cast_double_to_int<int32_t>(L_10), il2cpp_codegen_cast_double_to_int<int32_t>(L_11), il2cpp_codegen_cast_double_to_int<int32_t>(L_12), NULL);
 		// }
 		return;
 	}
