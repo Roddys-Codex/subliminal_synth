@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using AudioHelm;
+using jp.kshoji.unity.midi;
+using jp.kshoji.unity.midi.sample;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,15 +14,20 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
     public int positionObjectNumber;
     public GameObject gameObject;
     public GameObject noteSliderObject;
+    public GameObject midiSampleSceneGameObject;
+    public MidiSampleScene midiSampleScene;
     public bool noteActive = false;
     SynthManager synthManager;
     MeshRenderer renderer;
     public Note currentObjectNote;
     Slider noteSlider;
     private int noteValue;
+    public GameObject previousPositionObject;
+    public SequencerPosition previousSequencerPosition;
+    private bool previousNoteActive;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         noteSliderObject.SetActive(false);
         synthManager = gameObject.GetComponent<SynthManager>();
@@ -28,24 +36,52 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         synthManager.audioHelmClock.Reset();
         noteSlider.onValueChanged.AddListener(delegate { setNoteValue(); });
         noteValue = (int)noteSlider.value;
+        midiSampleScene = midiSampleSceneGameObject.GetComponent<MidiSampleScene>();
+        previousSequencerPosition = previousPositionObject.GetComponent<SequencerPosition>();
         //currentObjectNote = new Note();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         currentObjectNote.note = noteValue;
 
         sequencerPosition = synthManager.sequencerPosition;
         if(sequencerPosition == positionObjectNumber)
         {
+            previousNoteActive = previousSequencerPosition.noteActive;
+            if(previousNoteActive==true)
+            {
+                Debug.Log("Midi Off sent");
+                var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+                var deviceNames = new string[deviceIds.Length];
+
+                for (var i = 0; i < deviceIds.Length; i++)
+                {
+                    deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
+                    MidiManager.Instance.SendMidiNoteOff(deviceIds[0], 0, 0, 60, 127);
+                    Debug.Log("MidiNoteOffSent");
+                }
+            }
 
             if (noteActive==true)
             {
-                
+                Debug.Log("Midi On note pressed");
+                var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
+                var deviceNames = new string[deviceIds.Length];
+
+                for (var i = 0; i < deviceIds.Length; i++)
+                {
+                    deviceNames[i] = $"{MidiManager.Instance.GetDeviceName(deviceIds[i])} ({deviceIds[i]})";
+                    MidiManager.Instance.SendMidiNoteOn(deviceIds[0], 0, 0, 60, 127);
+                    Debug.Log("MidiNoteSent");
+                }
+
             } else
             {
                 StartCoroutine(ChangeColor(Color.magenta, true));
+                //midiSampleScene.sendMidiOffEvent();
             }
         }
 
