@@ -184,5 +184,10 @@ namespace AudioHelm
         {
             return base.GetAllNotes();
         }
+
+        void Start()
+        {
+            AudioHelmClock.GetInstance().Reset();
+        }
     }
 }

@@ -26,6 +26,7 @@ public class midiClick : MonoBehaviour, IPointerClickHandler
     {
         m_MeshRender.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         midiSampleScene.connectToRtpServer();
+        AudioHelm.AudioHelmClock.GetInstance().Reset();
         
     }
 }
