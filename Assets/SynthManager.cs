@@ -48,6 +48,7 @@ public class SynthManager : MonoBehaviour
     public Note selectedNote;
     public Note oldNote;
     public Note noteUpdate;
+    private bool firstTime = true;
 
     void Awake()
     {
@@ -148,6 +149,14 @@ public class SynthManager : MonoBehaviour
 
     private void AddNote(Note note, bool noteActive)
     {
+        /*
+         * CAREFUL
+         */
+        if (note.start < 0)
+        {
+            note.start = 15;
+        }
+            
         if (sequencerPositions[(int)note.start-1].note.start == note.start)
         {
             note.note = pitch;
@@ -163,6 +172,15 @@ public class SynthManager : MonoBehaviour
 
     private void RemoveNote(Note note, bool noteActive)
     {
+        if(firstTime == true)
+        {
+            Note firstTime = new Note();
+            firstTime.note = 60;
+            firstTime.start = note.note;
+            firstTime.end = note.end;
+            firstTime.velocity = note.velocity;
+            sequencer.RemoveNote(firstTime);
+        }
         if (noteActive == true)
         {
             sequencer.RemoveNote(note);
@@ -181,7 +199,7 @@ public class SynthManager : MonoBehaviour
 
         int oldKey = sequencerPositions[positionSelected].note.note;
 
-        pitch = (int)noteSlider.value * (int)octaveSlider.value;
+        pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
         sequencerPositions[positionSelected].note.note = pitch;
 
         //sequencer.RemoveNotesContainedInRange(noteUpdate.note, noteUpdate.start, noteUpdate.end);
