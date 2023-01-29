@@ -18,20 +18,13 @@ namespace jp.kshoji.unity.midi.sample
     public class MidiSampleScene : MonoBehaviour, IMidiAllEventsHandler, IMidiDeviceEventHandler
     {
         Random random = new Random();
-        public TMPro.TMP_Text ipAddressText;
-        public Button serverStartBtn;
-        public Image serverImage;
-        public Button connectToHostBtn;
-        public Button stopRTPmidiBtn;
-        public Button sendOnMidiBtn;
-        public Button sendOffMidiBtn;
-        public String userInput;
-
+        
         private AudioSource audioSource;
         private readonly AudioClip[] audioClips = new AudioClip[128];
         readonly int[] position = new int[128];
         private readonly float[] triangleTable = new float[1024];
         private static bool isPlaySound;
+        public bool midiEnabled = false;
 
         private void Awake()
         {
@@ -110,7 +103,8 @@ namespace jp.kshoji.unity.midi.sample
                     position[note] = newPosition;
                 });
             }
-
+            midiEnabled = true;
+            Debug.Log("MIDI HAS BEEN ENABLED: " + midiEnabled);
             audioSource = GetComponent<AudioSource>();
             MidiSystem.AddReceiver("MidiNoteReceiver", new MidiNoteReceiver());
         }
@@ -149,11 +143,11 @@ namespace jp.kshoji.unity.midi.sample
             
         }
 
-        public void readUserInput(String input)
-        {
-            userInput = input;
-            Debug.Log(input);
-        }
+        //public void readUserInput(String input)
+        //{
+        //    userInput = input;
+        //    Debug.Log(input);
+        //}
 
         private void sendMidiOffEvent()
         {

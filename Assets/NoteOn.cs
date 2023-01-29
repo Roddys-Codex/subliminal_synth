@@ -8,7 +8,7 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
 {
     /// <summary> The mesh render. </summary>
     private MeshRenderer m_MeshRender;
-    public SynthManager synth;
+    public SynthManager16th synth;
 
     public int note = 60;
 

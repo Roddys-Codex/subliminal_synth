@@ -8,7 +8,7 @@ using UnityEngine.Events;
 public class AddToSequencer : MonoBehaviour, IPointerClickHandler
 {
 
-    public SynthManager synth;
+    public SynthManager16th synth;
     public int positionInSequencer;
     public string noteName;
     public Note note;
