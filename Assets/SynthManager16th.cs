@@ -17,6 +17,7 @@ public class SynthManager16th : MonoBehaviour
     public AudioHelmClock audioHelmClock;
     public int sequencerPosition = 0;
     public int previousSeqPosition;
+    private int synthTime = 1;
 
     public List<GameObject> positionObjects;
     public List<SequencerPosition> sequencerPositions;
@@ -24,12 +25,16 @@ public class SynthManager16th : MonoBehaviour
     public List<int> seqPositionNumber;
     public int previousIndex = 16;
     public int currentIndex;
+
+    public GameObject timeObject;
+    public Slider timeSlider;
     public GameObject note;
     public Slider noteSlider;
     public GameObject position;
     public Slider positionSlider;
     public GameObject octave;
     public Slider octaveSlider;
+
     public int pitch;
     public int positionSelected = 1;
     public int previousSelected = 16;
@@ -59,10 +64,12 @@ public class SynthManager16th : MonoBehaviour
             position.OffNote += RemoveNote;
         });
 
+        timeSlider = timeObject.GetComponent<Slider>();
         noteSlider = note.GetComponent<Slider>();
         octaveSlider = octave.GetComponent<Slider>();
         positionSlider = position.GetComponent<Slider>();
 
+        timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
         positionSlider.onValueChanged.AddListener(delegate { PositionUpdate(); });
         noteSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
         octaveSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
@@ -75,7 +82,7 @@ public class SynthManager16th : MonoBehaviour
 
     private void AddNote(Note note, bool noteActive)
     {
-        if (note.start < 0)
+        if (note.start <= 0)
         {
             note.start = 15;
         }
@@ -114,34 +121,59 @@ public class SynthManager16th : MonoBehaviour
 
     private void NoteUpdate()
     {
+        if(synthTime==1)
+        {
+            int oldKey = sequencerPositions[positionSelected].note.note;
 
-        int oldKey = sequencerPositions[positionSelected].note.note;
+            pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
+            sequencerPositions[positionSelected].note.note = pitch;
 
-        pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
-        sequencerPositions[positionSelected].note.note = pitch;
+            sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
+            sequencerPositions[positionSelected].noteActive = true;
 
-        sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
-        sequencerPositions[positionSelected].noteActive = true;
-
-        selectedNote = noteUpdate;
+            selectedNote = noteUpdate;
+        }
+        
     }
 
     private void PositionUpdate()
     {
-        noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
-        noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
-        previousSelected = positionSelected;
-        positionSelected = (int)positionSlider.value;
+        if(synthTime == 1)
+        {
+            noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
+            noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
+            previousSelected = positionSelected;
+            positionSelected = (int)positionSlider.value;
 
-        if(sequencerPositions[previousSelected].noteActive)
-        {
-            sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
-        } else
-        {
-            sequencerPositions[previousSelected].renderer.material.color = Color.white;
+            if (sequencerPositions[previousSelected].noteActive)
+            {
+                sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+            }
+            else
+            {
+                sequencerPositions[previousSelected].renderer.material.color = Color.white;
+            }
+
+            sequencerPositions[positionSelected].renderer.material.color = Color.red;
         }
         
-        sequencerPositions[positionSelected].renderer.material.color = Color.red;
+    }
+
+    private void TimeUpdate()
+    {
+        synthTime = (int)timeSlider.value;
+
+        if(synthTime==1)
+        {
+            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 15;
+        } else
+        {
+            sequencerPositions[positionSelected].renderer.material.color = Color.white;
+        }
+        
+
     }
 
     public void BeatActionMagenta(int index)

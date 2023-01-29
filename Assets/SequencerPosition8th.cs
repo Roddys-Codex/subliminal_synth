@@ -38,7 +38,7 @@ public class SequencerPosition8th : MonoBehaviour, IPointerClickHandler
         note = new Note();
         note.note = noteValue;
         note.start = positionObjectNumber;
-        note.end = positionObjectNumber + 2;
+        note.end = positionObjectNumber + noteEndAddOn;
         note.velocity = 1;
     }
 

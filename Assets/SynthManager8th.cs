@@ -22,23 +22,31 @@ public class SynthManager8th : MonoBehaviour
     public List<SequencerPosition8th> sequencerPositions;
 
     public int previousIndex = 7;
-   
+
+    public GameObject timeObject;
+    public Slider timeSlider;
     public GameObject note;
     public Slider noteSlider;
     public GameObject position;
     public Slider positionSlider;
     public GameObject octave;
     public Slider octaveSlider;
+
     public int pitch;
-    public int positionSelected = 0;
-    public int previousSelected = 7;
+    public int positionSelected = 1;
+    public int previousSelected = 8;
     public Note activeNote;
     public Note selectedNote;
     public Note oldNote;
     public Note noteUpdate;
     private bool firstTime = true;
+    private int synthTime = 1;
 
     public bool notePlayed = false;
+
+    public Note firstNote;
+
+    public Note lastClicked;
 
     void Awake()
     {
@@ -68,37 +76,40 @@ public class SynthManager8th : MonoBehaviour
             seqPos.OffNote += RemoveNote;
         }
 
+        timeSlider = timeObject.GetComponent<Slider>();
         noteSlider = note.GetComponent<Slider>();
         octaveSlider = octave.GetComponent<Slider>();
         positionSlider = position.GetComponent<Slider>();
 
+        timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
         positionSlider.onValueChanged.AddListener(delegate { PositionUpdate(); });
         noteSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
         octaveSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
 
         pitch = 60;
-        //selectedNote = new Note();
+        selectedNote = new Note();
         noteUpdate = new Note();
 
     }
 
     private void AddNote(Note note, bool noteActive)
     {
-        //if (note.start == 1)
-        //{
-        //    note.start = 8;
-        //}
+        firstNote = note;
+        if (note.start <= 0)
+        {
+            note.start = 15;
+        }
 
-        //if (sequencerPositions[previousIndex].note.start == note.start)
-        //{
+        if (sequencerPositions[((int)note.start / 2)].note.start == note.start)
+        {
             note.note = pitch;
             if (noteActive == false)
             {
                 sequencer.AddNote(note.note, note.start, note.end, note.velocity);
             }
 
-            //NoteActionOn(note);
-        //}
+            NoteActionOn(note);
+        }
 
     }
 
@@ -106,12 +117,9 @@ public class SynthManager8th : MonoBehaviour
     {
         if (firstTime == true)
         {
-            Note firstTime = new Note();
-            firstTime.note = 60;
-            firstTime.start = note.note;
-            firstTime.end = note.end;
-            firstTime.velocity = note.velocity;
-            sequencer.RemoveNote(firstTime);
+            //Note firstTime = new Note();
+            
+            sequencer.RemoveNote(firstNote);
         }
         if (noteActive == true)
         {
@@ -123,35 +131,58 @@ public class SynthManager8th : MonoBehaviour
 
     private void NoteUpdate()
     {
+        if (synthTime == 2)
+        {
+            int oldKey = sequencerPositions[positionSelected].note.note;
 
-        int oldKey = sequencerPositions[positionSelected].note.note;
+            pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
+            sequencerPositions[positionSelected].note.note = pitch;
 
-        pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
-        sequencerPositions[positionSelected].note.note = pitch;
+            sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
+            sequencerPositions[positionSelected].noteActive = true;
 
-        sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
-        sequencerPositions[positionSelected].noteActive = true;
-
-        selectedNote = noteUpdate;
+            selectedNote = noteUpdate;
+        }
     }
 
     private void PositionUpdate()
     {
-        noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
-        noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
-        previousSelected = positionSelected;
-        positionSelected = (int)positionSlider.value;
-
-        if (sequencerPositions[previousSelected].noteActive)
+        if (synthTime == 2)
         {
-            sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+            noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
+            noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
+            previousSelected = positionSelected;
+            positionSelected = (int)positionSlider.value;
+
+            if (sequencerPositions[previousSelected].noteActive)
+            {
+                sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+            }
+            else
+            {
+                sequencerPositions[previousSelected].renderer.material.color = Color.white;
+            }
+
+            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+        }
+    }
+
+    private void TimeUpdate()
+    {
+        synthTime = (int)timeSlider.value;
+
+        if (synthTime == 2)
+        {
+            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 7;
         }
         else
         {
-            sequencerPositions[previousSelected].renderer.material.color = Color.white;
+            sequencerPositions[positionSelected].renderer.material.color = Color.white;
         }
 
-        sequencerPositions[positionSelected].renderer.material.color = Color.red;
+
     }
 
     public void BeatActionMagenta(int index)
@@ -165,15 +196,19 @@ public class SynthManager8th : MonoBehaviour
 
     public void BeatActionWhite(int index)
     {
-        if (index == 1)
+        if (index < 1 || index > 8)
         {
-            index = 0;
-            previousIndex = 7;
+            return;
         }
-        else
-        {
-            index = index - 1;
-        }
+        //if (index == 1)
+        //{
+        //    index = 0;
+        //    previousIndex = 7;
+        //}
+        //else
+        //{
+        index = index - 1;
+        //}
 
         if (sequencerPositions[previousIndex].noteActive != true)
         {
@@ -184,8 +219,13 @@ public class SynthManager8th : MonoBehaviour
             
             
         }
-        BeatActionMagenta(index);
-        BeatActionUpdate(index);
+
+        if(index != 20)
+        {
+            BeatActionMagenta(index);
+            BeatActionUpdate(index);
+        }
+        
 
     }
 
@@ -252,8 +292,7 @@ public class SynthManager8th : MonoBehaviour
 
     public void NoteActionOn(Note note)
     {
-        if(notePlayed==false)
-        {
+
             helmController.NoteOn(note.note, note.velocity, sixteenthTime);
             if (midiEnabled.midiEnabled)
             {
@@ -262,9 +301,6 @@ public class SynthManager8th : MonoBehaviour
                 MidiManager.Instance.SendMidiNoteOn(deviceIds[0], 0, 0, note.note, (int)note.velocity);
                 Debug.Log("MidiNote On Sent!");
             }
-        }
-
-        notePlayed = true;
 
     }
 
