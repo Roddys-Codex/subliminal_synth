@@ -2,6 +2,7 @@
 
 using UnityEngine;
 using System;
+using System.Collections.Generic;
 
 namespace AudioHelm
 {
@@ -177,6 +178,16 @@ namespace AudioHelm
                     Native.LoopSequencer(reference, loop);
                 currentLoop = loop;
             }
+        }
+
+        public List<Note> getAllNotes()
+        {
+            return base.GetAllNotes();
+        }
+
+        void Start()
+        {
+            AudioHelmClock.GetInstance().Reset();
         }
     }
 }

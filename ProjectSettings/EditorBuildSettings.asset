@@ -12,6 +12,8 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5c7ebb360ffedbe4494476f614929c3b,
+      type: 2}
     Unity.XR.WindowsMR.Settings: {fileID: 11400000, guid: 744b813df90924c169af73489b8325de,
       type: 2}
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 89a6d18d3df8d3e4fa917b0f9a963bc0,
@@ -22,7 +24,8 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.arkit.PlayerSettings: {fileID: 11400000, guid: b27ec7d82a91a48e69fd689ad6808e5e,
       type: 2}
-    com.unity.xr.magicleap.magic_leap_settings: {fileID: 0}
+    com.unity.xr.magicleap.magic_leap_settings: {fileID: 11400000, guid: 1eb95d77acb39444e8cf44313496a874,
+      type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 58f40b12bbc864f3c96c6505a9a1e1e3,
       type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 803f17424899bd3428b2f7962648f7da,
