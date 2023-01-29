@@ -54,7 +54,7 @@ public class SynthManager8th : MonoBehaviour
         helmController = GetComponent<HelmController>();
         sixteenthTime = sequencer.GetSixteenthTime() * 2;
 
-        sequencer.OnBeat += BeatActionWhite;
+        //sequencer.OnBeat += BeatActionWhite;
 
         sequencer.OnNoteOn += NoteActionOn;
 
