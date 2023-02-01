@@ -54,7 +54,7 @@ public class SynthManager8th : MonoBehaviour
         helmController = GetComponent<HelmController>();
         sixteenthTime = sequencer.GetSixteenthTime() * 2;
 
-        sequencer.OnBeat += BeatActionWhite;
+        //sequencer.OnBeat += BeatActionWhite;
 
         sequencer.OnNoteOn += NoteActionOn;
 
@@ -180,6 +180,8 @@ public class SynthManager8th : MonoBehaviour
         else
         {
             sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 15;
         }
 
 

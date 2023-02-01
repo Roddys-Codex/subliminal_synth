@@ -2604,8 +2604,6 @@ struct SyncMode_tAE4342FD821A2C60216840CAFB32AD23E42D9BBC;
 struct SynchronizationContext_tCDB842BBE53B050802CBBB59C6E6DC45B5B06DC0;
 // SynthManager16th
 struct SynthManager16th_t32B0E51C06E39CBBDE7B85176B49F0AE6041358B;
-// SynthManager8th
-struct SynthManager8th_t79084D970A2AA429E233AD64462559BFEAF33696;
 // AudioSynthesis.Synthesis.SynthParameters
 struct SynthParameters_t9A05D9B9E57FEF1494BA45277704DBCC2AF304DE;
 // AudioSynthesis.Synthesis.Synthesizer
@@ -54042,30 +54040,28 @@ struct SequencerPosition8th_t794721C5D2BFD737C156D74156532B9B36EC1DDE  : public 
 	int32_t ___positionObjectNumber_4;
 	// UnityEngine.GameObject SequencerPosition8th::synthObject
 	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___synthObject_5;
-	// SynthManager8th SequencerPosition8th::synthManager
-	SynthManager8th_t79084D970A2AA429E233AD64462559BFEAF33696* ___synthManager_6;
 	// System.Boolean SequencerPosition8th::noteActive
-	bool ___noteActive_7;
+	bool ___noteActive_6;
 	// UnityEngine.MeshRenderer SequencerPosition8th::renderer
-	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___renderer_8;
+	MeshRenderer_t4B7747212F0B88244BB7790C61AE124BFC15BAAE* ___renderer_7;
 	// System.Int32 SequencerPosition8th::noteEndAddOn
-	int32_t ___noteEndAddOn_9;
+	int32_t ___noteEndAddOn_8;
 	// System.Int32 SequencerPosition8th::noteValue
-	int32_t ___noteValue_10;
+	int32_t ___noteValue_9;
 	// UnityEngine.GameObject SequencerPosition8th::previousPositionObject
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___previousPositionObject_11;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___previousPositionObject_10;
 	// SequencerPosition8th SequencerPosition8th::previousSequencerPosition
-	SequencerPosition8th_t794721C5D2BFD737C156D74156532B9B36EC1DDE* ___previousSequencerPosition_12;
+	SequencerPosition8th_t794721C5D2BFD737C156D74156532B9B36EC1DDE* ___previousSequencerPosition_11;
 	// System.Boolean SequencerPosition8th::playing
-	bool ___playing_13;
+	bool ___playing_12;
 	// System.Int32 SequencerPosition8th::velocity
-	int32_t ___velocity_14;
+	int32_t ___velocity_13;
 	// AudioHelm.Note SequencerPosition8th::note
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___note_15;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___note_14;
 	// SequencerPosition8th/NoteActivated SequencerPosition8th::OnNote
-	NoteActivated_t286E201181D5C3C2290271FE0940BB8FBA73D93B* ___OnNote_16;
+	NoteActivated_t286E201181D5C3C2290271FE0940BB8FBA73D93B* ___OnNote_15;
 	// SequencerPosition8th/NoteActivated SequencerPosition8th::OffNote
-	NoteActivated_t286E201181D5C3C2290271FE0940BB8FBA73D93B* ___OffNote_17;
+	NoteActivated_t286E201181D5C3C2290271FE0940BB8FBA73D93B* ___OffNote_16;
 };
 
 // NRKernal.NRExamples.SessionEventsListener
@@ -54183,44 +54179,50 @@ struct SynthManager16th_t32B0E51C06E39CBBDE7B85176B49F0AE6041358B  : public Mono
 	int32_t ___sequencerPosition_9;
 	// System.Int32 SynthManager16th::previousSeqPosition
 	int32_t ___previousSeqPosition_10;
+	// System.Int32 SynthManager16th::synthTime
+	int32_t ___synthTime_11;
 	// System.Collections.Generic.List`1<UnityEngine.GameObject> SynthManager16th::positionObjects
-	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___positionObjects_11;
+	List_1_tB951CE80B58D1BF9650862451D8DAD8C231F207B* ___positionObjects_12;
 	// System.Collections.Generic.List`1<SequencerPosition> SynthManager16th::sequencerPositions
-	List_1_t5EE8EAC850A95E98A6E4AB47F4CF26B6FF41C966* ___sequencerPositions_12;
+	List_1_t5EE8EAC850A95E98A6E4AB47F4CF26B6FF41C966* ___sequencerPositions_13;
 	// System.Collections.Generic.List`1<System.Int32> SynthManager16th::seqPositionNumber
-	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___seqPositionNumber_13;
+	List_1_t05915E9237850A58106982B7FE4BC5DA4E872E73* ___seqPositionNumber_14;
 	// System.Int32 SynthManager16th::previousIndex
-	int32_t ___previousIndex_14;
+	int32_t ___previousIndex_15;
 	// System.Int32 SynthManager16th::currentIndex
-	int32_t ___currentIndex_15;
+	int32_t ___currentIndex_16;
+	// UnityEngine.GameObject SynthManager16th::timeObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___timeObject_17;
+	// UnityEngine.UI.Slider SynthManager16th::timeSlider
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___timeSlider_18;
 	// UnityEngine.GameObject SynthManager16th::note
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___note_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___note_19;
 	// UnityEngine.UI.Slider SynthManager16th::noteSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___noteSlider_17;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___noteSlider_20;
 	// UnityEngine.GameObject SynthManager16th::position
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___position_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___position_21;
 	// UnityEngine.UI.Slider SynthManager16th::positionSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___positionSlider_19;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___positionSlider_22;
 	// UnityEngine.GameObject SynthManager16th::octave
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___octave_20;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___octave_23;
 	// UnityEngine.UI.Slider SynthManager16th::octaveSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___octaveSlider_21;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___octaveSlider_24;
 	// System.Int32 SynthManager16th::pitch
-	int32_t ___pitch_22;
+	int32_t ___pitch_25;
 	// System.Int32 SynthManager16th::positionSelected
-	int32_t ___positionSelected_23;
+	int32_t ___positionSelected_26;
 	// System.Int32 SynthManager16th::previousSelected
-	int32_t ___previousSelected_24;
+	int32_t ___previousSelected_27;
 	// AudioHelm.Note SynthManager16th::activeNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___activeNote_25;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___activeNote_28;
 	// AudioHelm.Note SynthManager16th::selectedNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___selectedNote_26;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___selectedNote_29;
 	// AudioHelm.Note SynthManager16th::oldNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___oldNote_27;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___oldNote_30;
 	// AudioHelm.Note SynthManager16th::noteUpdate
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___noteUpdate_28;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___noteUpdate_31;
 	// System.Boolean SynthManager16th::firstTime
-	bool ___firstTime_29;
+	bool ___firstTime_32;
 };
 
 // SynthManager8th
@@ -54246,36 +54248,46 @@ struct SynthManager8th_t79084D970A2AA429E233AD64462559BFEAF33696  : public MonoB
 	List_1_t60365F177297004AA91C8DA7BF6CDD022E1EDC20* ___sequencerPositions_12;
 	// System.Int32 SynthManager8th::previousIndex
 	int32_t ___previousIndex_13;
+	// UnityEngine.GameObject SynthManager8th::timeObject
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___timeObject_14;
+	// UnityEngine.UI.Slider SynthManager8th::timeSlider
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___timeSlider_15;
 	// UnityEngine.GameObject SynthManager8th::note
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___note_14;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___note_16;
 	// UnityEngine.UI.Slider SynthManager8th::noteSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___noteSlider_15;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___noteSlider_17;
 	// UnityEngine.GameObject SynthManager8th::position
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___position_16;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___position_18;
 	// UnityEngine.UI.Slider SynthManager8th::positionSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___positionSlider_17;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___positionSlider_19;
 	// UnityEngine.GameObject SynthManager8th::octave
-	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___octave_18;
+	GameObject_t76FEDD663AB33C991A9C9A23129337651094216F* ___octave_20;
 	// UnityEngine.UI.Slider SynthManager8th::octaveSlider
-	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___octaveSlider_19;
+	Slider_t87EA570E3D6556CABF57456C2F3873FFD86E652F* ___octaveSlider_21;
 	// System.Int32 SynthManager8th::pitch
-	int32_t ___pitch_20;
+	int32_t ___pitch_22;
 	// System.Int32 SynthManager8th::positionSelected
-	int32_t ___positionSelected_21;
+	int32_t ___positionSelected_23;
 	// System.Int32 SynthManager8th::previousSelected
-	int32_t ___previousSelected_22;
+	int32_t ___previousSelected_24;
 	// AudioHelm.Note SynthManager8th::activeNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___activeNote_23;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___activeNote_25;
 	// AudioHelm.Note SynthManager8th::selectedNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___selectedNote_24;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___selectedNote_26;
 	// AudioHelm.Note SynthManager8th::oldNote
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___oldNote_25;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___oldNote_27;
 	// AudioHelm.Note SynthManager8th::noteUpdate
-	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___noteUpdate_26;
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___noteUpdate_28;
 	// System.Boolean SynthManager8th::firstTime
-	bool ___firstTime_27;
+	bool ___firstTime_29;
+	// System.Int32 SynthManager8th::synthTime
+	int32_t ___synthTime_30;
 	// System.Boolean SynthManager8th::notePlayed
-	bool ___notePlayed_28;
+	bool ___notePlayed_31;
+	// AudioHelm.Note SynthManager8th::firstNote
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___firstNote_32;
+	// AudioHelm.Note SynthManager8th::lastClicked
+	Note_t96CE62C204CCD9CC7B1070C2D04984810A3F0EB5* ___lastClicked_33;
 };
 
 // SynthReaction
