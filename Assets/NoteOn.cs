@@ -9,6 +9,7 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     /// <summary> The mesh render. </summary>
     private MeshRenderer m_MeshRender;
     public SynthManager16th synth;
+    private Color originalColour;
 
     public int note = 60;
 
@@ -16,6 +17,7 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     void Awake()
     {
         m_MeshRender = transform.GetComponent<MeshRenderer>();
+        originalColour = m_MeshRender.material.color;
     }
 
     void Start()
@@ -46,7 +48,7 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         /// <summary> when pointer hover, set the cube color to green. </summary>
         /// <param name="eventData"> Current event data.</param>
         public void OnPointerEnter(PointerEventData eventData)
-        {
+        {            
             m_MeshRender.material.color = Color.green;
         }
 
@@ -54,7 +56,7 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
         /// <param name="eventData"> Current event data.</param>
         public void OnPointerExit(PointerEventData eventData)
         {
-            m_MeshRender.material.color = Color.white;
+            m_MeshRender.material.color = originalColour; 
         }
     
 }

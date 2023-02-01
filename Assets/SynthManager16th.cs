@@ -82,7 +82,7 @@ public class SynthManager16th : MonoBehaviour
 
     private void AddNote(Note note, bool noteActive)
     {
-        if (note.start <= 0)
+        if (note.start < 0)
         {
             note.start = 15;
         }
@@ -166,8 +166,6 @@ public class SynthManager16th : MonoBehaviour
         if(synthTime==1)
         {
             sequencerPositions[positionSelected].renderer.material.color = Color.red;
-            positionSlider.minValue = 0;
-            positionSlider.maxValue = 15;
         } else
         {
             sequencerPositions[positionSelected].renderer.material.color = Color.white;
@@ -208,7 +206,11 @@ public class SynthManager16th : MonoBehaviour
 
     public void playANote(int note)
     {
-        helmController.NoteOn(note, 0.5f, 0.5f);
+        helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime() * 4);
+        sequencerPositions[sequencer.currentIndex].note.note = note;
+        sequencerPositions[sequencer.currentIndex].noteActive = true;
+
+        sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber, sequencerPositions[sequencer.currentIndex].positionObjectNumber + 1, 1);
     }
 
     public List<Note> getAllNotesInSequencer()

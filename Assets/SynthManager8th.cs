@@ -180,6 +180,8 @@ public class SynthManager8th : MonoBehaviour
         else
         {
             sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 15;
         }
 
 
