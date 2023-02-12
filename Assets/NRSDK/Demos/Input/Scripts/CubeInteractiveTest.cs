@@ -9,7 +9,6 @@
 
 using UnityEngine;
 using UnityEngine.EventSystems;
-// using AudioHelm.HelmController;
 
 namespace NRKernal.NRExamples
 {
@@ -18,8 +17,6 @@ namespace NRKernal.NRExamples
     {
         /// <summary> The mesh render. </summary>
         private MeshRenderer m_MeshRender;
-        // public AudioHelm.HelmController helmController;
-        public int note = 60;
 
         /// <summary> Awakes this object. </summary>
         void Awake()
@@ -50,19 +47,6 @@ namespace NRKernal.NRExamples
         {
             m_MeshRender.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         }
-
-        void OnGUI()
-        {
-            Event e = Event.current;
-            if (e.isKey)
-                Debug.Log("e.keyCode: " + e.keyCode);
-        }
-
-        // void OnMouseDown()
-        // {
-        //     m_MeshRender.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        //     // helmController.noteOn(0.5f, 0.5f, 0.5f);
-        // }
 
         /// <summary> when pointer hover, set the cube color to green. </summary>
         /// <param name="eventData"> Current event data.</param>

@@ -1,5 +1,6 @@
 ﻿// Copyright 2017 Matt Tytel
 
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ namespace AudioHelm
         public AudioHelmClock clock;
         public AudioSource loop;
         public float waitTime = 3.0f;
-        public Text text;
+        public TMP_Text text;
 
         int lastSecond = 0;
 

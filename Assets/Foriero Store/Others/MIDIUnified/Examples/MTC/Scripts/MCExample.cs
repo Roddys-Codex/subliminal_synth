@@ -1,10 +1,11 @@
 ﻿using UnityEngine;
 using ForieroEngine.MIDIUnified.SysEx;
 using UnityEngine.UI;
+using TMPro;
 
 public class MCExample : MonoBehaviour
 {
-    public Text text;
+    public TMP_Text text;
 
     // Start is called before the first frame update
     void Start()

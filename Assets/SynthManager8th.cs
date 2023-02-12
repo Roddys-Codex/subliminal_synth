@@ -48,6 +48,8 @@ public class SynthManager8th : MonoBehaviour
 
     public Note lastClicked;
 
+    public UnityEngine.UI.Toggle midiToggle;
+
     void Awake()
     {
         sequencer = GetComponent<HelmSequencer>();
@@ -179,7 +181,11 @@ public class SynthManager8th : MonoBehaviour
         }
         else
         {
-            sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            if (sequencerPositions[positionSelected].noteActive != true)
+            {
+                sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            }
+            
             positionSlider.minValue = 0;
             positionSlider.maxValue = 15;
         }
@@ -274,7 +280,17 @@ public class SynthManager8th : MonoBehaviour
 
     public void playANote(int note)
     {
-        helmController.NoteOn(note, 0.5f, 0.5f);
+        helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime() * 2);
+        sequencerPositions[sequencer.currentIndex].note.note = note;
+
+        if(midiToggle.isOn)
+        {
+            sequencerPositions[sequencer.currentIndex].noteActive = true;
+
+            sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber, sequencerPositions[sequencer.currentIndex].positionObjectNumber + 2, 1);
+            sequencerPositions[sequencer.currentIndex].renderer.material.color = Color.cyan;
+        }
+        
     }
 
     public List<Note> getAllNotesInSequencer()

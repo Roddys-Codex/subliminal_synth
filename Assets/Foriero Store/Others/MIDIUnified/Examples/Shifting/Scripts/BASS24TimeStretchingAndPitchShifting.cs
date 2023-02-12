@@ -1,4 +1,5 @@
 ﻿using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,12 +10,12 @@ public class BASS24TimeStretchingAndPitchShifting : MonoBehaviour
     public Slider speedSlider;
     public Slider semitoneSlider;
 
-    public Text speedText;
-    public Text semitoneText;
+    public TMP_Text speedText;
+    public TMP_Text semitoneText;
 
-    public Text playPauseText;
+    public TMP_Text playPauseText;
 
-    public Text timeText;
+    public TMP_Text timeText;
 
     public void Play()
     {

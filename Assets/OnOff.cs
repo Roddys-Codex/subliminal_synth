@@ -35,18 +35,21 @@ public class OnOff : MonoBehaviour
 
             if(noteMenuOnOff.value==1)
             {
-                synthManager16Th.sequencerPositions[synthManager16Th.positionSelected].renderer.material.color = Color.red;
+                //synthManager16Th.sequencerPositions[synthManager16Th.positionSelected].renderer.material.color = Color.red;
+                synthManager16Th.sixteenthLights[synthManager16Th.positionSelected].SetActive(true);
             } else
             {
-                synthManager8th.sequencerPositions[synthManager8th.positionSelected].renderer.material.color = Color.red;
+                //synthManager8th.sequencerPositions[synthManager8th.positionSelected].renderer.material.color = Color.red;
+                //synthManager8th.sixteenthLights[synthManager8th.positionSelected].renderer.material.color = Color.red;
             }
             
         } else
         {
             gameObject.SetActive(false);
             active = false;
-            synthManager16Th.sequencerPositions[synthManager16Th.positionSelected].renderer.material.color = Color.white;
-            synthManager8th.sequencerPositions[synthManager8th.positionSelected].renderer.material.color = Color.white;
+            //synthManager16Th.sequencerPositions[synthManager16Th.positionSelected].renderer.material.color = Color.white;
+            synthManager16Th.sixteenthLights[synthManager16Th.positionSelected].SetActive(false);
+            //synthManager8th.sequencerPositions[synthManager8th.positionSelected].renderer.material.color = Color.white;
         }
         
     }

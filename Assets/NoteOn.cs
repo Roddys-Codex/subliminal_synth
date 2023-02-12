@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using AudioHelm;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     /// <summary> The mesh render. </summary>
     private MeshRenderer m_MeshRender;
     public SynthManager16th synth;
+    public SynthManager8th synth8th;
     private Color originalColour;
+    public Toggle timeToggle; 
 
     public int note = 60;
 
@@ -42,7 +45,14 @@ public class NoteOn : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler,
     public void OnPointerClick(PointerEventData eventData)
     {
         m_MeshRender.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
-        synth.playANote(note);
+        if(timeToggle.isOn)
+        {
+            synth.playANote(note);
+        } else
+        {
+            synth8th.playANote(note);
+        }
+        
     }
 
         /// <summary> when pointer hover, set the cube color to green. </summary>
