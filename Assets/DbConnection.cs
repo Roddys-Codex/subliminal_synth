@@ -12,6 +12,8 @@ using static System.Net.Mime.MediaTypeNames;
 using UnityEngine.UIElements;
 using Application = UnityEngine.Application;
 using AudioHelm;
+using static TMPro.TMP_Dropdown;
+using static UnityEngine.UI.Dropdown;
 
 public class DbConnection : MonoBehaviour
 {
@@ -35,6 +37,7 @@ public class DbConnection : MonoBehaviour
     public long pattern_id;
     public TMP_InputField patternNameInputField;
     public List<Note> noteList;
+    public TMP_Dropdown patternDropDown;
     
     SqliteConnection connection;
 
@@ -85,7 +88,9 @@ public class DbConnection : MonoBehaviour
         //AddUser();
         // getAllPatterns();
         // setPatternByName();
-        
+        queryPatternFromDb();
+
+
     }
 
     public void logQuery() {
@@ -238,6 +243,34 @@ public class DbConnection : MonoBehaviour
         // }
     }
 
+    public void queryPatternFromDb() {
+        //Debug.Log("DROP DOWN VALUE = "+patternDropDown.value);
+        patternDropDown.ClearOptions();
+        using (var command = connection.CreateCommand())
+        {
+            // command.CommandText = "SELECT * FROM sixteenth_note_active JOIN sixteenth_note_pattern ON sixteenth_note_active.sixteenth_note_id=sixteenth_note_pattern.sixteenth_note_id JOIN pattern ON sixteenth_note_pattern.pattern_id=pattern.pattern_id;";
+            command.CommandText = "SELECT * FROM pattern;";
+
+            using (IDataReader reader = command.ExecuteReader())
+            {
+                List<string> options = new List<string>();
+                while (reader.Read())
+                {
+                    Debug.Log("PATTERN NAME = " + reader["pattern_name"]);
+                    print("Database Debug - PATTERN NAME = " + reader["pattern_name"]);
+                    
+                    options.Add((string)reader["pattern_name"]);
+                    
+                }
+                patternDropDown.AddOptions(options);
+                reader.Close();
+            }
+
+        }
+
+
+    }
+
     public void LogInfo(String log)
     {
         // logList.text += log;
@@ -343,7 +376,7 @@ public class DbConnection : MonoBehaviour
                         command.CommandText = "BEGIN TRANSACTION; INSERT INTO sixteenth_note (pattern_id, position, active) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1); COMMIT TRANSACTION;";
                         Debug.Log("COMMAND TEXT = "+command.CommandText);
 
-                        insertIntoSixteenthNote.text += command.CommandText;
+                        //insertIntoSixteenthNote.text += command.CommandText;
 
                         try {
                             command.ExecuteNonQuery();
@@ -359,7 +392,7 @@ public class DbConnection : MonoBehaviour
             }
         }
         // });
-
+        queryPatternFromDb();
     }
 
     public void getPatternByName() {
@@ -395,12 +428,14 @@ public class DbConnection : MonoBehaviour
         });
         Debug.Log("Setting pattern.");
         
-        pattern_name = patternNameInputField.text;
+        pattern_name = patternDropDown.options[patternDropDown.value].text;
+        Debug.Log("ITEM TEXT = " + patternDropDown.options[patternDropDown.value].text);
+        Debug.Log("PATTERN NAME = " + pattern_name);
         // using (var connection = new SqliteConnection(connectionString))
         // {
-            // connection.Open();
+        // connection.Open();
 
-            using (var command = connection.CreateCommand())
+        using (var command = connection.CreateCommand())
             {
                 Debug.Log("Preparing query to select active sixteenth notes.");
                 command.CommandText = "SELECT * FROM sixteenth_note JOIN pattern ON sixteenth_note.pattern_id=pattern.pattern_id WHERE pattern.pattern_name = \"" + pattern_name + "\" AND sixteenth_note.active = 1;";
