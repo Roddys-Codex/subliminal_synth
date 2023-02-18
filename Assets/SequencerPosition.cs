@@ -52,11 +52,13 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         {
             playing = true;
             renderer.material.color = Color.cyan;
+            //synthManager.sixteenthLights[synthManager.currentIndex].SetActive(true);
             OnNote(note, noteActive);
             noteActive = true;
         } else
         {
             renderer.material.color = Color.white;
+            //synthManager.sixteenthLights[synthManager.currentIndex].SetActive(false);
             OffNote(note, noteActive);
             noteActive = false;
         }

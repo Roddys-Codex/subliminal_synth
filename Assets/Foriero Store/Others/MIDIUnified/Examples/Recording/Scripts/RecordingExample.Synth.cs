@@ -3,15 +3,16 @@ using System.IO;
 using ForieroEngine.Extensions;
 using ForieroEngine.MIDIUnified.Plugins;
 using ForieroEngine.MIDIUnified.Recording;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
 public partial class RecordingExample : MonoBehaviour {
 
-    public Text speedText;
+    public TMP_Text speedText;
     public Slider speedSlider;
-    public Text semitoneText;
+    public TMP_Text semitoneText;
     public Slider semitoneSlider;
 
     public void StartSynthRecording(){

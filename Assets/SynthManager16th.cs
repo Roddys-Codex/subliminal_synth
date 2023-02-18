@@ -43,6 +43,8 @@ public class SynthManager16th : MonoBehaviour
     public Note oldNote;
     public Note noteUpdate;
     private bool firstTime = true;
+    public UnityEngine.UI.Toggle midiToggle;
+    public List<GameObject> sixteenthLights;
 
     void Awake()
     {
@@ -80,7 +82,7 @@ public class SynthManager16th : MonoBehaviour
 
     }
 
-    private void AddNote(Note note, bool noteActive)
+    public void AddNote(Note note, bool noteActive)
     {
         if (note.start < 0)
         {
@@ -98,6 +100,11 @@ public class SynthManager16th : MonoBehaviour
             NoteActionOn(note);
         }
         
+    }
+
+    public void AddNote(Note note)
+    {
+        sequencer.AddNote(note.note, note.start, note.end, note.velocity);
     }
 
     private void RemoveNote(Note note, bool noteActive)
@@ -130,6 +137,7 @@ public class SynthManager16th : MonoBehaviour
 
             sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
             sequencerPositions[positionSelected].noteActive = true;
+            sequencerPositions[positionSelected].renderer.material.color = Color.cyan;
 
             selectedNote = noteUpdate;
         }
@@ -148,13 +156,17 @@ public class SynthManager16th : MonoBehaviour
             if (sequencerPositions[previousSelected].noteActive)
             {
                 sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+                sixteenthLights[previousSelected].SetActive(false);
             }
             else
             {
-                sequencerPositions[previousSelected].renderer.material.color = Color.white;
+                //sequencerPositions[previousSelected].renderer.material.color = Color.white;
+                sixteenthLights[previousSelected].SetActive(false);
             }
 
-            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
+
+            sixteenthLights[positionSelected].SetActive(true);
         }
         
     }
@@ -165,10 +177,19 @@ public class SynthManager16th : MonoBehaviour
 
         if(synthTime==1)
         {
-            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
+
+            sixteenthLights[positionSelected].SetActive(true);
+
         } else
         {
-            sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            if (sequencerPositions[positionSelected].noteActive!=true)
+            {
+                sequencerPositions[positionSelected].renderer.material.color = Color.white;
+            }
+
+            sixteenthLights[positionSelected].SetActive(false);
+
         }
         
 
@@ -206,11 +227,18 @@ public class SynthManager16th : MonoBehaviour
 
     public void playANote(int note)
     {
-        helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime() * 4);
+        helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime());
         sequencerPositions[sequencer.currentIndex].note.note = note;
-        sequencerPositions[sequencer.currentIndex].noteActive = true;
 
-        sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber, sequencerPositions[sequencer.currentIndex].positionObjectNumber + 1, 1);
+        if (midiToggle.isOn)
+        {
+            
+            sequencerPositions[sequencer.currentIndex].noteActive = true;
+
+            sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber, sequencerPositions[sequencer.currentIndex].positionObjectNumber + 1, 1);
+            sequencerPositions[sequencer.currentIndex].renderer.material.color = Color.cyan;
+        }
+
     }
 
     public List<Note> getAllNotesInSequencer()

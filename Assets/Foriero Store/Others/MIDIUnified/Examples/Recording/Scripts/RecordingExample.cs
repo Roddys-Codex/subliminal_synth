@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using ForieroEngine.Extensions;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,8 +12,8 @@ public partial class RecordingExample : MonoBehaviour {
     [Range(0f, 1f)]
     public float bgMusicVolume = 1;
 
-    public Text synthFileText;
-    public Text midiFileText;
+    public TMP_Text synthFileText;
+    public TMP_Text midiFileText;
 
     private void Awake()
     {

@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using TMPro;
 
 public class MidiSelectionUIDeviceButton : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class MidiSelectionUIDeviceButton : MonoBehaviour
 
 	public MidiSelectionUI midiSelectionUI;
 	public Device device = Device.IN;
-	public Text text;
+	public TMP_Text text;
 	public Image image;
 
 	public bool connected = false;
