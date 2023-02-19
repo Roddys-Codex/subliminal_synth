@@ -37,6 +37,7 @@ public class DbConnection : MonoBehaviour
     public long pattern_id;
     public TMP_InputField patternNameInputField;
     public List<Note> noteList;
+    public List<Note> noteList8th;
     public TMP_Dropdown patternDropDown;
     
     SqliteConnection connection;
@@ -391,6 +392,42 @@ public class DbConnection : MonoBehaviour
                 // }
             }
         }
+
+        foreach (SequencerPosition8th sequencerPosition in synthManager8th.sequencerPositions)
+        {
+            // synthManager16th.sequencerPositions.ForEach(sequencerPosition =>
+            // {
+            if (sequencerPosition.noteActive == true)
+            {
+                // using (var connection = new SqliteConnection(connectionString))
+                // {
+                // connection.Open();
+
+                using (var command = connection.CreateCommand())
+                {
+                    // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
+                    // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                    command.CommandText = "BEGIN TRANSACTION; INSERT INTO eighth_note (pattern_id, position, active) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1); COMMIT TRANSACTION;";
+                    Debug.Log("COMMAND TEXT = " + command.CommandText);
+
+                    //insertIntoSixteenthNote.text += command.CommandText;
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (Exception ex)
+                    {
+                        // string code = ex.ErrorCode;
+                        Debug.Log("Exception: " + ex);
+                        logList.text += ("Exception: " + ex);
+                    }
+
+                }
+                // connection.Close();
+                // }
+            }
+        }
         // });
         queryPatternFromDb();
     }
@@ -436,40 +473,82 @@ public class DbConnection : MonoBehaviour
         // connection.Open();
 
         using (var command = connection.CreateCommand())
-            {
-                Debug.Log("Preparing query to select active sixteenth notes.");
-                command.CommandText = "SELECT * FROM sixteenth_note JOIN pattern ON sixteenth_note.pattern_id=pattern.pattern_id WHERE pattern.pattern_name = \"" + pattern_name + "\" AND sixteenth_note.active = 1;";
-                // command.CommandText = "SELECT * FROM sixteenth_note_pattern;";
+        {
+            Debug.Log("Preparing query to select active sixteenth notes.");
+            command.CommandText = "SELECT * FROM sixteenth_note JOIN pattern ON sixteenth_note.pattern_id=pattern.pattern_id WHERE pattern.pattern_name = \"" + pattern_name + "\" AND sixteenth_note.active = 1;";
+            // command.CommandText = "SELECT * FROM sixteenth_note_pattern;";
 
-                try{
-                    using (IDataReader reader = command.ExecuteReader())
+            try{
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
                     {
-                        while (reader.Read())
-                        {
-                            // TODO : FIND OUT IF THERE ARE ANY SIXTEENTH NOTE PATTERN IDs in PHONE DB BY PRINTING LINE BELOW
-                            Debug.Log("SIXTEENTH NOTE PATTERN ID = " + reader["sixteenth_note_id"]);
-                            // userList.text += reader["position"];
-                            Debug.Log("READER POSITION NOTE = " + reader.GetInt32(reader.GetOrdinal("position")));
-                            Debug.Log("READ OBJ = " + reader.ToString());
-                            Note note = new Note();
-                            note.note = 60;
-                            note.start = reader.GetInt32(reader.GetOrdinal("position"));
-                            note.end = reader.GetInt32(reader.GetOrdinal("position")) + 1;
-                            note.velocity = 1.0f;
+                        // TODO : FIND OUT IF THERE ARE ANY SIXTEENTH NOTE PATTERN IDs in PHONE DB BY PRINTING LINE BELOW
+                        Debug.Log("SIXTEENTH NOTE PATTERN ID = " + reader["sixteenth_note_id"]);
+                        // userList.text += reader["position"];
+                        Debug.Log("READER POSITION NOTE = " + reader.GetInt32(reader.GetOrdinal("position")));
+                        Debug.Log("READ OBJ = " + reader.ToString());
+                        Note note = new Note();
+                        note.note = 60;
+                        note.start = reader.GetInt32(reader.GetOrdinal("position"));
+                        note.end = reader.GetInt32(reader.GetOrdinal("position")) + 1;
+                        note.velocity = 1.0f;
 
-                            synthManager16th.AddNote(note);
-                            noteList.Add(note);
-                            int pos = reader.GetInt32(reader.GetOrdinal("position"));
-                            synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].note = note;
-                            synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].noteActive = true;
-                            synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].renderer.material.color = Color.cyan;
-                            // / ExecuteEvents.Execute(synthManager16th.sequencerPositions[(int)reader["position"]], pointer, ExecuteEvents.OnPointerClick);
-                        }
+                        synthManager16th.AddNote(note);
+                        noteList.Add(note);
+                        int pos = reader.GetInt32(reader.GetOrdinal("position"));
+                        synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].note = note;
+                        synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].noteActive = true;
+                        synthManager16th.sequencerPositions[reader.GetInt32(reader.GetOrdinal("position"))-1].renderer.material.color = Color.cyan;
+                        // / ExecuteEvents.Execute(synthManager16th.sequencerPositions[(int)reader["position"]], pointer, ExecuteEvents.OnPointerClick);
                     }
-                } catch(Exception ex) {
-                    Debug.Log("EXCEPTION FROM SIXTEENTH NOTE PATTERN QUERY. EX: " + ex);
+                }
+            } catch(Exception ex) {
+                Debug.Log("EXCEPTION FROM SIXTEENTH NOTE PATTERN QUERY. EX: " + ex);
+            }
+        }
+
+        using (var command = connection.CreateCommand())
+        {
+            Debug.Log("Preparing query to select active eighth notes.");
+            command.CommandText = "SELECT * FROM eighth_note JOIN pattern ON eighth_note.pattern_id=pattern.pattern_id WHERE pattern.pattern_name = \"" + pattern_name + "\" AND eighth_note.active = 1;";
+            // command.CommandText = "SELECT * FROM sixteenth_note_pattern;";
+
+            try
+            {
+                using (IDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        // TODO : FIND OUT IF THERE ARE ANY SIXTEENTH NOTE PATTERN IDs in PHONE DB BY PRINTING LINE BELOW
+                        Debug.Log("EIGHTH NOTE PATTERN ID = " + reader["eighth_note_id"]);
+                        // userList.text += reader["position"];
+                        Debug.Log("EIGHTH READER POSITION NOTE = " + reader.GetInt32(reader.GetOrdinal("position")));
+                        Debug.Log("READ OBJ = " + reader.ToString());
+                        Note note = new Note();
+                        note.note = 60;
+                        note.start = reader.GetInt32(reader.GetOrdinal("position"));
+                        note.end = reader.GetInt32(reader.GetOrdinal("position")) + 1;
+                        note.velocity = 1.0f;
+
+                        synthManager8th.AddNote(note);
+                        noteList8th.Add(note);
+                        int pos = reader.GetInt32(reader.GetOrdinal("position"));
+                        Debug.Log("POSITION BEFORE DIVISION = " + pos);
+                        pos = pos / 2;
+                        Debug.Log("POSITION DIVIDED BY TWO = "+pos);
+                        synthManager8th.sequencerPositions[pos].note = note;
+                        synthManager8th.sequencerPositions[pos].noteActive = true;
+                        synthManager8th.sequencerPositions[pos].renderer.material.color = Color.cyan;
+                        // / ExecuteEvents.Execute(synthManager16th.sequencerPositions[(int)reader["position"]], pointer, ExecuteEvents.OnPointerClick);
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                Debug.Log("EXCEPTION FROM SIXTEENTH NOTE PATTERN QUERY. EX: " + ex);
+            }
+        }
             // connection.Close();
         // }
     }

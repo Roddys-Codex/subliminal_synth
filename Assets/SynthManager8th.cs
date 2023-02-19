@@ -94,6 +94,11 @@ public class SynthManager8th : MonoBehaviour
 
     }
 
+    public void AddNote(Note note)
+    {
+        sequencer.AddNote(note.note, note.start, note.end, note.velocity);
+    }
+
     private void AddNote(Note note, bool noteActive)
     {
         firstNote = note;
