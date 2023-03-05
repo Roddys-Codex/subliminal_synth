@@ -28,6 +28,8 @@ namespace AudioHelm
                  " This must match the channel set in the Helm Audio plugin.")]
         public int channel = 0;
 
+        public List<HelmModulationSetting> modulationSetting = new List<HelmModulationSetting>();
+
         // Note: These parameters listed out to support Unity animations.
         [SerializeField]
         protected float synthParamValue0 = 0.0f, synthParamValue1 = 0.0f, synthParamValue2 = 0.0f, synthParamValue3 = 0.0f,
@@ -66,6 +68,7 @@ namespace AudioHelm
         {
             FieldInfo[] fields = typeof(HelmPatchSettings).GetFields();
             Native.HelmClearModulations(channel);
+            modulationSetting.Clear();
 
             List<float> values = new List<float>();
             values.Add(0.0f);
@@ -93,7 +96,7 @@ namespace AudioHelm
                                      " modulations are currently supported in the Helm Unity plugin.");
                     break;
                 }
-
+                modulationSetting.Add(modulation);
                 Native.HelmAddModulation(channel, modulationIndex,
                                          modulation.source, modulation.destination, modulation.amount);
                 modulationIndex++;
