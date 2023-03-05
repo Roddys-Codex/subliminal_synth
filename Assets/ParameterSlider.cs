@@ -17,7 +17,8 @@ public class ParameterSlider : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        paramSlider.minValue = Native.HelmGetParameterMinimum((int)param);
+        paramSlider.maxValue = Native.HelmGetParameterMaximum((int)param);
     }
 
     // Update is called once per frame
