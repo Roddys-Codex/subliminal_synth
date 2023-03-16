@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MidiPlay : MonoBehaviour
 {
-
-    public MeshRenderer renderer;
     public Color activeColor;
+    public Toggle m_Toggle;
+    public GameObject objectToActivate;
     // Start is called before the first frame update
     void Start()
     {
-        activeColor = Color.cyan;
+        m_Toggle = GetComponent<Toggle>();
+        //Add listener for when the state of the Toggle changes, to take action
+        m_Toggle.onValueChanged.AddListener(delegate {
+            switchColour();
+        });
+
     }
 
     // Update is called once per frame
@@ -22,12 +28,15 @@ public class MidiPlay : MonoBehaviour
     public void switchColour()
     {
 
-        if(renderer.material.color!=activeColor)
+        if(GetComponent<MeshRenderer>().material.color!=activeColor)
         {
-            renderer.material.color = activeColor;
+            GetComponent<MeshRenderer>().material.color = activeColor;
+            objectToActivate.SetActive(true);
+
         } else
         {
-            renderer.material.color = Color.white;
+            GetComponent<MeshRenderer>().material.color = Color.white;
+            objectToActivate.SetActive(false);
         }
         
     }
