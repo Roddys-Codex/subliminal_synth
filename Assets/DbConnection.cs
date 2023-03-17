@@ -152,9 +152,9 @@ public class DbConnection : MonoBehaviour
             using (var command = connection.CreateCommand())
             {
                 command.CommandText = "CREATE TABLE IF NOT EXISTS pattern (pattern_id INTEGER PRIMARY KEY, pattern_name TEXT NOT NULL); " +
-                    "CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                    "CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL, note INTEGER NOT NULL, velocity REAL NOT NULL," +
                     "FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION);" +
-                    "CREATE TABLE IF NOT EXISTS \"eighth_note\" ( eighth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                    "CREATE TABLE IF NOT EXISTS \"eighth_note\" ( eighth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL,  note INTEGER NOT NULL, velocity REAL NOT NULL," +
                     "FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION);";
                     // "CREATE TABLE IF NOT EXISTS eighth_note_pattern (eighth_note_pattern_id INTEGER PRIMARY KEY, eighth_note_id INTEGER, pattern_id INTEGER, " +
                     // "FOREIGN KEY (eighth_note_id) REFERENCES eighth_note (eighth_note_id) ON DELETE CASCADE ON UPDATE NO ACTION, FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION); " +
@@ -375,7 +375,7 @@ public class DbConnection : MonoBehaviour
                     {
                     // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
                     // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
-                        command.CommandText = "BEGIN TRANSACTION; INSERT INTO sixteenth_note (pattern_id, position, active) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1); COMMIT TRANSACTION;";
+                        command.CommandText = "BEGIN TRANSACTION; INSERT INTO sixteenth_note (pattern_id, position, active, note, velocity) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1, \""+sequencerPosition.note.note+"\", \""+sequencerPosition.note.velocity+"\"); COMMIT TRANSACTION;";
                         Debug.Log("COMMAND TEXT = "+command.CommandText);
 
                         //insertIntoSixteenthNote.text += command.CommandText;
@@ -408,7 +408,7 @@ public class DbConnection : MonoBehaviour
                 {
                     // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
                     // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
-                    command.CommandText = "BEGIN TRANSACTION; INSERT INTO eighth_note (pattern_id, position, active) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1); COMMIT TRANSACTION;";
+                    command.CommandText = "BEGIN TRANSACTION; INSERT INTO eighth_note (pattern_id, position, active, note, velocity) VALUES (\"" + pattern_id + "\", " + sequencerPosition.positionObjectNumber + ", 1, \"" + sequencerPosition.note.note+ "\", \"" + sequencerPosition.note.velocity+ "\"); COMMIT TRANSACTION;";
                     Debug.Log("COMMAND TEXT = " + command.CommandText);
 
                     //insertIntoSixteenthNote.text += command.CommandText;
@@ -490,10 +490,10 @@ public class DbConnection : MonoBehaviour
                         Debug.Log("READER POSITION NOTE = " + reader.GetInt32(reader.GetOrdinal("position")));
                         Debug.Log("READ OBJ = " + reader.ToString());
                         Note note = new Note();
-                        note.note = 60;
+                        note.note = reader.GetInt32(reader.GetOrdinal("note")); ;
                         note.start = reader.GetInt32(reader.GetOrdinal("position"));
                         note.end = reader.GetInt32(reader.GetOrdinal("position")) + 1;
-                        note.velocity = 1.0f;
+                        note.velocity = reader.GetFloat(reader.GetOrdinal("velocity"));
 
                         synthManager16th.AddNote(note);
                         noteList.Add(note);
