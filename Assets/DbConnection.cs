@@ -527,10 +527,10 @@ public class DbConnection : MonoBehaviour
                         Debug.Log("EIGHTH READER POSITION NOTE = " + reader.GetInt32(reader.GetOrdinal("position")));
                         Debug.Log("READ OBJ = " + reader.ToString());
                         Note note = new Note();
-                        note.note = 60;
+                        note.note = reader.GetInt32(reader.GetOrdinal("note")); ;
                         note.start = reader.GetInt32(reader.GetOrdinal("position"));
                         note.end = reader.GetInt32(reader.GetOrdinal("position")) + 1;
-                        note.velocity = 1.0f;
+                        note.velocity = reader.GetFloat(reader.GetOrdinal("velocity"));
 
                         synthManager8th.AddNote(note);
                         noteList8th.Add(note);
