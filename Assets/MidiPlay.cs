@@ -40,4 +40,19 @@ public class MidiPlay : MonoBehaviour
         }
         
     }
+
+    public void switchOnlyColour()
+    {
+
+        if (GetComponent<MeshRenderer>().material.color != activeColor)
+        {
+            GetComponent<MeshRenderer>().material.color = activeColor;
+
+        }
+        else
+        {
+            GetComponent<MeshRenderer>().material.color = Color.white;
+        }
+
+    }
 }

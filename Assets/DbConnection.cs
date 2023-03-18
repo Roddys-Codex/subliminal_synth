@@ -14,6 +14,8 @@ using Application = UnityEngine.Application;
 using AudioHelm;
 using static TMPro.TMP_Dropdown;
 using static UnityEngine.UI.Dropdown;
+using ForieroEngine;
+using static DbConnection;
 
 public class DbConnection : MonoBehaviour
 {
@@ -39,11 +41,36 @@ public class DbConnection : MonoBehaviour
     public List<Note> noteList;
     public List<Note> noteList8th;
     public TMP_Dropdown patternDropDown;
-    
+
+    private List<string> drums = new List<string> { "kick", "snare", "fx_1", "fx_2", "fx_3", "fx_4", "fx_5", "fx_6", "fx_7", "fx_8", "fx_9", "fx_10" };
+    public List<GameObject> drumObjects;
     SqliteConnection connection;
+
+    public class DrumRow
+    {
+        public string drumName { get; set; }
+        public SamplerPosition[] samplerPositions { get; set; }
+    }
+
+    public List<DrumRow> drumRows;
 
     void Start()
     {
+        drumRows = new List<DrumRow>();
+        int count = 0;
+        drumObjects.ForEach(drum =>
+        {
+            DrumRow drumRow = new DrumRow();
+            drumRow.samplerPositions = drum.GetComponentsInChildren<SamplerPosition>();
+            drumRow.drumName = drums[count];
+            count++;
+            drumRows.Add(drumRow);
+
+            Debug.Log("DRUM ROW " + count + " NAME = " + drumRow.drumName );
+            Debug.Log("DRUM ROW COUNT " + drumRow.samplerPositions.Length );
+        });
+
+        
         connectionString = "URI=file:" + Application.persistentDataPath + "/" + database_name + ";MultipleActiveResultSets=true;";
         Debug.Log("Before connection");
         Debug.Log("CONNECTION STRING = "+connectionString);
@@ -92,7 +119,10 @@ public class DbConnection : MonoBehaviour
         queryPatternFromDb();
 
 
+
     }
+
+    
 
     public void logQuery() {
 
@@ -155,7 +185,41 @@ public class DbConnection : MonoBehaviour
                     "CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL, note INTEGER NOT NULL, velocity REAL NOT NULL," +
                     "FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION);" +
                     "CREATE TABLE IF NOT EXISTS \"eighth_note\" ( eighth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL,  note INTEGER NOT NULL, velocity REAL NOT NULL," +
-                    "FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION);";
+                    "FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION);" +
+                    "CREATE TABLE IF NOT EXISTS drum_pattern (drum_pattern_id INTEGER PRIMARY KEY, drum_pattern_name TEXT NOT NULL UNIQUE);" +
+                    "CREATE TABLE IF NOT EXISTS drum (drum_id INTEGER PRIMARY KEY, drum_name TEXT NOT NULL UNIQUE, note INTEGER NOT NULL);" +
+                    "CREATE TABLE IF NOT EXISTS drum_row (drum_row_id INTEGER PRIMARY KEY, drum_pattern_id INTEGER NOT NULL, drum_id INTEGER NOT NULL, " +
+                    "row_1 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_2 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_3 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_4 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_5 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_6 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_7 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_8 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_9 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_10 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_11 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_12 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_13 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_14 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_15 INTEGER DEFAULT 0 NOT NULL, " +
+                    "row_16 INTEGER DEFAULT 0 NOT NULL, " +
+                    "FOREIGN KEY (drum_pattern_id) REFERENCES drum_pattern (drum_pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION," +
+                    "FOREIGN KEY (drum_id) REFERENCES drum (drum_id) ON DELETE CASCADE ON UPDATE NO ACTION);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"kick\", 60);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"snare\", 61);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_1\", 62);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_2\", 63);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_3\", 64);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_4\", 65);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_5\", 66);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_6\", 67);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_7\", 68);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_8\", 69);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_9\", 70);" +
+                    "INSERT OR IGNORE INTO drum (drum_name, note) VALUES( \"fx_10\", 71);";
+
                     // "CREATE TABLE IF NOT EXISTS eighth_note_pattern (eighth_note_pattern_id INTEGER PRIMARY KEY, eighth_note_id INTEGER, pattern_id INTEGER, " +
                     // "FOREIGN KEY (eighth_note_id) REFERENCES eighth_note (eighth_note_id) ON DELETE CASCADE ON UPDATE NO ACTION, FOREIGN KEY (pattern_id) REFERENCES pattern (pattern_id) ON DELETE CASCADE ON UPDATE NO ACTION); " +
                     // "CREATE TABLE IF NOT EXISTS sixteenth_note_pattern (sixteenth_note_pattern_id INTEGER PRIMARY KEY, sixteenth_note_id INTEGER, pattern_id INTEGER, " +
@@ -337,7 +401,87 @@ public class DbConnection : MonoBehaviour
         }
         DisplayUsers();
     }
+    public void saveDrumPattern()
+    {
+        String drum_pattern_name = "4tothefloor";
+        using (var command = connection.CreateCommand())
+        {
+            // command.CommandText = "INSERT INTO pattern (pattern_name) VALUES ('" + pattern_name + "'); SELECT last_insert_rowid();";
+            command.CommandText = "BEGIN TRANSACTION; INSERT INTO drum_pattern (drum_pattern_name) VALUES (\"" + drum_pattern_name + "\"); SELECT last_insert_rowid(); COMMIT TRANSACTION;";
 
+
+            // command.ExecuteNonQuery();
+            // command.CommandText = "SELECT last_insert_rowid()";
+            pattern_id = (long)command.ExecuteScalar();
+        }
+
+        foreach (DrumRow drumRow in drumRows)
+        {
+            // synthManager16th.sequencerPositions.ForEach(sequencerPosition =>
+            // {
+            //foreach (SamplerPosition samplerPosition in drumRow.samplerPositions)
+            //{
+                // using (var connection = new SqliteConnection(connectionString))
+                // {
+                // connection.Open();
+
+                
+                
+                    long drum_id;
+
+                    using (var command = connection.CreateCommand())
+                    {
+                        // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
+                        // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                        command.CommandText = "BEGIN TRANSACTION; SELECT drum_id FROM drum WHERE drum.drum_name= \"" + drumRow.drumName + "\"; COMMIT TRANSACTION;";
+                        drum_id = (long)command.ExecuteScalar();
+                    }
+                    using (var command = connection.CreateCommand())
+                    {
+                        command.CommandText = "BEGIN TRANSACTION; INSERT OR IGNORE INTO drum_row (drum_pattern_id, drum_id, row_1, row_2, row_3, row_4, row_5, row_6, row_7, row_8, row_9, row_10, row_11, row_12, row_13, row_14, row_15, row_16)" +
+                            " VALUES (" +
+                            "\"" + pattern_id
+                            + "\", " + drum_id
+                            + ", \"" + Convert.ToInt32(drumRow.samplerPositions[0].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[1].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[2].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[3].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[4].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[5].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[6].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[7].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[8].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[9].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[10].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[11].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[12].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[13].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[14].active)
+                            + "\", \"" + Convert.ToInt32(drumRow.samplerPositions[15].active)
+                            + "\"); COMMIT TRANSACTION;";
+                        Debug.Log("COMMAND TEXT = " + command.CommandText);
+
+                        //insertIntoSixteenthNote.text += command.CommandText;
+
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                        catch (Exception ex)
+                        {
+                            // string code = ex.ErrorCode;
+                            Debug.Log("Exception: " + ex);
+                            logList.text += ("Exception: " + ex);
+                        }
+
+                    
+                //}
+            }
+            // connection.Close();
+            // }
+        }
+
+    }
     public void savePattern()
     {
 
@@ -453,6 +597,163 @@ public class DbConnection : MonoBehaviour
             }
             // connection.Close();
         // }
+    }
+
+    public void loadDrumPattern()
+    {
+        String drum_pattern_name = "4tothefloor";
+        //List<DrumRow> drumRowListFromDB = new List<DrumRow>();
+        
+        //for (int i=0; i<drumRowListFromDB.Count; i++)
+        //{
+        //    drumRowListFromDB[i].samplerPositions = drumRows[i].samplerPositions;
+        //}
+        int count = 0;
+        foreach (DrumRow drumRow in drumRows)
+        {
+
+            long drum_id;
+
+            using (var command = connection.CreateCommand())
+            {
+                // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
+                // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                command.CommandText = "BEGIN TRANSACTION; SELECT drum_id FROM drum WHERE drum.drum_name= \"" + drumRow.drumName + "\"; COMMIT TRANSACTION;";
+                drum_id = (long)command.ExecuteScalar();
+            }
+
+            int note;
+            using (var command = connection.CreateCommand())
+            {
+                // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
+                // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
+                command.CommandText = "BEGIN TRANSACTION; SELECT note FROM drum WHERE drum.drum_name= \"" + drumRow.drumName + "\"; COMMIT TRANSACTION;";
+                long note_temp = (long)command.ExecuteScalar();
+                note = Convert.ToInt32(note_temp);
+            }
+
+            using (var command = connection.CreateCommand())
+            {
+                
+                Debug.Log("Preparing query to load drum " + drumRow.drumName);
+                command.CommandText = " SELECT * FROM drum_row JOIN drum_pattern ON drum_row.drum_pattern_id=drum_pattern.drum_pattern_id JOIN drum ON drum_row.drum_id=drum.drum_id WHERE drum_pattern.drum_pattern_name=\""+drum_pattern_name+"\" AND drum.drum_id="+drum_id+";";
+                // command.CommandText = "SELECT * FROM sixteenth_note_pattern;";
+
+                try
+                {
+                    using (IDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            // TODO : FIND OUT IF THERE ARE ANY SIXTEENTH NOTE PATTERN IDs in PHONE DB BY PRINTING LINE BELOW
+                            Debug.Log("DRUM PATTERN NAME = " + reader["drum_pattern_name"]);
+                            int position = 0;
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_1")));
+                            position++;
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_2")));
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_3")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_4")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_5")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_6")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_7")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_8")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_9")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_10")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_11")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_12")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_13")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_14")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_15")));
+                            
+                            position++;
+                            
+                            drumRows[count].samplerPositions[position].note = note;
+                            drumRows[count].samplerPositions[position].active = Convert.ToBoolean(reader.GetValue(reader.GetOrdinal("row_16")));
+                            
+
+                        
+
+                            drumRows[count].drumName = drumRow.drumName;
+
+                            Debug.Log("DRUM ROW LIST FROM DB SIZE " + drumRows.Count);
+                            Debug.Log("DRUM ROW LIST FROM DB NAME " + drumRows[count].drumName);
+
+                            // / ExecuteEvents.Execute(synthManager16th.sequencerPositions[(int)reader["position"]], pointer, ExecuteEvents.OnPointerClick);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Debug.Log("EXCEPTION FROM SIXTEENTH NOTE PATTERN QUERY. EX: " + ex);
+                }
+
+            }
+            count++;
+        }
+
+        // drumRows = drumRowListFromDB;
+
+        // int countTwo = 0;
+        // drumObjects.ForEach(drum =>
+        // {
+        //     for(int i = 0; i < drumRowListFromDB[0].samplerPositions.Length; i++) {
+        //         SamplerPosition samplerPosition = drum.GetComponent<SamplerPosition>();
+        //         samplerPosition = drumRowListFromDB[countTwo].samplerPositions[i];
+        //     }
+        // });
     }
 
     public void setPatternByName()

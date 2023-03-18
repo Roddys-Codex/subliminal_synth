@@ -22,6 +22,13 @@ public class SamplerPosition : MonoBehaviour, IPointerClickHandler
         
     }
 
+    public SamplerPosition(int note, bool active, int position)
+    {
+        this.note = note;
+        this.active = active;
+        this.position = position;
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         if (active == false)
