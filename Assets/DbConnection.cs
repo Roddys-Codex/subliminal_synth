@@ -401,9 +401,9 @@ public class DbConnection : MonoBehaviour
         }
         DisplayUsers();
     }
-    public void saveDrumPattern()
+    public void saveDrumPattern(string drum_pattern_name)
     {
-        String drum_pattern_name = "4tothefloor";
+
         using (var command = connection.CreateCommand())
         {
             // command.CommandText = "INSERT INTO pattern (pattern_name) VALUES ('" + pattern_name + "'); SELECT last_insert_rowid();";
@@ -599,9 +599,8 @@ public class DbConnection : MonoBehaviour
         // }
     }
 
-    public void loadDrumPattern()
+    public void loadDrumPattern(string drum_pattern_name)
     {
-        String drum_pattern_name = "4tothefloor";
         //List<DrumRow> drumRowListFromDB = new List<DrumRow>();
         
         //for (int i=0; i<drumRowListFromDB.Count; i++)
@@ -616,10 +615,12 @@ public class DbConnection : MonoBehaviour
 
             using (var command = connection.CreateCommand())
             {
+                Debug.Log("DRUM NAME  = " + drumRow.drumName);
                 // command.CommandText = "INSERT INTO sixteenth_note_pattern (sixteenth_note_id, pattern_id) VALUES ('" + sequencerPosition.positionObjectNumber.ToString() + "','" + pattern_id.ToString() + "');";
                 // CREATE TABLE IF NOT EXISTS \"sixteenth_note\" ( sixteenth_note_id INTEGER PRIMARY KEY, pattern_id INTEGER, position INTEGER NOT NULL, active INTEGER NOT NULL," +
                 command.CommandText = "BEGIN TRANSACTION; SELECT drum_id FROM drum WHERE drum.drum_name= \"" + drumRow.drumName + "\"; COMMIT TRANSACTION;";
                 drum_id = (long)command.ExecuteScalar();
+                Debug.Log("DRUM ID  = " + drum_id);
             }
 
             int note;
@@ -630,13 +631,16 @@ public class DbConnection : MonoBehaviour
                 command.CommandText = "BEGIN TRANSACTION; SELECT note FROM drum WHERE drum.drum_name= \"" + drumRow.drumName + "\"; COMMIT TRANSACTION;";
                 long note_temp = (long)command.ExecuteScalar();
                 note = Convert.ToInt32(note_temp);
+                Debug.Log("DRUM NOTE  = " + note);
             }
 
             using (var command = connection.CreateCommand())
             {
                 
                 Debug.Log("Preparing query to load drum " + drumRow.drumName);
-                command.CommandText = " SELECT * FROM drum_row JOIN drum_pattern ON drum_row.drum_pattern_id=drum_pattern.drum_pattern_id JOIN drum ON drum_row.drum_id=drum.drum_id WHERE drum_pattern.drum_pattern_name=\""+drum_pattern_name+"\" AND drum.drum_id="+drum_id+";";
+                command.CommandText = "SELECT * FROM drum_row JOIN drum_pattern ON drum_row.drum_pattern_id=drum_pattern.drum_pattern_id JOIN drum ON drum_row.drum_id=drum.drum_id WHERE drum_pattern.drum_pattern_name=\'"+drum_pattern_name+"\' AND drum.drum_id="+drum_id+";";
+                Debug.Log("COMMAND TEXT = " + command.CommandText);
+                
                 // command.CommandText = "SELECT * FROM sixteenth_note_pattern;";
 
                 try
