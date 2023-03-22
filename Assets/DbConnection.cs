@@ -54,7 +54,7 @@ public class DbConnection : MonoBehaviour
 
     public List<DrumRow> drumRows;
 
-    void Start()
+    void Awake()
     {
         drumRows = new List<DrumRow>();
         int count = 0;
@@ -946,5 +946,26 @@ public class DbConnection : MonoBehaviour
         }
         AConnection.Close();
         return result;
+    }
+
+    public List<TMP_Dropdown.OptionData>  getSamplerPatternOptions()
+    {
+        List<TMP_Dropdown.OptionData> optionList = new List<TMP_Dropdown.OptionData>();
+
+        using (var command = connection.CreateCommand())
+        {
+            command.CommandText = "SELECT drum_pattern_name FROM drum_pattern;";
+
+            using (IDataReader reader = command.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    TMP_Dropdown.OptionData Option = new TMP_Dropdown.OptionData();
+                    Option.text = reader.GetString(reader.GetOrdinal("drum_pattern_name"));
+                    optionList.Add(Option);
+                }
+            }
+        }
+        return optionList;
     }
 }
