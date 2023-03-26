@@ -19,12 +19,11 @@ public class parameterScript : MonoBehaviour
     public TMP_Dropdown folderDropdown;
     public TMP_Dropdown presetDowndown;
     public HelmController helmController;
+    public StreamingManager streamingManager;
+    public GameObject parameterScriptObject;
     // Start is called before the first frame update
     void Start()
     {
-        
-        
-
 
     }
 
@@ -36,21 +35,37 @@ public class parameterScript : MonoBehaviour
 
     public void loadPatch()
     {
-        HelmPatch patch = new HelmPatch();
-        patch.LoadPatchData(filepath+ presetDowndown.options[presetDowndown.value].text +".helm");
+        HelmPatch patch = parameterScriptObject.AddComponent<HelmPatch>();
+        //Add HelmPatch patch = new HelmPatch();
+        //string myString = StreamingManager.ReadFromString(filepath + presetDowndown.options[presetDowndown.value].text + ".helm");
+#if UNITY_EDITOR
+        patch.LoadPatchData(filepath + presetDowndown.options[presetDowndown.value].text + ".helm");
+#else
+        patch.LoadPatchDataAndroid(filepath + presetDowndown.options[presetDowndown.value].text + ".helm");
+#endif
         helmController.LoadPatch(patch);
     }
 
     public void updateFolder()
     {
         this.gameObject.SetActive(true);
-        filepath = "Assets/AudioHelm/Presets/" + folderDropdown.options[folderDropdown.value].text +"/";
+#if UNITY_EDITOR
+        filepath = Application.streamingAssetsPath + "/" + folderDropdown.options[folderDropdown.value].text + "/";
+#else
+        filepath = folderDropdown.options[folderDropdown.value].text + "/";
+#endif
+        Debug.Log("FILE PATH = " + filepath);
 
+        //filepath = "Assets/AudioHelm/Presets/" + folderDropdown.options[folderDropdown.value].text +"/";
+#if UNITY_EDITOR
         string[] files = System.IO.Directory.GetFiles(filepath, "*.helm", SearchOption.AllDirectories);
+#else
+        string[] files = BSA_BetterStreamingAssets.GetFiles(filepath, "*.helm", SearchOption.AllDirectories);
+#endif
         List<string> option = new List<string>();
 
         //string text = "ImageDimension=655x0;ThumbnailDimension=0x0";
-        string pattern = @"/(?:[^/]*\/){3}([^.]*)\.";
+        string pattern = @"(?<=\/)[^\/]+(?=\.[^.]+$)";
 
         files.ForEach(file =>
         {
@@ -58,12 +73,12 @@ public class parameterScript : MonoBehaviour
 
             if (match.Success)
             {
-                string result = match.Groups[1].Value;
-                option.Add(match.Groups[1].Value);
+                string result = match.Value;
+                option.Add(result);
             }
             
             Debug.Log("File = " + file);
-            Debug.Log("Matcher Value = " + match.Groups["fileName"].Value.ToString());
+            //Debug.Log("Matcher Value = " + match.Groups["fileName"].Value.ToString());
             //file.Remove(filepath.Length));
             //option.Add(Regex.Split(file, ""));
         });

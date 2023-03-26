@@ -15,5 +15,11 @@ namespace AudioHelm
             string patchText = File.ReadAllText(filePath);
             patchData = JsonUtility.FromJson<HelmPatchFormat>(patchText);
         }
+
+        public void LoadPatchDataAndroid(string filePath)
+        {
+            string patchText = BSA_BetterStreamingAssets.ReadAllText(filePath);
+            patchData = JsonUtility.FromJson<HelmPatchFormat>(patchText);
+        }
     }
 }
