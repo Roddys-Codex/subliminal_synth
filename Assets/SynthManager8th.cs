@@ -49,6 +49,7 @@ public class SynthManager8th : MonoBehaviour
     public Note lastClicked;
 
     public UnityEngine.UI.Toggle midiToggle;
+    public List<GameObject> eighthLights;
 
     void Awake()
     {
@@ -92,6 +93,11 @@ public class SynthManager8th : MonoBehaviour
         selectedNote = new Note();
         noteUpdate = new Note();
 
+    }
+
+    public void AddNote(Note note)
+    {
+        sequencer.AddNote(note.note, note.start, note.end, note.velocity);
     }
 
     private void AddNote(Note note, bool noteActive)
@@ -142,6 +148,7 @@ public class SynthManager8th : MonoBehaviour
 
             sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
             sequencerPositions[positionSelected].noteActive = true;
+            sequencerPositions[positionSelected].renderer.material.color = Color.cyan;
 
             selectedNote = noteUpdate;
         }
@@ -159,13 +166,16 @@ public class SynthManager8th : MonoBehaviour
             if (sequencerPositions[previousSelected].noteActive)
             {
                 sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+                eighthLights[previousSelected].SetActive(false);
             }
             else
             {
-                sequencerPositions[previousSelected].renderer.material.color = Color.white;
+                //sequencerPositions[previousSelected].renderer.material.color = Color.white;
+                eighthLights[previousSelected].SetActive(false);
             }
 
-            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            eighthLights[positionSelected].SetActive(true);
         }
     }
 
@@ -175,9 +185,10 @@ public class SynthManager8th : MonoBehaviour
 
         if (synthTime == 2)
         {
-            sequencerPositions[positionSelected].renderer.material.color = Color.red;
+            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
             positionSlider.minValue = 0;
             positionSlider.maxValue = 7;
+            eighthLights[positionSelected].SetActive(true);
         }
         else
         {
@@ -188,6 +199,7 @@ public class SynthManager8th : MonoBehaviour
             
             positionSlider.minValue = 0;
             positionSlider.maxValue = 15;
+            eighthLights[positionSelected].SetActive(false);
         }
 
 

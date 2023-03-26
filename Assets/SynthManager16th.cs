@@ -287,4 +287,9 @@ public class SynthManager16th : MonoBehaviour
         helmController.NoteOn(note.note, note.velocity, sixteenthTime);
     }
 
+    public void resetMod()
+    {
+        Native.HelmClearModulations(0);
+    }
+
 }
