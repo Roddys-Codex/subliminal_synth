@@ -10,22 +10,19 @@ using Slider = UnityEngine.UI.Slider;
 
 public class SynthManager16th : MonoBehaviour
 {
+    // General variables needed for functionality
     public EnableMidi midiEnabled;
     public float sixteenthTime;
     public HelmController helmController;
-    public HelmSequencer sequencer;
+    public Sequencer sequencer;
     public AudioHelmClock audioHelmClock;
     public int sequencerPosition = 0;
-    public int previousSeqPosition;
     private int synthTime = 1;
-
-    public List<GameObject> positionObjects;
     public List<SequencerPosition> sequencerPositions;
-
-    public List<int> seqPositionNumber;
     public int previousIndex = 16;
     public int currentIndex;
 
+    // References to GameObjects. These are the UI elements the user interacts with.
     public GameObject timeObject;
     public Slider timeSlider;
     public GameObject note;
@@ -35,97 +32,87 @@ public class SynthManager16th : MonoBehaviour
     public GameObject octave;
     public Slider octaveSlider;
 
+    // Variables related to setting the values of the note the user has selected.
     public int pitch;
     public int positionSelected = 1;
     public int previousSelected = 16;
-    public Note activeNote;
     public Note selectedNote;
-    public Note oldNote;
     public Note noteUpdate;
-    private bool firstTime = true;
     public UnityEngine.UI.Toggle midiToggle;
+
+    // List of 'lights' that show up when a user wants to change a note value.
     public List<GameObject> sixteenthLights;
 
     void Awake()
     {
+        // Initialialize variables.
         sequencer = GetComponent<HelmSequencer>();
         sixteenthTime = sequencer.GetSixteenthTime();
-        sequencer.OnBeat += BeatActionWhite;
+        sequencer.OnBeat += MoveColorIndicatorToCurrentIndex;
 
+        // Delegate sequencer methods.
         sequencer.OnNoteOn += NoteActionOn;
-
         sequencer.OnNoteOff += NoteActionOff;
         
         helmController = GetComponent<HelmController>();
         sequencer = GetComponent<HelmSequencer>();
         audioHelmClock = GetComponent<AudioHelmClock>();
-    
+
+        // Delegate each SequencerPosition8th to the method.
         sequencerPositions.ForEach(position =>
         {
             position.OnNote += AddNote;
             position.OffNote += RemoveNote;
         });
 
+        // Initialize objects.
         timeSlider = timeObject.GetComponent<Slider>();
         noteSlider = note.GetComponent<Slider>();
         octaveSlider = octave.GetComponent<Slider>();
         positionSlider = position.GetComponent<Slider>();
 
+        // Add listeners to the 'onChange' function of the sliders.
         timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
         positionSlider.onValueChanged.AddListener(delegate { PositionUpdate(); });
         noteSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
         octaveSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
 
+        // Initialize note currently being inspected by the user.
+        // This will become active when a user selects the 'note menu', as doing so also selects a note (the note initialised beneath).
         pitch = 60;
         selectedNote = new Note();
         noteUpdate = new Note();
 
     }
 
+    // Conditionally add a note to the Sequencer, if active, then play note.
     public void AddNote(Note note, bool noteActive)
-    {
-        if (note.start < 0)
+    {            
+        note.note = pitch;
+        if (noteActive == false)
         {
-            note.start = 15;
+            sequencer.AddNote(note.note, note.start, note.end, note.velocity);
         }
-            
-        if (sequencerPositions[(int)note.start-1].note.start == note.start)
-        {
-            note.note = pitch;
-            if (noteActive == false)
-            {
-                sequencer.AddNote(note.note, note.start, note.end, note.velocity);
-            }
-
-            NoteActionOn(note);
-        }
-        
+        NoteActionOn(note);
     }
 
+    // Adds a note to the sequencer.
     public void AddNote(Note note)
     {
         sequencer.AddNote(note.note, note.start, note.end, note.velocity);
     }
 
+    // Removes a note from the sequencer, if active.
     private void RemoveNote(Note note, bool noteActive)
     {
-        if(firstTime == true)
-        {
-            Note firstTime = new Note();
-            firstTime.note = 60;
-            firstTime.start = note.note;
-            firstTime.end = note.end;
-            firstTime.velocity = note.velocity;
-            sequencer.RemoveNote(firstTime);
-        }
         if (noteActive == true)
         {
             sequencer.RemoveNote(note);
         }
-
         NoteActionOn(note);
     }
 
+    // Updates the values of the Note currently selected by the user. Values are taken from the UI sliders shown on screen.
     private void NoteUpdate()
     {
         if(synthTime==1)
@@ -141,9 +128,9 @@ public class SynthManager16th : MonoBehaviour
 
             selectedNote = noteUpdate;
         }
-        
     }
 
+    // Updates the position the user currently has selected. Values are taken from the UI sliders shown on screen.
     private void PositionUpdate()
     {
         if(synthTime == 1)
@@ -160,25 +147,20 @@ public class SynthManager16th : MonoBehaviour
             }
             else
             {
-                //sequencerPositions[previousSelected].renderer.material.color = Color.white;
                 sixteenthLights[previousSelected].SetActive(false);
             }
-
-            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
 
             sixteenthLights[positionSelected].SetActive(true);
         }
         
     }
 
+    // Updates whether the user can program 16th or 8th notes, depending on which is selected on the UI.
     private void TimeUpdate()
     {
         synthTime = (int)timeSlider.value;
-
         if(synthTime==1)
         {
-            //sequencerPositions[positionSelected].renderer.material.color = Color.red;
-
             sixteenthLights[positionSelected].SetActive(true);
 
         } else
@@ -187,44 +169,37 @@ public class SynthManager16th : MonoBehaviour
             {
                 sequencerPositions[positionSelected].renderer.material.color = Color.white;
             }
-
             sixteenthLights[positionSelected].SetActive(false);
-
         }
         
 
     }
 
-    public void BeatActionMagenta(int index)
-    {
-        if (sequencerPositions[index].noteActive != true)
-        {
-            sequencerPositions[index].renderer.material.color = Color.magenta;
-        }
-        
-    }
-
-    public void BeatActionWhite(int index)
+    // Moves the loop indicator to the current index, and switches previous index back to white.
+    public void MoveColorIndicatorToCurrentIndex(int index)
     {   
         if(index != positionSelected)
         {
             if (sequencerPositions[previousIndex].noteActive != true)
             {
                 sequencerPositions[previousIndex].renderer.material.color = Color.white;
-                BeatActionMagenta(index);
-                BeatActionUpdate(index);
-            }  else {
-                BeatActionMagenta(index);
-                BeatActionUpdate(index);
-            }
+            }  
+            ChangePositionColour(index);
+            previousIndex = index;
         }
     }
 
-    public void BeatActionUpdate(int index)
+    // Helper method that changes the colour of the current index position.
+    public void ChangePositionColour(int index)
     {
-        previousIndex = index;
+        if (sequencerPositions[index].noteActive != true)
+        {
+            sequencerPositions[index].renderer.material.color = Color.magenta;
+        }
     }
 
+    // Plays a note for a set time. If MIDI play is enabled, calling this method will result in the selected note becoming active in the loop.
+    // Used for the MIDI play button.
     public void playANote(int note)
     {
         helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime());
@@ -232,30 +207,20 @@ public class SynthManager16th : MonoBehaviour
 
         if (midiToggle.isOn)
         {
-            
             sequencerPositions[sequencer.currentIndex].noteActive = true;
-
-            sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber, sequencerPositions[sequencer.currentIndex].positionObjectNumber + 1, 1);
+            sequencer.AddNote(note, sequencerPositions[sequencer.currentIndex].positionObjectNumber,
+                sequencerPositions[sequencer.currentIndex].positionObjectNumber + 1, 1);
             sequencerPositions[sequencer.currentIndex].renderer.material.color = Color.cyan;
         }
-
     }
 
-    public List<Note> getAllNotesInSequencer()
-    {
-        return sequencer.getAllNotes();
-    }
-
-    public List<Note> getAllNotes()
-    {
-        return sequencer.getAllNotes();
-    }
-
+    // Gets 16th note time as a float.
     public float getSixteenthTime()
     {
         return sequencer.GetSixteenthTime();
     }
 
+    // Implementation of the delegate method. This method will be called each time an active note is encountered in the loop.
     public void NoteActionOn(Note note)
     {
         helmController.NoteOn(note.note, note.velocity, sixteenthTime);
@@ -266,10 +231,9 @@ public class SynthManager16th : MonoBehaviour
             MidiManager.Instance.SendMidiNoteOn(deviceIds[0], 0, 0, note.note, (int)note.velocity);
             Debug.Log("MidiNote On Sent!");
         }
-        
-        
     }
 
+    // Implementation of the delegate method. This method will be called every time a NoteOff event is sent.
     public void NoteActionOff(Note note)
     {
         if(midiEnabled.midiEnabled)
@@ -282,11 +246,7 @@ public class SynthManager16th : MonoBehaviour
         
     }
 
-    public void NoteActionOnHelm(Note note)
-    {
-        helmController.NoteOn(note.note, note.velocity, sixteenthTime);
-    }
-
+    // Resets modulation of the current preset to default.
     public void resetMod()
     {
         Native.HelmClearModulations(0);

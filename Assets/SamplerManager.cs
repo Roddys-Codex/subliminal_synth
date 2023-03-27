@@ -22,6 +22,11 @@ public class SamplerManager : MonoBehaviour
 
     public void playIfActive(int index)
     {
+        //index = index--;
+        if(index<0)
+        {
+            index = 15;
+        } 
         int previousIndex;
         if(index == 0)
         {
