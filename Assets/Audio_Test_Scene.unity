@@ -4758,7 +4758,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 1031066465}
+  m_audioClip: {fileID: 974034983}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -4937,6 +4937,8 @@ MonoBehaviour:
   - {fileID: 285751698}
   - {fileID: 185824780}
   - {fileID: 984881305}
+  sixteenthLightObject: {fileID: 1849053495}
+  eighthLightObject: {fileID: 1345763701}
 --- !u!114 &182039464
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5090,7 +5092,7 @@ MonoBehaviour:
   - notes: []
   - notes: []
   - notes: []
-  scrollPosition: {x: 0, y: 842.9008}
+  scrollPosition: {x: 0, y: 893}
   autoScroll: 0
   division: 1
   zoom: 0
@@ -12241,7 +12243,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 2055215214}
+  m_audioClip: {fileID: 1054022917}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -12371,18 +12373,18 @@ MonoBehaviour:
   - {fileID: 1846123983346167752}
   - {fileID: 1846123982773433608}
   - {fileID: 1846123983943173888}
-  previousIndex: 7
+  previousIndex: 0
   timeObject: {fileID: 48210217}
   timeSlider: {fileID: 48210219}
-  noteObject: {fileID: 0}
+  noteObject: {fileID: 737079511}
   noteSlider: {fileID: 737079513}
-  positionObject: {fileID: 0}
+  positionObject: {fileID: 1637402170}
   positionSlider: {fileID: 1637402172}
-  octaveObject: {fileID: 0}
+  octaveObject: {fileID: 1118404139}
   octaveSlider: {fileID: 1118404141}
-  pitch: 0
-  positionSelected: 0
-  previousSelected: 7
+  pitch: 60
+  positionSelected: 1
+  previousSelected: 1
   selectedNote:
     note_: 0
     start_: 0
@@ -27196,6 +27198,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 972557465}
   m_CullTransparentMesh: 1
+--- !u!83 &974034983
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &984881305 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1634728980755628753, guid: 7069ca3e11bda4600bf7a0379ce31ab7,
@@ -28147,34 +28177,6 @@ MonoBehaviour:
   - {fileID: 1697288459}
   - {fileID: 110685735}
   sampler: {fileID: 1943974436}
---- !u!83 &1031066465
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1031369955
 GameObject:
   m_ObjectHideFlags: 0
@@ -29003,6 +29005,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053388296}
   m_CullTransparentMesh: 1
+--- !u!83 &1054022917
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &1058461499
 GameObject:
   m_ObjectHideFlags: 0
@@ -57980,34 +58010,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!83 &2055215214
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &2060568624
 GameObject:
   m_ObjectHideFlags: 0
@@ -62638,7 +62640,7 @@ GameObject:
   - component: {fileID: 1846123983904332598}
   - component: {fileID: 1846123983904332597}
   - component: {fileID: 1846123983904332596}
-  - component: {fileID: 1846123983904332600}
+  - component: {fileID: 1846123983904332604}
   - component: {fileID: 1846123983904332602}
   - component: {fileID: 1846123983904332603}
   m_Layer: 0
@@ -62731,7 +62733,48 @@ RectTransform:
   m_AnchoredPosition: {x: -2.3400013, y: 0.4}
   m_SizeDelta: {x: 1.1435, y: 1.3333}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1846123983904332600
+--- !u!114 &1846123983904332602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846123983904332593}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
+  m_Toggle: {fileID: 1846123983904332604}
+  objectToActivate: {fileID: 709398605}
+  objectsToActivate: []
+  multiObject: 0
+--- !u!114 &1846123983904332603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846123983904332593}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e96901230c0a47dda0c62ff195a0eaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectedMenu: {fileID: 709398605}
+  selectedButton: {fileID: 1846123983904332593}
+  allMenus:
+  - {fileID: 1136156097}
+  - {fileID: 1178445806}
+  - {fileID: 408496795}
+  allButtons:
+  - {fileID: 80198797}
+  - {fileID: 1799995054}
+  - {fileID: 728134894}
+  defaultColour: {fileID: 644987778}
+  m_Toggle: {fileID: 0}
+--- !u!114 &1846123983904332604
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62778,18 +62821,6 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1846123983904332603}
-        m_TargetAssemblyTypeName: AllOtherMenusOff, Assembly-CSharp
-        m_MethodName: deactivateAllOtherMenus
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 709398605}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -62802,9 +62833,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1846123983904332603}
+        m_TargetAssemblyTypeName: AllOtherMenusOff, Assembly-CSharp
+        m_MethodName: deactivateAllOtherMenus
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1846123983904332602}
         m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: switchColourAndSetActive
+        m_MethodName: switchOnlyColour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -62815,49 +62858,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   m_IsOn: 0
---- !u!114 &1846123983904332602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846123983904332593}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 1846123983904332600}
-  objectToActivate: {fileID: 709398605}
-  objectsToActivate: []
-  multiObject: 0
---- !u!114 &1846123983904332603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1846123983904332593}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e96901230c0a47dda0c62ff195a0eaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedMenu: {fileID: 709398605}
-  selectedButton: {fileID: 1846123983904332593}
-  allMenus:
-  - {fileID: 709398605}
-  - {fileID: 1136156097}
-  - {fileID: 1136156097}
-  - {fileID: 1178445806}
-  - {fileID: 408496795}
-  allButtons:
-  - {fileID: 80198797}
-  - {fileID: 1799995054}
-  - {fileID: 728134894}
-  defaultColour: {fileID: 644987778}
-  m_Toggle: {fileID: 1846123983904332600}
 --- !u!4 &1846123983920398344
 Transform:
   m_ObjectHideFlags: 0

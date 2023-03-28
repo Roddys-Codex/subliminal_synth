@@ -42,6 +42,8 @@ public class SynthManager16th : MonoBehaviour
 
     // List of 'lights' that show up when a user wants to change a note value.
     public List<GameObject> sixteenthLights;
+    public GameObject sixteenthLightObject;
+    public GameObject eighthLightObject;
 
     void Awake()
     {
@@ -115,7 +117,8 @@ public class SynthManager16th : MonoBehaviour
     // Updates the values of the Note currently selected by the user. Values are taken from the UI sliders shown on screen.
     private void NoteUpdate()
     {
-        if(synthTime==1)
+        synthTime = (int)timeSlider.value;
+        if (synthTime==1)
         {
             int oldKey = sequencerPositions[positionSelected].note.note;
 
@@ -133,7 +136,8 @@ public class SynthManager16th : MonoBehaviour
     // Updates the position the user currently has selected. Values are taken from the UI sliders shown on screen.
     private void PositionUpdate()
     {
-        if(synthTime == 1)
+        synthTime = (int)timeSlider.value;
+        if (synthTime == 1)
         {
             noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
             noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
@@ -159,20 +163,26 @@ public class SynthManager16th : MonoBehaviour
     private void TimeUpdate()
     {
         synthTime = (int)timeSlider.value;
-        if(synthTime==1)
+        if (synthTime==1)
         {
-            sixteenthLights[positionSelected].SetActive(true);
-
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 15;
+            positionSelected = 0;
+            eighthLightObject.SetActive(false);
+            sixteenthLightObject.SetActive(true);
+            PositionUpdate();
         } else
         {
             if (sequencerPositions[positionSelected].noteActive!=true)
             {
                 sequencerPositions[positionSelected].renderer.material.color = Color.white;
             }
+            positionSlider.minValue = 0;
+            positionSlider.maxValue = 7;
             sixteenthLights[positionSelected].SetActive(false);
+            eighthLightObject.SetActive(true);
+            FindObjectOfType<SynthManager8th>().PositionUpdate();
         }
-        
-
     }
 
     // Moves the loop indicator to the current index, and switches previous index back to white.

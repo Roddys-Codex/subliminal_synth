@@ -35,10 +35,10 @@ public class SynthManager8th : MonoBehaviour
     // Variables related to setting the values of the note the user has selected.
     public int pitch;
     public int positionSelected = 1;
-    public int previousSelected = 8;
+    public int previousSelected = 7;
     public Note selectedNote;
     public Note noteUpdate;
-    private int synthTime = 1;
+    private int synthTime = 2;
 
     // List of 'lights' that show up when a user wants to change a note value.
     public List<GameObject> eighthLights;
@@ -71,7 +71,7 @@ public class SynthManager8th : MonoBehaviour
         positionSlider = positionObject.GetComponent<Slider>();
 
         // Add listeners to the 'onChange' function of the sliders.
-        timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
+        //timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
         positionSlider.onValueChanged.AddListener(delegate { PositionUpdate(); });
         noteSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
         octaveSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
@@ -113,6 +113,7 @@ public class SynthManager8th : MonoBehaviour
     // Updates the note that the user has selected. (Method will take it's values from the UI sliders)
     private void NoteUpdate()
     {
+        synthTime = (int)timeSlider.value;
         if (synthTime == 2)
         {
             int oldKey = sequencerPositions[positionSelected].note.note;
@@ -129,8 +130,9 @@ public class SynthManager8th : MonoBehaviour
     }
 
     // Changes the position the user has selected.. (Method will take it's values from the UI sliders)
-    private void PositionUpdate()
+    public void PositionUpdate()
     {
+        synthTime = (int)timeSlider.value;
         if (synthTime == 2)
         {
             noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
@@ -159,21 +161,10 @@ public class SynthManager8th : MonoBehaviour
 
         if (synthTime == 2)
         {
-            positionSlider.minValue = 0;
-            positionSlider.maxValue = 7;
+            positionSelected = 0;
             eighthLights[positionSelected].SetActive(true);
         }
-        else
-        {
-            if (sequencerPositions[positionSelected].noteActive != true)
-            {
-                sequencerPositions[positionSelected].renderer.material.color = Color.white;
-            }
-            
-            positionSlider.minValue = 0;
-            positionSlider.maxValue = 15;
-            eighthLights[positionSelected].SetActive(false);
-        }
+        
     }
 
     // Plays a note for a designated time. Note param is the MIDI note.
