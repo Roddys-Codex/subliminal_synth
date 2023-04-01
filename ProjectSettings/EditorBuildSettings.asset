@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: Assets/NRSDK/Demos/RGBCamera-Record.unity
+    guid: 372f49325786d554ea3a2306e1178303
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 5c7ebb360ffedbe4494476f614929c3b,
       type: 2}
