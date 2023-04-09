@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Audio_Test_Scene.unity
+    path: Assets/subliminal_synth_scene.unity
     guid: 3a42cc896f1d0418aa68d6fde81aa190
   - enabled: 0
     path: 
