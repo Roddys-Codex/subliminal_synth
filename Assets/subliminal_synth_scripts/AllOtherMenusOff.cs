@@ -43,13 +43,6 @@ public class AllOtherMenusOff : MonoBehaviour
             Toggle toggle = button.GetComponent<Toggle>();
             mesh.material.color = Color.white;
             toggle.SetIsOnWithoutNotify(false);
-            
-
-            //if (toggle.isOn == true && button != selectedButton)
-            //{
-            //    mesh.material.color = Color.white;
-            //    toggle.isOn = false;
-            //}
         });
     }
 }
