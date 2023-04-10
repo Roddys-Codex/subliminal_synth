@@ -37,7 +37,9 @@ public class SamplerManager : MonoBehaviour
         }
         if (index == samplerPositionsC[index].position)
         {
-            samplerPositionsC[index].GetComponent<MeshRenderer>().material.color = Color.red;
+            MeshRenderer currentMesh = samplerPositionsC[index].GetComponent<MeshRenderer>();
+            currentMesh.material.color= Color.red;
+            
             if (samplerPositionsC[previousIndex].active != true)
             {
                 samplerPositionsC[previousIndex].GetComponent<MeshRenderer>().material.color = Color.white;
