@@ -2574,7 +2574,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 80198804}
         m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: switchColourAndSetActive
+        m_MethodName: SwitchThisColourAndSetTargetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2661,10 +2661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 80198800}
-  objectToActivate: {fileID: 1136156097}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 1136156097}
+  targetObjectsToActivate: []
 --- !u!114 &80198805
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4009,6 +4007,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 125319173}
   m_CullTransparentMesh: 1
+--- !u!83 &127136835
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &132895705
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,7 +5062,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 631641055}
+  m_audioClip: {fileID: 127136835}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7696,10 +7722,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 261233562}
-  objectToActivate: {fileID: 0}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 0}
+  targetObjectsToActivate: []
 --- !u!114 &261233562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10525,7 +10549,7 @@ MonoBehaviour:
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
+  SetParameterrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
@@ -10542,7 +10566,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 372402942}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10658,174 +10682,6 @@ Camera:
     type: 3}
   m_PrefabInstance: {fileID: 1957464681}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &379386348
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 379386349}
-  - component: {fileID: 379386354}
-  - component: {fileID: 379386353}
-  - component: {fileID: 379386352}
-  - component: {fileID: 379386351}
-  - component: {fileID: 379386350}
-  m_Layer: 0
-  m_Name: Preset (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &379386349
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_LocalRotation: {x: 0.20759852, y: -0, z: -0, w: 0.97821414}
-  m_LocalPosition: {x: 0.72, y: -1.376, z: 3.12}
-  m_LocalScale: {x: 1.0593605, y: 0.2928756, z: 0.36825085}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 985242928}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 23.963, y: 0, z: 0}
---- !u!114 &379386350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa1479b0620f4213a8c8e71b095e345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 182039459}
-        m_TargetAssemblyTypeName: AudioHelm.HelmController, Assembly-CSharp
-        m_MethodName: LoadPatch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 1058604420}
-          m_ObjectArgumentAssemblyTypeName: AudioHelm.HelmPatch, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &379386351
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &379386352
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &379386353
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &379386354
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 379386348}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &380834662
 GameObject:
   m_ObjectHideFlags: 0
@@ -11538,7 +11394,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 402502906}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11699,7 +11555,7 @@ RectTransform:
   - {fileID: 1618942554}
   m_Father: {fileID: 1716858388}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: SetParameter0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 137.5, y: 111.9}
@@ -12221,174 +12077,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415965156}
   m_CullTransparentMesh: 1
---- !u!1 &422289626
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 422289627}
-  - component: {fileID: 422289632}
-  - component: {fileID: 422289631}
-  - component: {fileID: 422289630}
-  - component: {fileID: 422289629}
-  - component: {fileID: 422289628}
-  m_Layer: 0
-  m_Name: Preset (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &422289627
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_LocalRotation: {x: 0.20759852, y: -0, z: -0, w: 0.97821414}
-  m_LocalPosition: {x: -0.4, y: -1.371, z: 3.124}
-  m_LocalScale: {x: 1.0294262, y: 0.2928756, z: 0.37938127}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 985242928}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 23.963, y: 0, z: 0}
---- !u!114 &422289628
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa1479b0620f4213a8c8e71b095e345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 182039459}
-        m_TargetAssemblyTypeName: AudioHelm.HelmController, Assembly-CSharp
-        m_MethodName: LoadPatch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 736760266}
-          m_ObjectArgumentAssemblyTypeName: AudioHelm.HelmPatch, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &422289629
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &422289630
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &422289631
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &422289632
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 422289626}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &427311509
 GameObject:
   m_ObjectHideFlags: 0
@@ -12593,7 +12281,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 1419908825}
+  m_audioClip: {fileID: 2109300844}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15667,7 +15355,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 530502526}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16002,7 +15690,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 2
+  m_HorizontaSetParameter2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -18247,10 +17935,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 609763736}
-  objectToActivate: {fileID: 1684188521}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 1684188521}
+  targetObjectsToActivate: []
 --- !u!114 &609763741
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18848,34 +18534,6 @@ RectTransform:
   m_AnchoredPosition: {x: 18.2, y: 0.62}
   m_SizeDelta: {x: 40.21, y: -1.25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!83 &631641055
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &633239439
 GameObject:
   m_ObjectHideFlags: 0
@@ -21713,7 +21371,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 715387282}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22017,7 +21675,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1849053496}
     m_Modifications:
-    - target: {fileID: 1634728980755628751, guid: 7069ca3e11bda4600bf7a0379ce31ab7,
+    - target: {fileID: 1634728980SetParameteruid: 7069ca3e11bda4600bf7a0379ce31ab7,
         type: 3}
       propertyPath: m_RootOrder
       value: 15
@@ -22273,7 +21931,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 728134900}
         m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: switchColourAndSetActive
+        m_MethodName: SwitchThisColourAndSetTargetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -22360,10 +22018,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 728134896}
-  objectToActivate: {fileID: 408496795}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 408496795}
+  targetObjectsToActivate: []
 --- !u!114 &728134901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23784,10 +23440,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 798707297}
-  objectToActivate: {fileID: 798707293}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 798707293}
+  targetObjectsToActivate: []
 --- !u!114 &798707297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27750,7 +27404,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 945145826}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -28083,7 +27737,7 @@ GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
+  m_PrefabSetParameterID: 0}
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985131839}
@@ -28228,40 +27882,6 @@ RectTransform:
   m_AnchoredPosition: {x: 16, y: 0}
   m_SizeDelta: {x: -74.52, y: -0.89}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &985242927
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 985242928}
-  m_Layer: 0
-  m_Name: PresetSelector
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &985242928
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 985242927}
-  m_LocalRotation: {x: -0.6655866, y: -0, z: -0, w: 0.7463207}
-  m_LocalPosition: {x: -0.03, y: -2.27, z: 1.29}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1438039554}
-  - {fileID: 422289627}
-  - {fileID: 379386349}
-  m_Father: {fileID: 1077432215}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -83.455, y: 0, z: 0}
 --- !u!1 &993708961
 GameObject:
   m_ObjectHideFlags: 0
@@ -30451,7 +30071,6 @@ Transform:
   m_Children:
   - {fileID: 1545451808}
   - {fileID: 1779625484}
-  - {fileID: 985242928}
   - {fileID: 1672595605}
   m_Father: {fileID: 1082185057}
   m_RootOrder: 2
@@ -33460,7 +33079,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1178212736}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33857,8 +33476,7 @@ GameObject:
 --- !u!1001 &1195608937
 PrefabInstance:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
+  serializedVersSetParameterodification:
     m_TransformParent: {fileID: 1259417145}
     m_Modifications:
     - target: {fileID: 1378127170835785448, guid: c82a3041ae85240b5b0d5f6cfe025c6f,
@@ -35331,8 +34949,8 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1232220473}
-        m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: switchColourAndSetActive
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: SwitchThisObjectColour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -35419,10 +35037,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 0}
-  objectToActivate: {fileID: 0}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 0}
+  targetObjectsToActivate: []
 --- !u!1 &1236974027
 GameObject:
   m_ObjectHideFlags: 0
@@ -39875,7 +39491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1371824354}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -40213,8 +39829,7 @@ MonoBehaviour:
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillSetParameterm_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -41398,34 +41013,6 @@ RectTransform:
   m_AnchoredPosition: {x: 277.1, y: -195.5}
   m_SizeDelta: {x: 65.3, y: 76.98692}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!83 &1419908825
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1001 &1423589921
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41919,174 +41506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioHelmClock: {fileID: 182039465}
---- !u!1 &1438039548
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1438039554}
-  - component: {fileID: 1438039553}
-  - component: {fileID: 1438039552}
-  - component: {fileID: 1438039551}
-  - component: {fileID: 1438039550}
-  - component: {fileID: 1438039549}
-  m_Layer: 0
-  m_Name: Preset
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1438039549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: baa1479b0620f4213a8c8e71b095e345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 182039459}
-        m_TargetAssemblyTypeName: AudioHelm.HelmController, Assembly-CSharp
-        m_MethodName: LoadPatch
-        m_Mode: 2
-        m_Arguments:
-          m_ObjectArgument: {fileID: 97193712}
-          m_ObjectArgumentAssemblyTypeName: AudioHelm.HelmPatch, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!65 &1438039550
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.99999994, y: 0.99999994, z: 0.99999994}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!135 &1438039551
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1438039552
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1438039553
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1438039554
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1438039548}
-  m_LocalRotation: {x: 0.20759852, y: -0, z: -0, w: 0.97821414}
-  m_LocalPosition: {x: -1.53, y: -1.371, z: 3.129}
-  m_LocalScale: {x: 1.059661, y: 0.2928756, z: 0.40138757}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 985242928}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 23.963, y: 0, z: 0}
 --- !u!1 &1445134237
 GameObject:
   m_ObjectHideFlags: 0
@@ -42790,7 +42209,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1486753068}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -43345,8 +42764,7 @@ MeshRenderer:
     firstSubMesh: 0
     subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ProbeAnchor: {fileID:SetParametertProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_ReceiveGI: 1
   m_PreserveUVs: 0
@@ -44366,7 +43784,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1561496661}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -44963,7 +44381,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1570907072
+--- !uSetParameter7072
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -47414,7 +46832,7 @@ Transform:
   - {fileID: 885666222}
   - {fileID: 1449632409}
   m_Father: {fileID: 1077432215}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1674035836
 GameObject:
@@ -50864,7 +50282,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1787086546}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51335,7 +50753,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1799995061}
         m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: switchColourAndSetActive
+        m_MethodName: SwitchThisColourAndSetTargetActive
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -51422,15 +50840,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 0}
-  objectToActivate: {fileID: 0}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 0}
+  targetObjectsToActivate: []
 --- !u!114 &1799995062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+SetParameterstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1799995054}
   m_Enabled: 1
@@ -53024,7 +52440,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1831954779}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -53576,7 +52992,7 @@ MonoBehaviour:
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  mSetParameternce: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1853530792}
   m_Material: {fileID: 0}
@@ -54302,10 +53718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 1868186126}
-  objectToActivate: {fileID: 163200295}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 163200295}
+  targetObjectsToActivate: []
 --- !u!114 &1868186126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60743,12 +60157,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 0}
-  objectToActivate: {fileID: 139140553}
-  objectsToActivate:
+  targetObjectToActivate: {fileID: 139140553}
+  targetObjectsToActivate:
   - {fileID: 139140553}
   - {fileID: 1662727818}
-  multiObject: 1
 --- !u!114 &2095579852
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60810,7 +60222,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2095579851}
         m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: setObjectsActiveByToggle
+        m_MethodName: SetObjectsActiveByToggle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -61086,24 +60498,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2099122344}
-        m_TargetAssemblyTypeName: EightNoteToggle, Assembly-CSharp
-        m_MethodName: toggleColor
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: SwitchThisObjectColour
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1865853221}
-        m_TargetAssemblyTypeName: EightNoteToggle, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -61180,13 +60580,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2099122337}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3170956c3c97540d78b83a6a6cddb325, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  toggle: {fileID: 2099122340}
-  renderer: {fileID: 2099122342}
+  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
+  targetObjectToActivate: {fileID: 0}
+  targetObjectsToActivate: []
 --- !u!1 &2099628943
 GameObject:
   m_ObjectHideFlags: 0
@@ -61859,6 +61260,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109084403}
   m_CullTransparentMesh: 1
+--- !u!83 &2109300844
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &2109581981
 GameObject:
   m_ObjectHideFlags: 0
@@ -62913,7 +62342,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2140687174}
         m_TargetAssemblyTypeName: ParameterSlider, Assembly-CSharp
-        m_MethodName: setParameter
+        m_MethodName: SetParameter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -63460,7 +62889,7 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 7069ca3e11bda4600bf7a0379ce31ab7, type: 3}
+  m_SourcePrefab: {fSetParameter0000, guid: 7069ca3e11bda4600bf7a0379ce31ab7, type: 3}
 --- !u!33 &1846123982122991568
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -64433,10 +63862,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
-  m_Toggle: {fileID: 1846123983904332604}
-  objectToActivate: {fileID: 709398605}
-  objectsToActivate: []
-  multiObject: 0
+  targetObjectToActivate: {fileID: 709398605}
+  targetObjectsToActivate: []
 --- !u!114 &1846123983904332603
 MonoBehaviour:
   m_ObjectHideFlags: 0

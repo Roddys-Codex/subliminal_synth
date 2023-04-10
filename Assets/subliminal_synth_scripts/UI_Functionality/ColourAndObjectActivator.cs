@@ -6,35 +6,21 @@ using UnityEngine.UI;
 public class ColourAndObjectActivator : MonoBehaviour
 {
     public Color activeColor;
-    [FormerlySerializedAs("m_Toggle")] public Toggle toggleOnCurrentGameObject;
-    public GameObject objectToActivate;
-    public List<GameObject> objectsToActivate;
-    public bool multiObject = false;
-    
-    void Start()
-    {
-        if(multiObject)
-        {
-            toggleOnCurrentGameObject = GetComponent<Toggle>();
+    [FormerlySerializedAs("objectToActivate")] public GameObject targetObjectToActivate;
+    [FormerlySerializedAs("objectsToActivate")] public List<GameObject> targetObjectsToActivate;
 
-            toggleOnCurrentGameObject.onValueChanged.AddListener(delegate {
-                switchColourAndSetActive();
-            });
-        }
-    }
-
-    public void switchColourAndSetActive()
+    public void SwitchThisColourAndSetTargetActive()
     {
 
         if(GetComponent<MeshRenderer>().material.color!=activeColor)
         {
             GetComponent<MeshRenderer>().material.color = activeColor;
-            objectToActivate.SetActive(true);
+            targetObjectToActivate.SetActive(true);
 
         } else
         {
             GetComponent<MeshRenderer>().material.color = Color.white;
-            objectToActivate.SetActive(false);
+            targetObjectToActivate.SetActive(false);
         }
         
     }
@@ -53,26 +39,9 @@ public class ColourAndObjectActivator : MonoBehaviour
 
     }
 
-    public void setObjectsActive()
+    public void SetObjectsActiveByToggle()
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
-        for (int i = 0; i < objectsToActivate.Count; i++)
-        {
-            if (meshRenderer.material.color != activeColor)
-            {
-                objectsToActivate[i].SetActive(true);
-            }
-            else
-            {
-                objectsToActivate[i].SetActive(false);
-            }
-        }
-        SwitchThisObjectColour();
-    }
-
-    public void setObjectsActiveByToggle()
-    {
-        objectsToActivate.ForEach(item =>
+        targetObjectsToActivate.ForEach(item =>
         {
             if (GetComponent<Toggle>().isOn)
             {
@@ -83,6 +52,5 @@ public class ColourAndObjectActivator : MonoBehaviour
                 item.SetActive(false);
             }
         });
-        SwitchThisObjectColour();
     }
 }
