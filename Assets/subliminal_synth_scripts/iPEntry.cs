@@ -1,6 +1,3 @@
-using jp.kshoji.unity.midi;
-using System.Net;
-using jp.kshoji.unity.midi.sample;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using TMPro;
@@ -16,12 +13,6 @@ public class iPEntry: MonoBehaviour, IPointerClickHandler
     {
         midiConnectButton = connectButton.GetComponent<midiConnectButton>();
         textMesh = ipEntryO.GetComponent<TMP_InputField>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void OnPointerClick(PointerEventData eventData)

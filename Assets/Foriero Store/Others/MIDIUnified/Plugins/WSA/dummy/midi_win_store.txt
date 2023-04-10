@@ -1,1 +1,0 @@
-﻿Set this to everypossible platform except WSA.

@@ -5,13 +5,14 @@ using jp.kshoji.unity.midi;
 using System.Linq;
 using UnityEngine.UI;
 using System;
+using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 
 public class SynthManager8th : MonoBehaviour
 {
     // General variables needed for functionality
-    public EnableMidi midiEnabled;
+    [FormerlySerializedAs("midiEnabled")] public EnableRTPMidi rtpMidiEnabled;
     public UnityEngine.UI.Toggle midiToggle;
     public float sixteenthTime;
     public HelmController helmController;
@@ -200,7 +201,7 @@ public class SynthManager8th : MonoBehaviour
     {
 
             helmController.NoteOn(note.note, note.velocity, sixteenthTime);
-            if (midiEnabled.midiEnabled)
+            if (rtpMidiEnabled.midiEnabled)
             {
                 var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
                 var deviceNames = new string[deviceIds.Length];
@@ -213,7 +214,7 @@ public class SynthManager8th : MonoBehaviour
     // Implementation of the delegate method. This method will be called every time a NoteOff event is sent.
     public void NoteActionOff(Note note)
     {
-        if (midiEnabled.midiEnabled)
+        if (rtpMidiEnabled.midiEnabled)
         {
             var deviceIds = MidiManager.Instance.DeviceIdSet.ToArray();
             var deviceNames = new string[deviceIds.Length];
