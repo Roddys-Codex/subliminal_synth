@@ -13,8 +13,10 @@ public class ParamUtil : MonoBehaviour
     {
         List<string> option = new List<string>();
         string[] allParams = Enum.GetNames(typeof(Param));
+        //controller.UpdateAllParameters();
         int count = Enum.GetValues(typeof(CommonParam)).Length;
-        for (int i = 0; i < count; i++)
+        //List<string> enu
+        for (int i = 0; i < 16; i++)
         {
             option.Add(allParams[i]);
         }

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using AudioHelm;
 using UnityEngine;
@@ -7,15 +8,21 @@ public class SamplerManager : MonoBehaviour
     public Sequencer sequencer;
     public List<SamplerPosition> samplerPositionsC;
     public Sampler sampler;
-    
     // Start is called before the first frame update
     void Start()
     {
-        sequencer.OnBeat += PlayIfActive;
+        sequencer.OnBeat += playIfActive;
     }
 
-    public void PlayIfActive(int index)
+    // Update is called once per frame
+    void Update()
     {
+        
+    }
+
+    public void playIfActive(int index)
+    {
+        //index = index--;
         if(index<0)
         {
             index = 15;

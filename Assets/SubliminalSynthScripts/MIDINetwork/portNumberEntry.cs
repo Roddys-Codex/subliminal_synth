@@ -6,7 +6,7 @@ public class portNumberEntry : MonoBehaviour
 {
 
     public GameObject connectButton;
-    private midiConnectButton midiConnectButton;
+    private MidiConnectButton midiConnectButton;
     public GameObject portNumberEntryO;
     private TextMesh textMesh;
     private int portNumber;
@@ -14,7 +14,7 @@ public class portNumberEntry : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        midiConnectButton = connectButton.GetComponent<midiConnectButton>();
+        midiConnectButton = connectButton.GetComponent<MidiConnectButton>();
         textMesh = portNumberEntryO.GetComponent<TextMesh>();
     }
 
@@ -26,7 +26,7 @@ public class portNumberEntry : MonoBehaviour
 
     public void SetPortNumber()
     {
-        midiConnectButton.setPort();
+        midiConnectButton.SetPort();
         //midiConnectButton.setPort(textMesh.text);
         //if (int.TryParse(textMesh.text, out int result))
         //{

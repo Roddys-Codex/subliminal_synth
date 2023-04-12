@@ -27,10 +27,10 @@ public class PianoKey : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
         m_MeshRender.material.color = new Color(Random.Range(0f, 1f), Random.Range(0f, 1f), Random.Range(0f, 1f));
         if(timeToggle.isOn)
         {
-            synth.playANote(note);
+            synth.PlayANote(note);
         } else
         {
-            synth8th.PlayANote(note);
+            synth8th.playANote(note);
         }
         
     }

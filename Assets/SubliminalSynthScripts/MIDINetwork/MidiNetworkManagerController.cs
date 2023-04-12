@@ -11,7 +11,9 @@ public class MidiNetworkManagerController : MonoBehaviour
     {
           
         midiManager = objectMidiManager.GetComponent<MidiManager>();
+        // Register an GameObject to receive MIDI events
         midiManager.RegisterEventHandleObject(gameObject);
+        // Initialize MidiManager
         midiManager.InitializeMidi(() =>
         {
             // Start to scan Bluetooth LE MIDI devices

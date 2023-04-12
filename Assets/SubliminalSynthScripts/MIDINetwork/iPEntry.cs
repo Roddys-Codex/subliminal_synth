@@ -5,13 +5,13 @@ using TMPro;
 public class iPEntry: MonoBehaviour, IPointerClickHandler
 {
     public GameObject connectButton;
-    public midiConnectButton midiConnectButton;
+    public MidiConnectButton midiConnectButton;
     private TMP_InputField textMesh;
     public GameObject ipEntryO;
     // Start is called before the first frame update
     void Start()
     {
-        midiConnectButton = connectButton.GetComponent<midiConnectButton>();
+        midiConnectButton = connectButton.GetComponent<MidiConnectButton>();
         textMesh = ipEntryO.GetComponent<TMP_InputField>();
     }
 
@@ -26,7 +26,7 @@ public class iPEntry: MonoBehaviour, IPointerClickHandler
         //GameObject midBtn = GameObject.Find("MidiHandling/MidiConnect");
         //midiConnectButton midi = midBtn.GetComponent<midiConnectButton>();
 
-         midiConnectButton.setIpAddress();
+         midiConnectButton.SetIpAddress();
         //this.iPaddressString = iPEntryText.text;
     }
 }

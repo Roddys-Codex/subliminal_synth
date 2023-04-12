@@ -5,6 +5,7 @@ using jp.kshoji.unity.midi;
 using System.Linq;
 using UnityEngine.UI;
 using System;
+using Unity.VisualScripting;
 using UnityEngine.Serialization;
 using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
@@ -187,7 +188,7 @@ public class SynthManager16th : MonoBehaviour
     }
 
     // Moves the loop indicator to the current index, and switches previous index back to white.
-    public void MoveColorIndicatorToCurrentIndex(int index)
+    private void MoveColorIndicatorToCurrentIndex(int index)
     {   
         if(index != positionSelected)
         {
@@ -201,17 +202,18 @@ public class SynthManager16th : MonoBehaviour
     }
 
     // Helper method that changes the colour of the current index position.
-    public void ChangePositionColour(int index)
+    private void ChangePositionColour(int index)
     {
         if (sequencerPositions[index].noteActive != true)
         {
             sequencerPositions[index].renderer.material.color = Color.magenta;
         }
+        
     }
 
     // Plays a note for a set time. If MIDI play is enabled, calling this method will result in the selected note becoming active in the loop.
     // Used for the MIDI play button.
-    public void playANote(int note)
+    public void PlayANote(int note)
     {
         helmController.NoteOn(note, 0.5f, sequencer.GetSixteenthTime());
         sequencerPositions[sequencer.currentIndex].note.note = note;
@@ -226,7 +228,7 @@ public class SynthManager16th : MonoBehaviour
     }
 
     // Gets 16th note time as a float.
-    public float getSixteenthTime()
+    public float GetSixteenthTime()
     {
         return sequencer.GetSixteenthTime();
     }
@@ -245,7 +247,7 @@ public class SynthManager16th : MonoBehaviour
     }
 
     // Implementation of the delegate method. This method will be called every time a NoteOff event is sent.
-    public void NoteActionOff(Note note)
+    private void NoteActionOff(Note note)
     {
         if(rtpMidiEnabled.midiEnabled)
         {
@@ -258,7 +260,7 @@ public class SynthManager16th : MonoBehaviour
     }
 
     // Resets modulation of the current preset to default.
-    public void resetMod()
+    public void ResetMod()
     {
         Native.HelmClearModulations(0);
     }

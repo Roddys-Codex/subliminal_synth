@@ -1,22 +1,25 @@
+using System.Collections;
 using AudioHelm;
+using jp.kshoji.unity.midi.sample;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
+using static AudioHelm.Sequencer;
 
-public class SequencerPosition : MonoBehaviour, IPointerClickHandler
+public class SequencerPosition8th : MonoBehaviour, IPointerClickHandler
 {
     public int positionObjectNumber;
 
     public GameObject synthObject;
-    public SynthManager16th synthManager;
-    
+
     public bool noteActive = false;
-    
+
     public MeshRenderer renderer;
-    
+
     public int noteEndAddOn;
     public int noteValue;
     public GameObject previousPositionObject;
-    public SequencerPosition previousSequencerPosition;
+    public SequencerPosition8th previousSequencerPosition;
     public bool playing = false;
     public int velocity = 127;
     public Note note;
@@ -29,11 +32,9 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
 
     void Awake()
     {
-        synthManager = synthObject.GetComponent<SynthManager16th>();
         renderer = GetComponent<MeshRenderer>();
-        synthManager.audioHelmClock.Reset();
-        
-        previousSequencerPosition = previousPositionObject.GetComponent<SequencerPosition>();
+
+        previousSequencerPosition = previousPositionObject.GetComponent<SequencerPosition8th>();
         note = new Note();
         note.note = noteValue;
         note.start = positionObjectNumber;
@@ -48,9 +49,10 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         {
             playing = true;
             renderer.material.color = Color.cyan;
-            if (OnNote != null) OnNote(note, noteActive);
+            OnNote(note, noteActive);
             noteActive = true;
-        } else
+        }
+        else
         {
             renderer.material.color = Color.white;
             OffNote(note, noteActive);

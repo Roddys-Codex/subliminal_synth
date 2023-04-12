@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using NRKernal;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -7,6 +10,17 @@ public class SamplerPosition : MonoBehaviour, IPointerClickHandler
     public int note;
     public bool active;
     public int position;
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
 
     public SamplerPosition(int note, bool active, int position)
     {
@@ -20,7 +34,7 @@ public class SamplerPosition : MonoBehaviour, IPointerClickHandler
         if (active == false)
         {
             active = true;
-            GetComponent<MeshRenderer>().material.color = Color.cyan;
+           GetComponent<MeshRenderer>().material.color = Color.cyan;
         }
         else
         {
@@ -29,4 +43,4 @@ public class SamplerPosition : MonoBehaviour, IPointerClickHandler
         }
     }
 
-}
+    }
