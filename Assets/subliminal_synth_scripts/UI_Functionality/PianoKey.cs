@@ -30,7 +30,7 @@ public class PianoKey : MonoBehaviour, IPointerClickHandler, IPointerEnterHandle
             synth.playANote(note);
         } else
         {
-            synth8th.playANote(note);
+            synth8th.PlayANote(note);
         }
         
     }

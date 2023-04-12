@@ -1,10 +1,6 @@
-using System.Collections;
 using AudioHelm;
-using jp.kshoji.unity.midi.sample;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
-using static AudioHelm.Sequencer;
 
 public class SequencerPosition : MonoBehaviour, IPointerClickHandler
 {
@@ -52,13 +48,11 @@ public class SequencerPosition : MonoBehaviour, IPointerClickHandler
         {
             playing = true;
             renderer.material.color = Color.cyan;
-            //synthManager.sixteenthLights[synthManager.currentIndex].SetActive(true);
-            OnNote(note, noteActive);
+            if (OnNote != null) OnNote(note, noteActive);
             noteActive = true;
         } else
         {
             renderer.material.color = Color.white;
-            //synthManager.sixteenthLights[synthManager.currentIndex].SetActive(false);
             OffNote(note, noteActive);
             noteActive = false;
         }
