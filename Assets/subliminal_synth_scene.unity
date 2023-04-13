@@ -2514,8 +2514,8 @@ RectTransform:
   m_Father: {fileID: 1025220603}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0.5030862, y: 0}
+  m_AnchorMax: {x: 0.5030862, y: 1}
   m_AnchoredPosition: {x: 2.199997, y: 0.010000229}
   m_SizeDelta: {x: 24.4, y: -0.03}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4584,7 +4584,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 1110164259}
+  m_audioClip: {fileID: 2091290060}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -7955,6 +7955,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -8771,6 +8776,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -9617,7 +9627,7 @@ GameObject:
   - component: {fileID: 372402943}
   - component: {fileID: 372402942}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: WaveSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9660,8 +9670,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 372402943}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 65
+  param:
+    parameter_: 65
+    scaleType: 0
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &372402943
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9709,7 +9725,7 @@ MonoBehaviour:
   m_MinValue: 0.01
   m_MaxValue: 128
   m_WholeNumbers: 0
-  m_Value: 0.01
+  m_Value: 64.4
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -10445,7 +10461,7 @@ GameObject:
   - component: {fileID: 402502907}
   - component: {fileID: 402502906}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: TransposeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10488,8 +10504,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 402502907}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 60
+  param:
+    parameter_: 60
+    scaleType: 1
+    parent: {fileID: 182039459}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &402502907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11429,7 +11451,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 1055132865}
+  m_audioClip: {fileID: 832661890}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -13409,6 +13431,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -14255,7 +14282,7 @@ GameObject:
   - component: {fileID: 530502527}
   - component: {fileID: 530502526}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: VoicesSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14298,8 +14325,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 530502527}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 63
+  param:
+    parameter_: 63
+    scaleType: 1
+    parent: {fileID: 182039459}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &530502527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16820,21 +16853,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 609763740}
-        m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
-        m_MethodName: SwitchThisObjectColour
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: SwitchThisColourAndSetTargetActive
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1684188521}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16952,7 +16973,7 @@ MonoBehaviour:
   - {fileID: 163200295}
   allButtons:
   - {fileID: 1868186123}
-  defaultColour: {fileID: 0}
+  defaultColour: {fileID: 644987778}
   m_Toggle: {fileID: 0}
 --- !u!4 &612788210 stripped
 Transform:
@@ -20193,7 +20214,7 @@ GameObject:
   - component: {fileID: 715387283}
   - component: {fileID: 715387282}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: VoicesSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20236,8 +20257,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 715387283}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 69
+  param:
+    parameter_: 69
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &715387283
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20388,6 +20415,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -21842,6 +21874,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -23361,6 +23398,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 831211137}
   m_CullTransparentMesh: 1
+--- !u!83 &832661890
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &832828039
 GameObject:
   m_ObjectHideFlags: 0
@@ -26055,7 +26120,7 @@ GameObject:
   - component: {fileID: 945145827}
   - component: {fileID: 945145826}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: TransposeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26098,8 +26163,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 945145827}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 66
+  param:
+    parameter_: 66
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &945145827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28213,34 +28284,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1053388296}
   m_CullTransparentMesh: 1
---- !u!83 &1055132865
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1058461499
 GameObject:
   m_ObjectHideFlags: 0
@@ -28887,6 +28930,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -29453,34 +29501,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -0.000000022351742}
   m_SizeDelta: {x: 0.16526607, y: 0.25508922}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!83 &1110164259
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1112032919
 GameObject:
   m_ObjectHideFlags: 0
@@ -31593,7 +31613,7 @@ GameObject:
   - component: {fileID: 1178212737}
   - component: {fileID: 1178212736}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31636,8 +31656,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1178212737}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 70
+  param:
+    parameter_: 70
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1178212737
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32568,6 +32594,19 @@ MonoBehaviour:
   helmController: {fileID: 182039459}
   streamingManager: {fileID: 1220548006}
   presetDropdownGameObject: {fileID: 1216737328}
+  parameterSliders:
+  - {fileID: 372402942}
+  - {fileID: 402502906}
+  - {fileID: 1787086546}
+  - {fileID: 1831954779}
+  - {fileID: 1371824354}
+  - {fileID: 530502526}
+  - {fileID: 1486753068}
+  - {fileID: 945145826}
+  - {fileID: 2140687174}
+  - {fileID: 1178212736}
+  - {fileID: 1561496661}
+  - {fileID: 715387282}
 --- !u!114 &1216737334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -34364,6 +34403,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -36945,7 +36989,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMax: {x: 0.5030862, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -37960,7 +38004,7 @@ GameObject:
   - component: {fileID: 1371824355}
   - component: {fileID: 1371824354}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: UnisonDetuneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38003,8 +38047,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1371824355}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 62
+  param:
+    parameter_: 62
+    scaleType: 1
+    parent: {fileID: 182039459}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1371824355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38155,6 +38205,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -39754,6 +39809,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -40699,7 +40759,7 @@ GameObject:
   - component: {fileID: 1486753069}
   - component: {fileID: 1486753068}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: WaveSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -40742,8 +40802,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1486753069}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 71
+  param:
+    parameter_: 71
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1486753069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42239,7 +42305,7 @@ GameObject:
   - component: {fileID: 1561496662}
   - component: {fileID: 1561496661}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: UnisonDetuneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -42282,8 +42348,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1561496662}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 68
+  param:
+    parameter_: 68
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1561496662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45590,7 +45662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1684188522
 RectTransform:
   m_ObjectHideFlags: 0
@@ -47378,6 +47450,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -47923,6 +48000,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -48124,6 +48206,11 @@ PrefabInstance:
       propertyPath: gameObject
       value: 
       objectReference: {fileID: 182039458}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
       propertyPath: synthObject
@@ -48760,7 +48847,7 @@ GameObject:
   - component: {fileID: 1787086547}
   - component: {fileID: 1787086546}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: TuneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48803,8 +48890,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1787086547}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 61
+  param:
+    parameter_: 61
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1787086547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50629,6 +50722,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -50921,7 +51019,7 @@ GameObject:
   - component: {fileID: 1831954780}
   - component: {fileID: 1831954779}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: VolumeSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50964,8 +51062,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 1831954780}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 64
+  param:
+    parameter_: 64
+    scaleType: 1
+    parent: {fileID: 182039459}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &1831954780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54420,6 +54524,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -56802,6 +56911,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -58121,6 +58235,11 @@ PrefabInstance:
       objectReference: {fileID: 182039458}
     - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
         type: 3}
+      propertyPath: note.note_
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 1846123983076248693, guid: 5ed5846d62eee4a1fb63e830d51300c0,
+        type: 3}
       propertyPath: synthObject
       value: 
       objectReference: {fileID: 182039458}
@@ -58548,6 +58667,34 @@ RectTransform:
   m_AnchoredPosition: {x: 16, y: 0}
   m_SizeDelta: {x: -74.52, y: -0.89}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!83 &2091290060
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &2091931895
 GameObject:
   m_ObjectHideFlags: 0
@@ -60781,7 +60928,7 @@ GameObject:
   - component: {fileID: 2140687175}
   - component: {fileID: 2140687174}
   m_Layer: 5
-  m_Name: ParamSlider
+  m_Name: TuneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -60824,8 +60971,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paramSlider: {fileID: 2140687175}
   helmController: {fileID: 182039459}
-  helmParameters: []
-  param: 67
+  param:
+    parameter_: 67
+    scaleType: 1
+    parent: {fileID: 0}
+    minimumRange: 0
+    maximumRange: 1
+    paramValue_: 0
+  paramName: 
 --- !u!114 &2140687175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62303,7 +62456,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
   targetObjectToActivate: {fileID: 709398605}
-  targetObjectsToActivate: []
+  targetObjectsToActivate:
+  - {fileID: 709398605}
+  - {fileID: 1849053495}
+  - {fileID: 1345763701}
 --- !u!114 &1846123983904332603
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -62321,6 +62477,7 @@ MonoBehaviour:
   allMenus:
   - {fileID: 1136156097}
   - {fileID: 1178445806}
+  - {fileID: 408496795}
   - {fileID: 408496795}
   allButtons:
   - {fileID: 80198797}
@@ -62400,7 +62557,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1846123983904332602}
-        m_TargetAssemblyTypeName: ColourChange, Assembly-CSharp
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: SetObjectsActiveByToggle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1846123983904332602}
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
         m_MethodName: SwitchThisObjectColour
         m_Mode: 1
         m_Arguments:

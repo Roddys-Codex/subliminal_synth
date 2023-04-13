@@ -3,11 +3,7 @@ using UnityEngine;
 using AudioHelm;
 using jp.kshoji.unity.midi;
 using System.Linq;
-using UnityEngine.UI;
-using System;
-using Unity.VisualScripting;
 using UnityEngine.Serialization;
-using UnityEngine.UIElements;
 using Slider = UnityEngine.UI.Slider;
 
 public class SynthManager16th : MonoBehaviour
@@ -35,7 +31,7 @@ public class SynthManager16th : MonoBehaviour
     public Slider octaveSlider;
 
     // Variables related to setting the values of the note the user has selected.
-    public int pitch;
+    public int pitch = 60;
     public int positionSelected = 1;
     public int previousSelected = 16;
     public Note selectedNote;
@@ -120,45 +116,47 @@ public class SynthManager16th : MonoBehaviour
     private void NoteUpdate()
     {
         synthTime = (int)timeSlider.value;
-        if (synthTime==1)
-        {
-            int oldKey = sequencerPositions[positionSelected].note.note;
+        if (synthTime != 1) return;
+        int oldKey = sequencerPositions[positionSelected].note.note;
 
-            pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
-            sequencerPositions[positionSelected].note.note = pitch;
+        pitch = (int)octaveSlider.value * 12 + (int)noteSlider.value;
+        sequencerPositions[positionSelected].note.note = pitch;
 
-            sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
-            sequencerPositions[positionSelected].noteActive = true;
-            sequencerPositions[positionSelected].renderer.material.color = Color.cyan;
+        sequencer.NotifyNoteKeyChanged(sequencerPositions[positionSelected].note, oldKey);
+        sequencerPositions[positionSelected].noteActive = true;
+        sequencerPositions[positionSelected].renderer.material.color = Color.cyan;
 
-            selectedNote = noteUpdate;
-        }
+        selectedNote = noteUpdate;
     }
 
     // Updates the position the user currently has selected. Values are taken from the UI sliders shown on screen.
     private void PositionUpdate()
     {
         synthTime = (int)timeSlider.value;
-        if (synthTime == 1)
+        if (synthTime != 1) return;
+        noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
+        noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
+        previousSelected = positionSelected;
+        positionSelected = (int)positionSlider.value;
+
+        if (sequencerPositions[previousSelected].noteActive)
         {
-            noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
-            noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
-            previousSelected = positionSelected;
-            positionSelected = (int)positionSlider.value;
-
-            if (sequencerPositions[previousSelected].noteActive)
-            {
-                sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
-                sixteenthLights[previousSelected].SetActive(false);
-            }
-            else
-            {
-                sixteenthLights[previousSelected].SetActive(false);
-            }
-
-            sixteenthLights[positionSelected].SetActive(true);
+            sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+            sixteenthLights[previousSelected].SetActive(false);
         }
+        else
+        {
+            sixteenthLights[previousSelected].SetActive(false);
+        }
+
+        sixteenthLights[positionSelected].SetActive(true);
         
+        int pitchSelected = sequencerPositions[positionSelected].note.note;
+        int octaveSelected = pitchSelected / 12;
+        int noteSelected = pitchSelected % 12;
+
+        noteSlider.SetValueWithoutNotify(noteSelected);
+        octaveSlider.SetValueWithoutNotify(octaveSelected);
     }
 
     // Updates whether the user can program 16th or 8th notes, depending on which is selected on the UI.

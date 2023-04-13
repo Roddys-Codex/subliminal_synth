@@ -72,7 +72,6 @@ public class SynthManager8th : MonoBehaviour
         positionSlider = positionObject.GetComponent<Slider>();
 
         // Add listeners to the 'onChange' function of the sliders.
-        //timeSlider.onValueChanged.AddListener(delegate { TimeUpdate(); });
         positionSlider.onValueChanged.AddListener(delegate { PositionUpdate(); });
         noteSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
         octaveSlider.onValueChanged.AddListener(delegate { NoteUpdate(); });
@@ -134,25 +133,30 @@ public class SynthManager8th : MonoBehaviour
     public void PositionUpdate()
     {
         synthTime = (int)timeSlider.value;
-        if (synthTime == 2)
+        if (synthTime != 2) return;
+        noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
+        noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
+        previousSelected = positionSelected;
+        positionSelected = (int)positionSlider.value;
+
+        if (sequencerPositions[previousSelected].noteActive)
         {
-            noteUpdate.start = sequencerPositions[(int)positionSlider.value].note.start;
-            noteUpdate.end = sequencerPositions[(int)positionSlider.value].note.end;
-            previousSelected = positionSelected;
-            positionSelected = (int)positionSlider.value;
-
-            if (sequencerPositions[previousSelected].noteActive)
-            {
-                sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
-                eighthLights[previousSelected].SetActive(false);
-            }
-            else
-            {
-                eighthLights[previousSelected].SetActive(false);
-            }
-
-            eighthLights[positionSelected].SetActive(true);
+            sequencerPositions[previousSelected].renderer.material.color = Color.cyan;
+            eighthLights[previousSelected].SetActive(false);
         }
+        else
+        {
+            eighthLights[previousSelected].SetActive(false);
+        }
+
+        eighthLights[positionSelected].SetActive(true);
+        
+        int pitchSelected = sequencerPositions[positionSelected].note.note;
+        int octaveSelected = pitchSelected / 12;
+        int noteSelected = pitchSelected % 12;
+
+        noteSlider.SetValueWithoutNotify(noteSelected);
+        octaveSlider.SetValueWithoutNotify(octaveSelected);
     }
 
     // Changes from allowing the user to program either 16th or 8th notes.

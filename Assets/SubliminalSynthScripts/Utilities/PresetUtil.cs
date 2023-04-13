@@ -5,6 +5,7 @@ using UnityEngine;
 using AudioHelm;
 
 using System.Text.RegularExpressions;
+using UnityEngine.XR;
 
 public class PresetUtil : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PresetUtil : MonoBehaviour
     public HelmController helmController;
     public StreamingManager streamingManager;
     public GameObject presetDropdownGameObject;
+    public List<ParameterSlider> parameterSliders;
     
     public void LoadPreset()
     {
@@ -25,6 +27,10 @@ public class PresetUtil : MonoBehaviour
         patch.LoadPatchDataAndroid(filepath + presetDowndown.options[presetDowndown.value].text + ".helm");
 #endif
         helmController.LoadPatch(patch);
+
+        parameterSliders.ForEach(slider => 
+                slider.paramSlider.value = Native.HelmGetParameterValue(0, (int)slider.param.parameter)
+        );
     }
 
     public void UpdateFolder()
