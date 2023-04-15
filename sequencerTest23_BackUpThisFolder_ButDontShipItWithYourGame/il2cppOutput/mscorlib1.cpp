@@ -2038,9 +2038,9 @@ struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE  : public MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE
 {
 	// System.IO.Stream/ReadWriteTask System.IO.Stream::_activeReadWriteTask
-	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_3;
+	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_2;
 	// System.Threading.SemaphoreSlim System.IO.Stream::_asyncActiveSemaphore
-	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_4;
+	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_3;
 };
 
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE_StaticFields
@@ -2471,43 +2471,43 @@ struct FileStatus_tABB5F252F1E597EC95E9041035DC424EF66712A5_marshaled_com
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.FileStream::buf
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_8;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_6;
 	// System.String System.IO.FileStream::name
-	String_t* ___name_9;
+	String_t* ___name_7;
 	// Microsoft.Win32.SafeHandles.SafeFileHandle System.IO.FileStream::safeHandle
-	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_10;
+	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_8;
 	// System.Boolean System.IO.FileStream::isExposed
-	bool ___isExposed_11;
+	bool ___isExposed_9;
 	// System.Int64 System.IO.FileStream::append_startpos
-	int64_t ___append_startpos_12;
+	int64_t ___append_startpos_10;
 	// System.IO.FileAccess System.IO.FileStream::access
-	int32_t ___access_13;
+	int32_t ___access_11;
 	// System.Boolean System.IO.FileStream::owner
-	bool ___owner_14;
+	bool ___owner_12;
 	// System.Boolean System.IO.FileStream::async
-	bool ___async_15;
+	bool ___async_13;
 	// System.Boolean System.IO.FileStream::canseek
-	bool ___canseek_16;
+	bool ___canseek_14;
 	// System.Boolean System.IO.FileStream::anonymous
-	bool ___anonymous_17;
+	bool ___anonymous_15;
 	// System.Boolean System.IO.FileStream::buf_dirty
-	bool ___buf_dirty_18;
+	bool ___buf_dirty_16;
 	// System.Int32 System.IO.FileStream::buf_size
-	int32_t ___buf_size_19;
+	int32_t ___buf_size_17;
 	// System.Int32 System.IO.FileStream::buf_length
-	int32_t ___buf_length_20;
+	int32_t ___buf_length_18;
 	// System.Int32 System.IO.FileStream::buf_offset
-	int32_t ___buf_offset_21;
+	int32_t ___buf_offset_19;
 	// System.Int64 System.IO.FileStream::buf_start
-	int64_t ___buf_start_22;
+	int64_t ___buf_start_20;
 };
 
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8_StaticFields
 {
 	// System.Byte[] System.IO.FileStream::buf_recycle
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_6;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_4;
 	// System.Object System.IO.FileStream::buf_recycle_lock
-	RuntimeObject* ___buf_recycle_lock_7;
+	RuntimeObject* ___buf_recycle_lock_5;
 };
 
 // Mono.Security.Cryptography.MD2Managed
@@ -27006,46 +27006,6 @@ IL_00c5:
 	{
 		ValueListBuilder_1_Dispose_mE3B9D4AD5CDC1E5D3B9F50469678BF99D2FD276D_inline((&V_2), ValueListBuilder_1_Dispose_mE3B9D4AD5CDC1E5D3B9F50469678BF99D2FD276D_RuntimeMethod_var);
 		return G_B16_0;
-	}
-}
-// System.String[] System.String::Split(System.String,System.StringSplitOptions)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* String_Split_m15EB0AE498D606D2ABC49FC5F1EC3E29121F8AFB (String_t* __this, String_t* ___separator0, int32_t ___options1, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&String_t_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	String_t* G_B2_0 = NULL;
-	String_t* G_B2_1 = NULL;
-	String_t* G_B1_0 = NULL;
-	String_t* G_B1_1 = NULL;
-	{
-		String_t* L_0 = ___separator0;
-		String_t* L_1 = L_0;
-		G_B1_0 = L_1;
-		G_B1_1 = __this;
-		if (L_1)
-		{
-			G_B2_0 = L_1;
-			G_B2_1 = __this;
-			goto IL_000b;
-		}
-	}
-	{
-		String_t* L_2 = ((String_t_StaticFields*)il2cpp_codegen_static_fields_for(String_t_il2cpp_TypeInfo_var))->___Empty_6;
-		G_B2_0 = L_2;
-		G_B2_1 = G_B1_1;
-	}
-
-IL_000b:
-	{
-		int32_t L_3 = ___options1;
-		NullCheck(G_B2_1);
-		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_4;
-		L_4 = String_SplitInternal_m745427B49FF0A688443186ED70A9345301773B2C(G_B2_1, G_B2_0, (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)NULL, ((int32_t)2147483647LL), L_3, NULL);
-		return L_4;
 	}
 }
 // System.String[] System.String::Split(System.String[],System.StringSplitOptions)

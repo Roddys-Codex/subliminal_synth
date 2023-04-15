@@ -9,7 +9,6 @@ public class MidiNetworkManagerController : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-          
         midiManager = objectMidiManager.GetComponent<MidiManager>();
         // Register an GameObject to receive MIDI events
         midiManager.RegisterEventHandleObject(gameObject);

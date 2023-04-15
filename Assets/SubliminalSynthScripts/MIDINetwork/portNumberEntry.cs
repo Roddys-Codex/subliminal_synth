@@ -18,12 +18,6 @@ public class portNumberEntry : MonoBehaviour
         textMesh = portNumberEntryO.GetComponent<TextMesh>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void SetPortNumber()
     {
         midiConnectButton.SetPort();

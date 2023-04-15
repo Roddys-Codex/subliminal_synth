@@ -3887,9 +3887,9 @@ struct StateMachineAttribute_t9D7900B1B0E39C142A948AFD6025BBE3CE09AA76  : public
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE  : public MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE
 {
 	// System.IO.Stream/ReadWriteTask System.IO.Stream::_activeReadWriteTask
-	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_3;
+	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_2;
 	// System.Threading.SemaphoreSlim System.IO.Stream::_asyncActiveSemaphore
-	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_4;
+	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_3;
 };
 
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE_StaticFields
@@ -4458,43 +4458,43 @@ struct Exception_t_marshaled_com
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.FileStream::buf
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_8;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_6;
 	// System.String System.IO.FileStream::name
-	String_t* ___name_9;
+	String_t* ___name_7;
 	// Microsoft.Win32.SafeHandles.SafeFileHandle System.IO.FileStream::safeHandle
-	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_10;
+	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_8;
 	// System.Boolean System.IO.FileStream::isExposed
-	bool ___isExposed_11;
+	bool ___isExposed_9;
 	// System.Int64 System.IO.FileStream::append_startpos
-	int64_t ___append_startpos_12;
+	int64_t ___append_startpos_10;
 	// System.IO.FileAccess System.IO.FileStream::access
-	int32_t ___access_13;
+	int32_t ___access_11;
 	// System.Boolean System.IO.FileStream::owner
-	bool ___owner_14;
+	bool ___owner_12;
 	// System.Boolean System.IO.FileStream::async
-	bool ___async_15;
+	bool ___async_13;
 	// System.Boolean System.IO.FileStream::canseek
-	bool ___canseek_16;
+	bool ___canseek_14;
 	// System.Boolean System.IO.FileStream::anonymous
-	bool ___anonymous_17;
+	bool ___anonymous_15;
 	// System.Boolean System.IO.FileStream::buf_dirty
-	bool ___buf_dirty_18;
+	bool ___buf_dirty_16;
 	// System.Int32 System.IO.FileStream::buf_size
-	int32_t ___buf_size_19;
+	int32_t ___buf_size_17;
 	// System.Int32 System.IO.FileStream::buf_length
-	int32_t ___buf_length_20;
+	int32_t ___buf_length_18;
 	// System.Int32 System.IO.FileStream::buf_offset
-	int32_t ___buf_offset_21;
+	int32_t ___buf_offset_19;
 	// System.Int64 System.IO.FileStream::buf_start
-	int64_t ___buf_start_22;
+	int64_t ___buf_start_20;
 };
 
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8_StaticFields
 {
 	// System.Byte[] System.IO.FileStream::buf_recycle
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_6;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_4;
 	// System.Object System.IO.FileStream::buf_recycle_lock
-	RuntimeObject* ___buf_recycle_lock_7;
+	RuntimeObject* ___buf_recycle_lock_5;
 };
 
 // System.Runtime.InteropServices.GCHandle
@@ -4746,23 +4746,23 @@ struct SafeHandle_tC1A4DA80DA89B867CC011B707A07275230321BF7  : public CriticalFi
 struct UnmanagedMemoryStream_t83B223BCEF722E04E3AB3A7F6B73416F59BE630D  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Runtime.InteropServices.SafeBuffer System.IO.UnmanagedMemoryStream::_buffer
-	SafeBuffer_t75FD9565BE645665AB242CA8C8BB22E1A933DFCE* ____buffer_5;
+	SafeBuffer_t75FD9565BE645665AB242CA8C8BB22E1A933DFCE* ____buffer_4;
 	// System.Byte* System.IO.UnmanagedMemoryStream::_mem
-	uint8_t* ____mem_6;
+	uint8_t* ____mem_5;
 	// System.Int64 System.IO.UnmanagedMemoryStream::_length
-	int64_t ____length_7;
+	int64_t ____length_6;
 	// System.Int64 System.IO.UnmanagedMemoryStream::_capacity
-	int64_t ____capacity_8;
+	int64_t ____capacity_7;
 	// System.Int64 System.IO.UnmanagedMemoryStream::_position
-	int64_t ____position_9;
+	int64_t ____position_8;
 	// System.Int64 System.IO.UnmanagedMemoryStream::_offset
-	int64_t ____offset_10;
+	int64_t ____offset_9;
 	// System.IO.FileAccess System.IO.UnmanagedMemoryStream::_access
-	int32_t ____access_11;
+	int32_t ____access_10;
 	// System.Boolean System.IO.UnmanagedMemoryStream::_isOpen
-	bool ____isOpen_12;
+	bool ____isOpen_11;
 	// System.Threading.Tasks.Task`1<System.Int32> System.IO.UnmanagedMemoryStream::_lastReadTask
-	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_13;
+	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_12;
 };
 
 // System.Runtime.CompilerServices.ValueTaskAwaiter
@@ -4851,9 +4851,9 @@ struct MulticastDelegate_t_marshaled_com : public Delegate_t_marshaled_com
 struct PinnedBufferMemoryStream_t8E711E8F32195672BA8621BCE2FD9FF66D3CEACC  : public UnmanagedMemoryStream_t83B223BCEF722E04E3AB3A7F6B73416F59BE630D
 {
 	// System.Byte[] System.IO.PinnedBufferMemoryStream::_array
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____array_14;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____array_13;
 	// System.Runtime.InteropServices.GCHandle System.IO.PinnedBufferMemoryStream::_pinningHandle
-	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ____pinningHandle_15;
+	GCHandle_tC44F6F72EE68BD4CFABA24309DA7A179D41127DC ____pinningHandle_14;
 };
 
 // System.Reflection.RuntimeMethodInfo
@@ -6590,10 +6590,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_FreeHGlobal_m298EF0650E82E326EDA
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_ClearUnicode_m6CBCE7AC53A2014EC43EBAD40FDBB66DF5F1625C (intptr_t ___ptr0, const RuntimeMethod* method) ;
 // System.Void System.Buffer::Memcpy(System.Byte*,System.Byte*,System.Int32,System.Boolean)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Buffer_Memcpy_mB203712DD2D0E5DF1CF52F752638F8B94E03E217 (uint8_t* ___dest0, uint8_t* ___src1, int32_t ___len2, bool ___useICall3, const RuntimeMethod* method) ;
-// System.Type System.Object::GetType()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3 (RuntimeObject* __this, const RuntimeMethod* method) ;
-// System.Int32 System.Runtime.InteropServices.Marshal::SizeOf(System.Type)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Marshal_SizeOf_mED64846722033D6F60C2973CA604B7C2D7D4A1B7 (Type_t* ___t0, const RuntimeMethod* method) ;
 // System.Int32 System.Runtime.CompilerServices.RuntimeHelpers::get_OffsetToStringData()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RuntimeHelpers_get_OffsetToStringData_m90A5D27EF88BE9432BF7093B7D7E7A0ACB0A8FBD (const RuntimeMethod* method) ;
 // System.IntPtr System.Runtime.InteropServices.Marshal::StringToHGlobalAnsi(System.Char*,System.Int32)
@@ -6917,6 +6913,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void U3CU3Ec__DisplayClass5_0__ctor_mDB43DF99FDC43A2CF4CED27098C4BA6F04CA217E (U3CU3Ec__DisplayClass5_0_t1104D3BFAC3C93AE9B0B9A0648367E5C177B4B2E* __this, const RuntimeMethod* method) ;
 // System.Action System.Runtime.CompilerServices.AsyncMethodBuilderCore::CreateContinuationWrapper(System.Action,System.Action,System.Threading.Tasks.Task)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* AsyncMethodBuilderCore_CreateContinuationWrapper_m9817BD27BF3BCC2A4FF050BA86D5B69F416B83FC (Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___continuation0, Action_tD00B0A84D7945E50C2DFFC28EFEE6ED44ED2AD07* ___invokeAction1, Task_t751C4CC3ECD055BABA8A0B6A5DFBB4283DCA8572* ___innerTask2, const RuntimeMethod* method) ;
+// System.Type System.Object::GetType()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Type_t* Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3 (RuntimeObject* __this, const RuntimeMethod* method) ;
 // System.String System.String::Concat(System.String,System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* String_Concat_m9E3155FB84015C823606188F53B47CB44C444991 (String_t* ___str00, String_t* ___str11, const RuntimeMethod* method) ;
 // System.Void System.Threading.Tasks.AsyncCausalityTracer::TraceOperationCreation(System.Threading.Tasks.CausalityTraceLevel,System.Int32,System.String,System.UInt64)
@@ -7549,7 +7547,7 @@ IL_0013_1:
 			BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_3 = __this->___dataReader_11;
 			NullCheck(L_3);
 			uint8_t L_4;
-			L_4 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_3);
+			L_4 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_3);
 			V_2 = L_4;
 			uint8_t L_5 = V_2;
 			V_1 = L_5;
@@ -7956,7 +7954,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool __BinaryParser_ReadBoolean_mADFA1C50D7CF
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		bool L_1;
-		L_1 = VirtualFuncInvoker0< bool >::Invoke(10 /* System.Boolean System.IO.BinaryReader::ReadBoolean() */, L_0);
+		L_1 = VirtualFuncInvoker0< bool >::Invoke(9 /* System.Boolean System.IO.BinaryReader::ReadBoolean() */, L_0);
 		return L_1;
 	}
 }
@@ -7967,7 +7965,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint8_t __BinaryParser_ReadByte_mD0BB9A3BE88B
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		uint8_t L_1;
-		L_1 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_0);
+		L_1 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_0);
 		return L_1;
 	}
 }
@@ -7979,7 +7977,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A8261
 		int32_t L_1 = ___length0;
 		NullCheck(L_0);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_2;
-		L_2 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_0, L_1);
+		L_2 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_0, L_1);
 		return L_2;
 	}
 }
@@ -7999,7 +7997,7 @@ IL_0002:
 		int32_t L_3 = ___size2;
 		NullCheck(L_0);
 		int32_t L_4;
-		L_4 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(25 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_0, L_1, L_2, L_3);
+		L_4 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(24 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_0, L_1, L_2, L_3);
 		V_0 = L_4;
 		int32_t L_5 = V_0;
 		if (L_5)
@@ -8040,7 +8038,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Il2CppChar __BinaryParser_ReadChar_m0F9FC356B
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		Il2CppChar L_1;
-		L_1 = VirtualFuncInvoker0< Il2CppChar >::Invoke(13 /* System.Char System.IO.BinaryReader::ReadChar() */, L_0);
+		L_1 = VirtualFuncInvoker0< Il2CppChar >::Invoke(12 /* System.Char System.IO.BinaryReader::ReadChar() */, L_0);
 		return L_1;
 	}
 }
@@ -8052,7 +8050,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8
 		int32_t L_1 = ___length0;
 		NullCheck(L_0);
 		CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB* L_2;
-		L_2 = VirtualFuncInvoker1< CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB*, int32_t >::Invoke(24 /* System.Char[] System.IO.BinaryReader::ReadChars(System.Int32) */, L_0, L_1);
+		L_2 = VirtualFuncInvoker1< CharU5BU5D_t799905CF001DD5F13F7DBB310181FC4D8B7D0AAB*, int32_t >::Invoke(23 /* System.Char[] System.IO.BinaryReader::ReadChars(System.Int32) */, L_0, L_1);
 		return L_2;
 	}
 }
@@ -8070,7 +8068,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Decimal_tDA6C877282B2D789CF97C0949661CC11D643
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_0);
 		il2cpp_codegen_runtime_class_init_inline(CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0_il2cpp_TypeInfo_var);
 		CultureInfo_t9BA817D41AD55AC8BD07480DD8AC22F8FFA378E0* L_2;
 		L_2 = CultureInfo_get_InvariantCulture_mD1E96DC845E34B10F78CB744B0CB5D7D63CEB1E6(NULL);
@@ -8087,7 +8085,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float __BinaryParser_ReadSingle_m59EAB55BC131
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		float L_1;
-		L_1 = VirtualFuncInvoker0< float >::Invoke(20 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_0);
+		L_1 = VirtualFuncInvoker0< float >::Invoke(19 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_0);
 		return L_1;
 	}
 }
@@ -8098,7 +8096,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR double __BinaryParser_ReadDouble_m8605E2C960A
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		double L_1;
-		L_1 = VirtualFuncInvoker0< double >::Invoke(21 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_0);
+		L_1 = VirtualFuncInvoker0< double >::Invoke(20 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_0);
 		return L_1;
 	}
 }
@@ -8109,7 +8107,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int16_t __BinaryParser_ReadInt16_m51590087008
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		int16_t L_1;
-		L_1 = VirtualFuncInvoker0< int16_t >::Invoke(14 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_0);
+		L_1 = VirtualFuncInvoker0< int16_t >::Invoke(13 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_0);
 		return L_1;
 	}
 }
@@ -8120,7 +8118,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t __BinaryParser_ReadInt32_mA2D54CD0FA7
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		int32_t L_1;
-		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_0);
+		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_0);
 		return L_1;
 	}
 }
@@ -8131,7 +8129,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t __BinaryParser_ReadInt64_m14C7A04CE76
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		int64_t L_1;
-		L_1 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_0);
+		L_1 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_0);
 		return L_1;
 	}
 }
@@ -8151,7 +8149,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* __BinaryParser_ReadString_mB1946128
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		String_t* L_1;
-		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_0);
+		L_1 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_0);
 		return L_1;
 	}
 }
@@ -8192,7 +8190,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint16_t __BinaryParser_ReadUInt16_m0553CF1DC
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		uint16_t L_1;
-		L_1 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_0);
+		L_1 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_0);
 		return L_1;
 	}
 }
@@ -8203,7 +8201,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t __BinaryParser_ReadUInt32_m074A96F31
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		uint32_t L_1;
-		L_1 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_0);
+		L_1 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_0);
 		return L_1;
 	}
 }
@@ -8214,7 +8212,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint64_t __BinaryParser_ReadUInt64_m1C868E4A9
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->___dataReader_11;
 		NullCheck(L_0);
 		uint64_t L_1;
-		L_1 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_0);
+		L_1 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_0);
 		return L_1;
 	}
 }
@@ -17244,159 +17242,6 @@ IL_0013:
 		return;
 	}
 }
-// System.Void System.Runtime.InteropServices.Marshal::Copy(System.IntPtr,System.Int16[],System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_Copy_m7468DC2D28F64C434A9CF777AEB2399BF1EA5784 (intptr_t ___source0, Int16U5BU5D_t8175CE8DD9C9F9FB0CF4F58E45BC570575B43CFB* ___destination1, int32_t ___startIndex2, int32_t ___length3, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	void* V_0 = NULL;
-	int16_t* V_1 = NULL;
-	{
-		Int16U5BU5D_t8175CE8DD9C9F9FB0CF4F58E45BC570575B43CFB* L_0 = ___destination1;
-		int32_t L_1 = ___startIndex2;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		bool L_2;
-		L_2 = Marshal_skip_fixed_mB1077A7387081CC486EAB42E28A9EB70814D9278((RuntimeArray*)L_0, L_1, NULL);
-		if (!L_2)
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		intptr_t L_3 = ___source0;
-		int32_t L_4 = ___startIndex2;
-		Int16U5BU5D_t8175CE8DD9C9F9FB0CF4F58E45BC570575B43CFB* L_5 = ___destination1;
-		int32_t L_6 = ___length3;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_m0C231B3D40123E31CF8B0D7C49D9A6ADF9D62282(L_3, L_4, (RuntimeArray*)L_5, L_6, NULL);
-		return;
-	}
-
-IL_0013:
-	{
-		Int16U5BU5D_t8175CE8DD9C9F9FB0CF4F58E45BC570575B43CFB* L_7 = ___destination1;
-		int32_t L_8 = ___startIndex2;
-		NullCheck(L_7);
-		V_1 = ((L_7)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_8)));
-		int16_t* L_9 = V_1;
-		V_0 = (void*)((uintptr_t)L_9);
-		intptr_t L_10 = ___source0;
-		int32_t L_11 = ___startIndex2;
-		Int16U5BU5D_t8175CE8DD9C9F9FB0CF4F58E45BC570575B43CFB* L_12 = ___destination1;
-		int32_t L_13 = ___length3;
-		void* L_14 = V_0;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_fixed_mD985A7AB264B8836F28D326E7E7AF93993FAAF36(L_10, L_11, (RuntimeArray*)L_12, L_13, L_14, NULL);
-		V_1 = (int16_t*)((uintptr_t)0);
-		return;
-	}
-}
-// System.Void System.Runtime.InteropServices.Marshal::Copy(System.IntPtr,System.Int32[],System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_Copy_m7AB9510A41CD2959424C87A8E0C332F19E40D980 (intptr_t ___source0, Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* ___destination1, int32_t ___startIndex2, int32_t ___length3, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	void* V_0 = NULL;
-	int32_t* V_1 = NULL;
-	{
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_0 = ___destination1;
-		int32_t L_1 = ___startIndex2;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		bool L_2;
-		L_2 = Marshal_skip_fixed_mB1077A7387081CC486EAB42E28A9EB70814D9278((RuntimeArray*)L_0, L_1, NULL);
-		if (!L_2)
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		intptr_t L_3 = ___source0;
-		int32_t L_4 = ___startIndex2;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_5 = ___destination1;
-		int32_t L_6 = ___length3;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_m0C231B3D40123E31CF8B0D7C49D9A6ADF9D62282(L_3, L_4, (RuntimeArray*)L_5, L_6, NULL);
-		return;
-	}
-
-IL_0013:
-	{
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_7 = ___destination1;
-		int32_t L_8 = ___startIndex2;
-		NullCheck(L_7);
-		V_1 = ((L_7)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_8)));
-		int32_t* L_9 = V_1;
-		V_0 = (void*)((uintptr_t)L_9);
-		intptr_t L_10 = ___source0;
-		int32_t L_11 = ___startIndex2;
-		Int32U5BU5D_t19C97395396A72ECAF310612F0760F165060314C* L_12 = ___destination1;
-		int32_t L_13 = ___length3;
-		void* L_14 = V_0;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_fixed_mD985A7AB264B8836F28D326E7E7AF93993FAAF36(L_10, L_11, (RuntimeArray*)L_12, L_13, L_14, NULL);
-		V_1 = (int32_t*)((uintptr_t)0);
-		return;
-	}
-}
-// System.Void System.Runtime.InteropServices.Marshal::Copy(System.IntPtr,System.Single[],System.Int32,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_Copy_m4744F803E7E605726758725D11D157455BD43775 (intptr_t ___source0, SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* ___destination1, int32_t ___startIndex2, int32_t ___length3, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	void* V_0 = NULL;
-	float* V_1 = NULL;
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_0 = ___destination1;
-		int32_t L_1 = ___startIndex2;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		bool L_2;
-		L_2 = Marshal_skip_fixed_mB1077A7387081CC486EAB42E28A9EB70814D9278((RuntimeArray*)L_0, L_1, NULL);
-		if (!L_2)
-		{
-			goto IL_0013;
-		}
-	}
-	{
-		intptr_t L_3 = ___source0;
-		int32_t L_4 = ___startIndex2;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_5 = ___destination1;
-		int32_t L_6 = ___length3;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_m0C231B3D40123E31CF8B0D7C49D9A6ADF9D62282(L_3, L_4, (RuntimeArray*)L_5, L_6, NULL);
-		return;
-	}
-
-IL_0013:
-	{
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_7 = ___destination1;
-		int32_t L_8 = ___startIndex2;
-		NullCheck(L_7);
-		V_1 = ((L_7)->GetAddressAt(static_cast<il2cpp_array_size_t>(L_8)));
-		float* L_9 = V_1;
-		V_0 = (void*)((uintptr_t)L_9);
-		intptr_t L_10 = ___source0;
-		int32_t L_11 = ___startIndex2;
-		SingleU5BU5D_t89DEFE97BCEDB5857010E79ECE0F52CF6E93B87C* L_12 = ___destination1;
-		int32_t L_13 = ___length3;
-		void* L_14 = V_0;
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		Marshal_copy_from_unmanaged_fixed_mD985A7AB264B8836F28D326E7E7AF93993FAAF36(L_10, L_11, (RuntimeArray*)L_12, L_13, L_14, NULL);
-		V_1 = (float*)((uintptr_t)0);
-		return;
-	}
-}
 // System.Void System.Runtime.InteropServices.Marshal::Copy(System.IntPtr,System.IntPtr[],System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Marshal_Copy_mEA749F87AA97225B0E14A5F533E39D6B1B799E58 (intptr_t ___source0, IntPtrU5BU5D_tFD177F8C806A6921AD7150264CCC62FA00CAD832* ___destination1, int32_t ___startIndex2, int32_t ___length3, const RuntimeMethod* method) 
 {
@@ -17785,26 +17630,6 @@ IL_0012:
 		Buffer_Memcpy_mB203712DD2D0E5DF1CF52F752638F8B94E03E217((uint8_t*)((uintptr_t)(&V_1)), L_6, 4, (bool)1, NULL);
 		int32_t L_7 = V_1;
 		return L_7;
-	}
-}
-// System.Int32 System.Runtime.InteropServices.Marshal::SizeOf(System.Object)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Marshal_SizeOf_m596657DAE86DB62FCC24730A3A6FB0F19B4C6B2E (RuntimeObject* ___structure0, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		RuntimeObject* L_0 = ___structure0;
-		NullCheck(L_0);
-		Type_t* L_1;
-		L_1 = Object_GetType_mE10A8FC1E57F3DF29972CCBC026C2DC3942263B3(L_0, NULL);
-		il2cpp_codegen_runtime_class_init_inline(Marshal_tD976A56A90263C3CE2B780D4B1CADADE2E70B4A7_il2cpp_TypeInfo_var);
-		int32_t L_2;
-		L_2 = Marshal_SizeOf_mED64846722033D6F60C2973CA604B7C2D7D4A1B7(L_1, NULL);
-		return L_2;
 	}
 }
 // System.Int32 System.Runtime.InteropServices.Marshal::SizeOf(System.Type)
@@ -26061,7 +25886,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ResourceSet_tA2F16C08175368D3899938AD0FFCDC07
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_8 = V_1;
 		NullCheck(L_8);
 		int32_t L_9;
-		L_9 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_8);
+		L_9 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_8);
 		il2cpp_codegen_runtime_class_init_inline(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var);
 		int32_t L_10 = ((ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_StaticFields*)il2cpp_codegen_static_fields_for(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var))->___MagicNumber_18;
 		if ((!(((uint32_t)L_9) == ((uint32_t)L_10))))
@@ -26073,7 +25898,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ResourceSet_tA2F16C08175368D3899938AD0FFCDC07
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_11 = V_1;
 		NullCheck(L_11);
 		int32_t L_12;
-		L_12 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_11);
+		L_12 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_11);
 		V_2 = L_12;
 		V_3 = (String_t*)NULL;
 		V_4 = (String_t*)NULL;
@@ -26089,16 +25914,16 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR ResourceSet_tA2F16C08175368D3899938AD0FFCDC07
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_15 = V_1;
 		NullCheck(L_15);
 		int32_t L_16;
-		L_16 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_15);
+		L_16 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_15);
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_17 = V_1;
 		NullCheck(L_17);
 		String_t* L_18;
-		L_18 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_17);
+		L_18 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_17);
 		V_3 = L_18;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_19 = V_1;
 		NullCheck(L_19);
 		String_t* L_20;
-		L_20 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_19);
+		L_20 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_19);
 		V_4 = L_20;
 		goto IL_00cc;
 	}
@@ -26117,7 +25942,7 @@ IL_0062:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_23 = V_1;
 		NullCheck(L_23);
 		int32_t L_24;
-		L_24 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_23);
+		L_24 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_23);
 		V_5 = L_24;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_25 = V_1;
 		NullCheck(L_25);
@@ -26131,12 +25956,12 @@ IL_0062:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_29 = V_1;
 		NullCheck(L_29);
 		String_t* L_30;
-		L_30 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_29);
+		L_30 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_29);
 		V_3 = L_30;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_31 = V_1;
 		NullCheck(L_31);
 		String_t* L_32;
-		L_32 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_31);
+		L_32 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_31);
 		V_4 = L_32;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_33 = V_1;
 		NullCheck(L_33);
@@ -30471,7 +30296,7 @@ IL_00b7_1:
 				BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_47 = __this->____store_0;
 				NullCheck(L_47);
 				int32_t L_48;
-				L_48 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_47);
+				L_48 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_47);
 				V_10 = L_48;
 				int32_t L_49 = V_10;
 				if ((((int32_t)L_49) < ((int32_t)0)))
@@ -30664,7 +30489,7 @@ IL_0080:
 		int32_t L_27 = V_2;
 		NullCheck(L_23);
 		int32_t L_28;
-		L_28 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(25 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_23, L_24, ((int32_t)il2cpp_codegen_subtract(L_25, L_26)), L_27);
+		L_28 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(24 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_23, L_24, ((int32_t)il2cpp_codegen_subtract(L_25, L_26)), L_27);
 		V_3 = L_28;
 		int32_t L_29 = V_3;
 		if (L_29)
@@ -30956,7 +30781,7 @@ IL_011f_1:
 				BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_62 = __this->____store_0;
 				NullCheck(L_62);
 				int32_t L_63;
-				L_63 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_62);
+				L_63 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_62);
 				*((int32_t*)L_61) = (int32_t)L_63;
 				int32_t* L_64 = ___dataOffset1;
 				int32_t L_65 = *((int32_t*)L_64);
@@ -31027,7 +30852,7 @@ IL_0196_1:
 				int32_t L_88 = V_5;
 				NullCheck(L_84);
 				int32_t L_89;
-				L_89 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(25 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_84, L_85, ((int32_t)il2cpp_codegen_subtract(L_86, L_87)), L_88);
+				L_89 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(24 /* System.Int32 System.IO.BinaryReader::Read(System.Byte[],System.Int32,System.Int32) */, L_84, L_85, ((int32_t)il2cpp_codegen_subtract(L_86, L_87)), L_88);
 				V_14 = L_89;
 				int32_t L_90 = V_14;
 				if (L_90)
@@ -31072,7 +30897,7 @@ IL_01d4_1:
 				BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_102 = __this->____store_0;
 				NullCheck(L_102);
 				int32_t L_103;
-				L_103 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_102);
+				L_103 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_102);
 				*((int32_t*)L_101) = (int32_t)L_103;
 				int32_t* L_104 = ___dataOffset1;
 				int32_t L_105 = *((int32_t*)L_104);
@@ -31205,7 +31030,7 @@ IL_00a9:
 				BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_10 = __this->____store_0;
 				NullCheck(L_10);
 				int32_t L_11;
-				L_11 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_10);
+				L_11 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_10);
 				V_3 = L_11;
 				int32_t L_12 = V_3;
 				if ((((int32_t)L_12) < ((int32_t)0)))
@@ -31372,7 +31197,7 @@ IL_0075:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_21 = __this->____store_0;
 		NullCheck(L_21);
 		String_t* L_22;
-		L_22 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_21);
+		L_22 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_21);
 		V_0 = L_22;
 		goto IL_00db;
 	}
@@ -31448,7 +31273,7 @@ IL_00cb:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_38 = __this->____store_0;
 		NullCheck(L_38);
 		String_t* L_39;
-		L_39 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_38);
+		L_39 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_38);
 		V_0 = L_39;
 	}
 
@@ -31695,7 +31520,7 @@ IL_002d:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_14 = __this->____store_0;
 		NullCheck(L_14);
 		String_t* L_15;
-		L_15 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_14);
+		L_15 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_14);
 		return L_15;
 	}
 
@@ -31717,7 +31542,7 @@ IL_0053:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_20 = __this->____store_0;
 		NullCheck(L_20);
 		int32_t L_21;
-		L_21 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_20);
+		L_21 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_20);
 		int32_t L_22 = L_21;
 		RuntimeObject* L_23 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_22);
 		return L_23;
@@ -31741,7 +31566,7 @@ IL_0076:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_28 = __this->____store_0;
 		NullCheck(L_28);
 		uint8_t L_29;
-		L_29 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_28);
+		L_29 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_28);
 		uint8_t L_30 = L_29;
 		RuntimeObject* L_31 = Box(Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_il2cpp_TypeInfo_var, &L_30);
 		return L_31;
@@ -31765,7 +31590,7 @@ IL_0099:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_36 = __this->____store_0;
 		NullCheck(L_36);
 		int8_t L_37;
-		L_37 = VirtualFuncInvoker0< int8_t >::Invoke(12 /* System.SByte System.IO.BinaryReader::ReadSByte() */, L_36);
+		L_37 = VirtualFuncInvoker0< int8_t >::Invoke(11 /* System.SByte System.IO.BinaryReader::ReadSByte() */, L_36);
 		int8_t L_38 = L_37;
 		RuntimeObject* L_39 = Box(SByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_il2cpp_TypeInfo_var, &L_38);
 		return L_39;
@@ -31789,7 +31614,7 @@ IL_00bc:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_44 = __this->____store_0;
 		NullCheck(L_44);
 		int16_t L_45;
-		L_45 = VirtualFuncInvoker0< int16_t >::Invoke(14 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_44);
+		L_45 = VirtualFuncInvoker0< int16_t >::Invoke(13 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_44);
 		int16_t L_46 = L_45;
 		RuntimeObject* L_47 = Box(Int16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_il2cpp_TypeInfo_var, &L_46);
 		return L_47;
@@ -31813,7 +31638,7 @@ IL_00df:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_52 = __this->____store_0;
 		NullCheck(L_52);
 		int64_t L_53;
-		L_53 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_52);
+		L_53 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_52);
 		int64_t L_54 = L_53;
 		RuntimeObject* L_55 = Box(Int64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_il2cpp_TypeInfo_var, &L_54);
 		return L_55;
@@ -31837,7 +31662,7 @@ IL_0102:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_60 = __this->____store_0;
 		NullCheck(L_60);
 		uint16_t L_61;
-		L_61 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_60);
+		L_61 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_60);
 		uint16_t L_62 = L_61;
 		RuntimeObject* L_63 = Box(UInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_il2cpp_TypeInfo_var, &L_62);
 		return L_63;
@@ -31861,7 +31686,7 @@ IL_0125:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_68 = __this->____store_0;
 		NullCheck(L_68);
 		uint32_t L_69;
-		L_69 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_68);
+		L_69 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_68);
 		uint32_t L_70 = L_69;
 		RuntimeObject* L_71 = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &L_70);
 		return L_71;
@@ -31885,7 +31710,7 @@ IL_0148:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_76 = __this->____store_0;
 		NullCheck(L_76);
 		uint64_t L_77;
-		L_77 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_76);
+		L_77 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_76);
 		uint64_t L_78 = L_77;
 		RuntimeObject* L_79 = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &L_78);
 		return L_79;
@@ -31909,7 +31734,7 @@ IL_016b:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_84 = __this->____store_0;
 		NullCheck(L_84);
 		float L_85;
-		L_85 = VirtualFuncInvoker0< float >::Invoke(20 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_84);
+		L_85 = VirtualFuncInvoker0< float >::Invoke(19 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_84);
 		float L_86 = L_85;
 		RuntimeObject* L_87 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_86);
 		return L_87;
@@ -31933,7 +31758,7 @@ IL_018e:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_92 = __this->____store_0;
 		NullCheck(L_92);
 		double L_93;
-		L_93 = VirtualFuncInvoker0< double >::Invoke(21 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_92);
+		L_93 = VirtualFuncInvoker0< double >::Invoke(20 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_92);
 		double L_94 = L_93;
 		RuntimeObject* L_95 = Box(Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_il2cpp_TypeInfo_var, &L_94);
 		return L_95;
@@ -31957,7 +31782,7 @@ IL_01b1:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_100 = __this->____store_0;
 		NullCheck(L_100);
 		int64_t L_101;
-		L_101 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_100);
+		L_101 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_100);
 		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_102;
 		memset((&L_102), 0, sizeof(L_102));
 		DateTime__ctor_m64AFCE84ABB24698256EB9F635EFD0A221823441((&L_102), L_101, /*hidden argument*/NULL);
@@ -31984,7 +31809,7 @@ IL_01d9:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_109 = __this->____store_0;
 		NullCheck(L_109);
 		int64_t L_110;
-		L_110 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_109);
+		L_110 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_109);
 		TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A L_111;
 		memset((&L_111), 0, sizeof(L_111));
 		TimeSpan__ctor_m061B122FA11D2063FE751C1F1D019DF1C8B10B1F_inline((&L_111), L_110, /*hidden argument*/NULL);
@@ -32021,7 +31846,7 @@ IL_021e:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_121 = __this->____store_0;
 		NullCheck(L_121);
 		int32_t L_122;
-		L_122 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_121);
+		L_122 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_121);
 		NullCheck(L_119);
 		(L_119)->SetAt(static_cast<il2cpp_array_size_t>(L_120), (int32_t)L_122);
 		int32_t L_123 = V_3;
@@ -32322,7 +32147,7 @@ IL_00c0:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_11 = __this->____store_0;
 		NullCheck(L_11);
 		String_t* L_12;
-		L_12 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_11);
+		L_12 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_11);
 		return L_12;
 	}
 
@@ -32331,7 +32156,7 @@ IL_00cc:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_13 = __this->____store_0;
 		NullCheck(L_13);
 		bool L_14;
-		L_14 = VirtualFuncInvoker0< bool >::Invoke(10 /* System.Boolean System.IO.BinaryReader::ReadBoolean() */, L_13);
+		L_14 = VirtualFuncInvoker0< bool >::Invoke(9 /* System.Boolean System.IO.BinaryReader::ReadBoolean() */, L_13);
 		bool L_15 = L_14;
 		RuntimeObject* L_16 = Box(Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22_il2cpp_TypeInfo_var, &L_15);
 		return L_16;
@@ -32342,7 +32167,7 @@ IL_00dd:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_17 = __this->____store_0;
 		NullCheck(L_17);
 		uint16_t L_18;
-		L_18 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_17);
+		L_18 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_17);
 		Il2CppChar L_19 = ((Il2CppChar)L_18);
 		RuntimeObject* L_20 = Box(Char_t521A6F19B456D956AF452D926C32709DC03D6B17_il2cpp_TypeInfo_var, &L_19);
 		return L_20;
@@ -32353,7 +32178,7 @@ IL_00ee:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_21 = __this->____store_0;
 		NullCheck(L_21);
 		uint8_t L_22;
-		L_22 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_21);
+		L_22 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_21);
 		uint8_t L_23 = L_22;
 		RuntimeObject* L_24 = Box(Byte_t94D9231AC217BE4D2E004C4CD32DF6D099EA41A3_il2cpp_TypeInfo_var, &L_23);
 		return L_24;
@@ -32364,7 +32189,7 @@ IL_00ff:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_25 = __this->____store_0;
 		NullCheck(L_25);
 		int8_t L_26;
-		L_26 = VirtualFuncInvoker0< int8_t >::Invoke(12 /* System.SByte System.IO.BinaryReader::ReadSByte() */, L_25);
+		L_26 = VirtualFuncInvoker0< int8_t >::Invoke(11 /* System.SByte System.IO.BinaryReader::ReadSByte() */, L_25);
 		int8_t L_27 = L_26;
 		RuntimeObject* L_28 = Box(SByte_tFEFFEF5D2FEBF5207950AE6FAC150FC53B668DB5_il2cpp_TypeInfo_var, &L_27);
 		return L_28;
@@ -32375,7 +32200,7 @@ IL_0110:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_29 = __this->____store_0;
 		NullCheck(L_29);
 		int16_t L_30;
-		L_30 = VirtualFuncInvoker0< int16_t >::Invoke(14 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_29);
+		L_30 = VirtualFuncInvoker0< int16_t >::Invoke(13 /* System.Int16 System.IO.BinaryReader::ReadInt16() */, L_29);
 		int16_t L_31 = L_30;
 		RuntimeObject* L_32 = Box(Int16_tB8EF286A9C33492FA6E6D6E67320BE93E794A175_il2cpp_TypeInfo_var, &L_31);
 		return L_32;
@@ -32386,7 +32211,7 @@ IL_0121:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_33 = __this->____store_0;
 		NullCheck(L_33);
 		uint16_t L_34;
-		L_34 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_33);
+		L_34 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_33);
 		uint16_t L_35 = L_34;
 		RuntimeObject* L_36 = Box(UInt16_tF4C148C876015C212FD72652D0B6ED8CC247A455_il2cpp_TypeInfo_var, &L_35);
 		return L_36;
@@ -32397,7 +32222,7 @@ IL_0132:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_37 = __this->____store_0;
 		NullCheck(L_37);
 		int32_t L_38;
-		L_38 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_37);
+		L_38 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_37);
 		int32_t L_39 = L_38;
 		RuntimeObject* L_40 = Box(Int32_t680FF22E76F6EFAD4375103CBBFFA0421349384C_il2cpp_TypeInfo_var, &L_39);
 		return L_40;
@@ -32408,7 +32233,7 @@ IL_0143:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_41 = __this->____store_0;
 		NullCheck(L_41);
 		uint32_t L_42;
-		L_42 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_41);
+		L_42 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_41);
 		uint32_t L_43 = L_42;
 		RuntimeObject* L_44 = Box(UInt32_t1833D51FFA667B18A5AA4B8D34DE284F8495D29B_il2cpp_TypeInfo_var, &L_43);
 		return L_44;
@@ -32419,7 +32244,7 @@ IL_0154:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_45 = __this->____store_0;
 		NullCheck(L_45);
 		int64_t L_46;
-		L_46 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_45);
+		L_46 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_45);
 		int64_t L_47 = L_46;
 		RuntimeObject* L_48 = Box(Int64_t092CFB123BE63C28ACDAF65C68F21A526050DBA3_il2cpp_TypeInfo_var, &L_47);
 		return L_48;
@@ -32430,7 +32255,7 @@ IL_0165:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_49 = __this->____store_0;
 		NullCheck(L_49);
 		uint64_t L_50;
-		L_50 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_49);
+		L_50 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_49);
 		uint64_t L_51 = L_50;
 		RuntimeObject* L_52 = Box(UInt64_t8F12534CC8FC4B5860F2A2CD1EE79D322E7A41AF_il2cpp_TypeInfo_var, &L_51);
 		return L_52;
@@ -32441,7 +32266,7 @@ IL_0176:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_53 = __this->____store_0;
 		NullCheck(L_53);
 		float L_54;
-		L_54 = VirtualFuncInvoker0< float >::Invoke(20 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_53);
+		L_54 = VirtualFuncInvoker0< float >::Invoke(19 /* System.Single System.IO.BinaryReader::ReadSingle() */, L_53);
 		float L_55 = L_54;
 		RuntimeObject* L_56 = Box(Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C_il2cpp_TypeInfo_var, &L_55);
 		return L_56;
@@ -32452,7 +32277,7 @@ IL_0187:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_57 = __this->____store_0;
 		NullCheck(L_57);
 		double L_58;
-		L_58 = VirtualFuncInvoker0< double >::Invoke(21 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_57);
+		L_58 = VirtualFuncInvoker0< double >::Invoke(20 /* System.Double System.IO.BinaryReader::ReadDouble() */, L_57);
 		double L_59 = L_58;
 		RuntimeObject* L_60 = Box(Double_tE150EF3D1D43DEE85D533810AB4C742307EEDE5F_il2cpp_TypeInfo_var, &L_59);
 		return L_60;
@@ -32463,7 +32288,7 @@ IL_0198:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_61 = __this->____store_0;
 		NullCheck(L_61);
 		Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F L_62;
-		L_62 = VirtualFuncInvoker0< Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F >::Invoke(22 /* System.Decimal System.IO.BinaryReader::ReadDecimal() */, L_61);
+		L_62 = VirtualFuncInvoker0< Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F >::Invoke(21 /* System.Decimal System.IO.BinaryReader::ReadDecimal() */, L_61);
 		Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F L_63 = L_62;
 		RuntimeObject* L_64 = Box(Decimal_tDA6C877282B2D789CF97C0949661CC11D643969F_il2cpp_TypeInfo_var, &L_63);
 		return L_64;
@@ -32474,7 +32299,7 @@ IL_01a9:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_65 = __this->____store_0;
 		NullCheck(L_65);
 		int64_t L_66;
-		L_66 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_65);
+		L_66 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_65);
 		il2cpp_codegen_runtime_class_init_inline(DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D_il2cpp_TypeInfo_var);
 		DateTime_t66193957C73913903DDAD89FEDC46139BCA5802D L_67;
 		L_67 = DateTime_FromBinary_m3CED9C962489A2A0ABF34FB77B2AB257B9DA7B7B(L_66, NULL);
@@ -32488,7 +32313,7 @@ IL_01bf:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_70 = __this->____store_0;
 		NullCheck(L_70);
 		int64_t L_71;
-		L_71 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_70);
+		L_71 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_70);
 		TimeSpan_t8195C5B013A2C532FEBDF0B64B6911982E750F5A L_72;
 		memset((&L_72), 0, sizeof(L_72));
 		TimeSpan__ctor_m061B122FA11D2063FE751C1F1D019DF1C8B10B1F_inline((&L_72), L_71, /*hidden argument*/NULL);
@@ -32502,7 +32327,7 @@ IL_01d5:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_75 = __this->____store_0;
 		NullCheck(L_75);
 		int32_t L_76;
-		L_76 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_75);
+		L_76 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_75);
 		V_2 = L_76;
 		int32_t L_77 = V_2;
 		if ((((int32_t)L_77) >= ((int32_t)0)))
@@ -32572,7 +32397,7 @@ IL_023f:
 		int32_t L_98 = V_2;
 		NullCheck(L_97);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_99;
-		L_99 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_97, L_98);
+		L_99 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_97, L_98);
 		return (RuntimeObject*)L_99;
 	}
 
@@ -32629,7 +32454,7 @@ IL_029e:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_119 = __this->____store_0;
 		NullCheck(L_119);
 		int32_t L_120;
-		L_120 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_119);
+		L_120 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_119);
 		V_4 = L_120;
 		int32_t L_121 = V_4;
 		if ((((int32_t)L_121) >= ((int32_t)0)))
@@ -32667,7 +32492,7 @@ IL_02d0:
 		int32_t L_131 = V_4;
 		NullCheck(L_130);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_132;
-		L_132 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_130, L_131);
+		L_132 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_130, L_131);
 		PinnedBufferMemoryStream_t8E711E8F32195672BA8621BCE2FD9FF66D3CEACC* L_133 = (PinnedBufferMemoryStream_t8E711E8F32195672BA8621BCE2FD9FF66D3CEACC*)il2cpp_codegen_object_new(PinnedBufferMemoryStream_t8E711E8F32195672BA8621BCE2FD9FF66D3CEACC_il2cpp_TypeInfo_var);
 		NullCheck(L_133);
 		PinnedBufferMemoryStream__ctor_m1B0F455B8B0302DB69EAD1B4586B5D5D6ECBCD44(L_133, L_132, NULL);
@@ -32927,7 +32752,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void ResourceReader__ReadResources_m3D5D9AED9
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = __this->____store_0;
 		NullCheck(L_0);
 		int32_t L_1;
-		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_0);
+		L_1 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_0);
 		il2cpp_codegen_runtime_class_init_inline(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var);
 		int32_t L_2 = ((ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_StaticFields*)il2cpp_codegen_static_fields_for(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var))->___MagicNumber_18;
 		if ((((int32_t)L_1) == ((int32_t)L_2)))
@@ -32949,12 +32774,12 @@ IL_0022:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_5 = __this->____store_0;
 		NullCheck(L_5);
 		int32_t L_6;
-		L_6 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_5);
+		L_6 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_5);
 		V_0 = L_6;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_7 = __this->____store_0;
 		NullCheck(L_7);
 		int32_t L_8;
-		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_7);
+		L_8 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_7);
 		V_1 = L_8;
 		int32_t L_9 = V_1;
 		if ((((int32_t)L_9) < ((int32_t)0)))
@@ -33005,7 +32830,7 @@ IL_006c:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_18 = __this->____store_0;
 		NullCheck(L_18);
 		String_t* L_19;
-		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_18);
+		L_19 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_18);
 		V_5 = L_19;
 		il2cpp_codegen_runtime_class_init_inline(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var);
 		String_t* L_20 = ((ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_StaticFields*)il2cpp_codegen_static_fields_for(ResourceManager_t311D6D32A753224008949B32CC6A5468C47498EB_il2cpp_TypeInfo_var))->___MscorlibName_23;
@@ -33048,7 +32873,7 @@ IL_00b6:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_31 = __this->____store_0;
 		NullCheck(L_31);
 		int32_t L_32;
-		L_32 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_31);
+		L_32 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_31);
 		V_2 = L_32;
 		int32_t L_33 = V_2;
 		if ((((int32_t)L_33) == ((int32_t)2)))
@@ -33093,7 +32918,7 @@ IL_00f2:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_46 = __this->____store_0;
 		NullCheck(L_46);
 		int32_t L_47;
-		L_47 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_46);
+		L_47 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_46);
 		__this->____numResources_11 = L_47;
 		int32_t L_48 = __this->____numResources_11;
 		if ((((int32_t)L_48) >= ((int32_t)0)))
@@ -33115,7 +32940,7 @@ IL_0123:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_51 = __this->____store_0;
 		NullCheck(L_51);
 		int32_t L_52;
-		L_52 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_51);
+		L_52 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_51);
 		V_3 = L_52;
 		int32_t L_53 = V_3;
 		if ((((int32_t)L_53) >= ((int32_t)0)))
@@ -33198,7 +33023,7 @@ IL_01a9:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_72 = __this->____store_0;
 		NullCheck(L_72);
 		uint8_t L_73;
-		L_73 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_72);
+		L_73 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_72);
 		int32_t L_74 = V_8;
 		V_8 = ((int32_t)il2cpp_codegen_add(L_74, 1));
 	}
@@ -33237,7 +33062,7 @@ IL_01e1:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_82 = __this->____store_0;
 		NullCheck(L_82);
 		int32_t L_83;
-		L_83 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_82);
+		L_83 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_82);
 		NullCheck(L_80);
 		(L_80)->SetAt(static_cast<il2cpp_array_size_t>(L_81), (int32_t)L_83);
 		int32_t L_84 = V_9;
@@ -33316,7 +33141,7 @@ IL_027c:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_101 = __this->____store_0;
 		NullCheck(L_101);
 		int32_t L_102;
-		L_102 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_101);
+		L_102 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_101);
 		V_12 = L_102;
 		int32_t L_103 = V_12;
 		if ((((int32_t)L_103) >= ((int32_t)0)))
@@ -33399,7 +33224,7 @@ IL_0312:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_123 = __this->____store_0;
 		NullCheck(L_123);
 		int32_t L_124;
-		L_124 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_123);
+		L_124 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_123);
 		__this->____dataSectionOffset_3 = ((int64_t)L_124);
 		int64_t L_125 = __this->____dataSectionOffset_3;
 		if ((((int64_t)L_125) >= ((int64_t)((int64_t)0))))
@@ -33545,7 +33370,7 @@ FINALLY_007b:
 			BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_22 = __this->____store_0;
 			NullCheck(L_22);
 			String_t* L_23;
-			L_23 = VirtualFuncInvoker0< String_t* >::Invoke(23 /* System.String System.IO.BinaryReader::ReadString() */, L_22);
+			L_23 = VirtualFuncInvoker0< String_t* >::Invoke(22 /* System.String System.IO.BinaryReader::ReadString() */, L_22);
 			V_1 = L_23;
 			RuntimeTypeU5BU5D_tC404B7F55FB8F6C64CB37ECD01379D36A9238146* L_24 = __this->____typeTable_8;
 			int32_t L_25 = ___typeIndex0;

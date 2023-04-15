@@ -1361,9 +1361,9 @@ struct Single_t4530F2FF86FCB0DC29F35385CA1BD21BE294761C
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE  : public MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE
 {
 	// System.IO.Stream/ReadWriteTask System.IO.Stream::_activeReadWriteTask
-	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_3;
+	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_2;
 	// System.Threading.SemaphoreSlim System.IO.Stream::_asyncActiveSemaphore
-	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_4;
+	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_3;
 };
 
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE_StaticFields
@@ -1992,68 +1992,68 @@ struct Exception_t_marshaled_com
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.FileStream::buf
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_8;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_6;
 	// System.String System.IO.FileStream::name
-	String_t* ___name_9;
+	String_t* ___name_7;
 	// Microsoft.Win32.SafeHandles.SafeFileHandle System.IO.FileStream::safeHandle
-	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_10;
+	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_8;
 	// System.Boolean System.IO.FileStream::isExposed
-	bool ___isExposed_11;
+	bool ___isExposed_9;
 	// System.Int64 System.IO.FileStream::append_startpos
-	int64_t ___append_startpos_12;
+	int64_t ___append_startpos_10;
 	// System.IO.FileAccess System.IO.FileStream::access
-	int32_t ___access_13;
+	int32_t ___access_11;
 	// System.Boolean System.IO.FileStream::owner
-	bool ___owner_14;
+	bool ___owner_12;
 	// System.Boolean System.IO.FileStream::async
-	bool ___async_15;
+	bool ___async_13;
 	// System.Boolean System.IO.FileStream::canseek
-	bool ___canseek_16;
+	bool ___canseek_14;
 	// System.Boolean System.IO.FileStream::anonymous
-	bool ___anonymous_17;
+	bool ___anonymous_15;
 	// System.Boolean System.IO.FileStream::buf_dirty
-	bool ___buf_dirty_18;
+	bool ___buf_dirty_16;
 	// System.Int32 System.IO.FileStream::buf_size
-	int32_t ___buf_size_19;
+	int32_t ___buf_size_17;
 	// System.Int32 System.IO.FileStream::buf_length
-	int32_t ___buf_length_20;
+	int32_t ___buf_length_18;
 	// System.Int32 System.IO.FileStream::buf_offset
-	int32_t ___buf_offset_21;
+	int32_t ___buf_offset_19;
 	// System.Int64 System.IO.FileStream::buf_start
-	int64_t ___buf_start_22;
+	int64_t ___buf_start_20;
 };
 
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8_StaticFields
 {
 	// System.Byte[] System.IO.FileStream::buf_recycle
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_6;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_4;
 	// System.Object System.IO.FileStream::buf_recycle_lock
-	RuntimeObject* ___buf_recycle_lock_7;
+	RuntimeObject* ___buf_recycle_lock_5;
 };
 
 // System.IO.MemoryStream
 struct MemoryStream_tAAED1B42172E3390584E4194308AB878E786AAC2  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.MemoryStream::_buffer
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____buffer_5;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____buffer_4;
 	// System.Int32 System.IO.MemoryStream::_origin
-	int32_t ____origin_6;
+	int32_t ____origin_5;
 	// System.Int32 System.IO.MemoryStream::_position
-	int32_t ____position_7;
+	int32_t ____position_6;
 	// System.Int32 System.IO.MemoryStream::_length
-	int32_t ____length_8;
+	int32_t ____length_7;
 	// System.Int32 System.IO.MemoryStream::_capacity
-	int32_t ____capacity_9;
+	int32_t ____capacity_8;
 	// System.Boolean System.IO.MemoryStream::_expandable
-	bool ____expandable_10;
+	bool ____expandable_9;
 	// System.Boolean System.IO.MemoryStream::_writable
-	bool ____writable_11;
+	bool ____writable_10;
 	// System.Boolean System.IO.MemoryStream::_exposable
-	bool ____exposable_12;
+	bool ____exposable_11;
 	// System.Boolean System.IO.MemoryStream::_isOpen
-	bool ____isOpen_13;
+	bool ____isOpen_12;
 	// System.Threading.Tasks.Task`1<System.Int32> System.IO.MemoryStream::_lastReadTask
-	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_14;
+	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_13;
 };
 
 // UnityEngine.Object
@@ -2239,15 +2239,15 @@ struct StreamWriter_t6E7DF7D524AA3C018A65F62EE80779873ED4D1E4_StaticFields
 struct SubReadOnlyStream_t3F4EC6562140C0E1454D502FF40D5F5206CA4152  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Int64 Better.StreamingAssets.SubReadOnlyStream::m_offset
-	int64_t ___m_offset_5;
+	int64_t ___m_offset_4;
 	// System.Boolean Better.StreamingAssets.SubReadOnlyStream::m_leaveOpen
-	bool ___m_leaveOpen_6;
+	bool ___m_leaveOpen_5;
 	// System.Nullable`1<System.Int64> Better.StreamingAssets.SubReadOnlyStream::m_length
-	Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 ___m_length_7;
+	Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 ___m_length_6;
 	// System.IO.Stream Better.StreamingAssets.SubReadOnlyStream::m_actualStream
-	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___m_actualStream_8;
+	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___m_actualStream_7;
 	// System.Int64 Better.StreamingAssets.SubReadOnlyStream::m_position
-	int64_t ___m_position_9;
+	int64_t ___m_position_8;
 };
 
 // UnityEngine.Networking.UploadHandler
@@ -7577,11 +7577,11 @@ IL_001b:
 	{
 		// m_actualStream = actualStream;
 		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_3 = ___actualStream0;
-		__this->___m_actualStream_8 = L_3;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_actualStream_8), (void*)L_3);
+		__this->___m_actualStream_7 = L_3;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_actualStream_7), (void*)L_3);
 		// m_leaveOpen = leaveOpen;
 		bool L_4 = ___leaveOpen1;
-		__this->___m_leaveOpen_6 = L_4;
+		__this->___m_leaveOpen_5 = L_4;
 		// }
 		return;
 	}
@@ -7666,16 +7666,16 @@ IL_0033:
 		Debug_Assert_m9192EFA9CFAB2EDE68E87341348441EEE645348F((bool)((((int32_t)((((int64_t)((int64_t)il2cpp_codegen_add(L_14, L_15))) > ((int64_t)L_17))? 1 : 0)) == ((int32_t)0))? 1 : 0), NULL);
 		// m_offset = offset;
 		int64_t L_18 = ___offset1;
-		__this->___m_offset_5 = L_18;
+		__this->___m_offset_4 = L_18;
 		// m_position = offset;
 		int64_t L_19 = ___offset1;
-		__this->___m_position_9 = L_19;
+		__this->___m_position_8 = L_19;
 		// m_length = length;
 		int64_t L_20 = ___length2;
 		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 L_21;
 		memset((&L_21), 0, sizeof(L_21));
 		Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1((&L_21), L_20, /*hidden argument*/Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1_RuntimeMethod_var);
-		__this->___m_length_7 = L_21;
+		__this->___m_length_6 = L_21;
 		// }
 		return;
 	}
@@ -7697,7 +7697,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t SubReadOnlyStream_get_Length_m06AE41F
 		// ThrowIfDisposed();
 		SubReadOnlyStream_ThrowIfDisposed_m2C05F6371DE1D4603D50DC30C152A33DCA63F3D0(__this, NULL);
 		// if (!m_length.HasValue)
-		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_0 = (&__this->___m_length_7);
+		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_0 = (&__this->___m_length_6);
 		bool L_1;
 		L_1 = Nullable_1_get_HasValue_mB4991C0F4C2664AB3CB2584DEECF5BCE6AB7757D_inline(L_0, Nullable_1_get_HasValue_mB4991C0F4C2664AB3CB2584DEECF5BCE6AB7757D_RuntimeMethod_var);
 		V_0 = (bool)((((int32_t)L_1) == ((int32_t)0))? 1 : 0);
@@ -7709,21 +7709,21 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t SubReadOnlyStream_get_Length_m06AE41F
 	}
 	{
 		// m_length = m_actualStream.Length - m_offset;
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_3 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_3 = __this->___m_actualStream_7;
 		NullCheck(L_3);
 		int64_t L_4;
 		L_4 = VirtualFuncInvoker0< int64_t >::Invoke(11 /* System.Int64 System.IO.Stream::get_Length() */, L_3);
-		int64_t L_5 = __this->___m_offset_5;
+		int64_t L_5 = __this->___m_offset_4;
 		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 L_6;
 		memset((&L_6), 0, sizeof(L_6));
 		Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1((&L_6), ((int64_t)il2cpp_codegen_subtract(L_4, L_5)), /*hidden argument*/Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1_RuntimeMethod_var);
-		__this->___m_length_7 = L_6;
+		__this->___m_length_6 = L_6;
 	}
 
 IL_0037:
 	{
 		// return m_length.Value; ;
-		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_7 = (&__this->___m_length_7);
+		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_7 = (&__this->___m_length_6);
 		int64_t L_8;
 		L_8 = Nullable_1_get_Value_mB475257F3012818AAA61B72B67DA701FACE716DC(L_7, Nullable_1_get_Value_mB475257F3012818AAA61B72B67DA701FACE716DC_RuntimeMethod_var);
 		V_1 = L_8;
@@ -7745,8 +7745,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t SubReadOnlyStream_get_Position_m47275
 		// ThrowIfDisposed();
 		SubReadOnlyStream_ThrowIfDisposed_m2C05F6371DE1D4603D50DC30C152A33DCA63F3D0(__this, NULL);
 		// return m_position - m_offset;
-		int64_t L_0 = __this->___m_position_9;
-		int64_t L_1 = __this->___m_offset_5;
+		int64_t L_0 = __this->___m_position_8;
+		int64_t L_1 = __this->___m_offset_4;
 		V_0 = ((int64_t)il2cpp_codegen_subtract(L_0, L_1));
 		goto IL_0018;
 	}
@@ -7777,7 +7777,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SubReadOnlyStream_get_CanRead_m627C59E7C
 	bool V_0 = false;
 	{
 		// public override bool CanRead { get { return m_actualStream.CanRead; } }
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_7;
 		NullCheck(L_0);
 		bool L_1;
 		L_1 = VirtualFuncInvoker0< bool >::Invoke(7 /* System.Boolean System.IO.Stream::get_CanRead() */, L_0);
@@ -7798,7 +7798,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool SubReadOnlyStream_get_CanSeek_m2E326AB6C
 	bool V_0 = false;
 	{
 		// public override bool CanSeek { get { return m_actualStream.CanSeek; } }
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_7;
 		NullCheck(L_0);
 		bool L_1;
 		L_1 = VirtualFuncInvoker0< bool >::Invoke(8 /* System.Boolean System.IO.Stream::get_CanSeek() */, L_0);
@@ -7852,11 +7852,11 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SubReadOnlyStream_Read_m5D40F13AE2448
 		// ThrowIfDisposed();
 		SubReadOnlyStream_ThrowIfDisposed_m2C05F6371DE1D4603D50DC30C152A33DCA63F3D0(__this, NULL);
 		// if ( m_actualStream.Position != m_position )
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_7;
 		NullCheck(L_0);
 		int64_t L_1;
 		L_1 = VirtualFuncInvoker0< int64_t >::Invoke(12 /* System.Int64 System.IO.Stream::get_Position() */, L_0);
-		int64_t L_2 = __this->___m_position_9;
+		int64_t L_2 = __this->___m_position_8;
 		V_1 = (bool)((((int32_t)((((int64_t)L_1) == ((int64_t)L_2))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_3 = V_1;
 		if (!L_3)
@@ -7866,8 +7866,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SubReadOnlyStream_Read_m5D40F13AE2448
 	}
 	{
 		// m_actualStream.Seek(m_position, SeekOrigin.Begin);
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_4 = __this->___m_actualStream_8;
-		int64_t L_5 = __this->___m_position_9;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_4 = __this->___m_actualStream_7;
+		int64_t L_5 = __this->___m_position_8;
 		NullCheck(L_4);
 		int64_t L_6;
 		L_6 = VirtualFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(31 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_4, L_5, 0);
@@ -7876,7 +7876,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t SubReadOnlyStream_Read_m5D40F13AE2448
 IL_003c:
 	{
 		// if ( m_length.HasValue )
-		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_7 = (&__this->___m_length_7);
+		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_7 = (&__this->___m_length_6);
 		bool L_8;
 		L_8 = Nullable_1_get_HasValue_mB4991C0F4C2664AB3CB2584DEECF5BCE6AB7757D_inline(L_7, Nullable_1_get_HasValue_mB4991C0F4C2664AB3CB2584DEECF5BCE6AB7757D_RuntimeMethod_var);
 		V_2 = L_8;
@@ -7888,13 +7888,13 @@ IL_003c:
 	}
 	{
 		// var endPosition = m_offset + m_length.Value;
-		int64_t L_10 = __this->___m_offset_5;
-		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_11 = (&__this->___m_length_7);
+		int64_t L_10 = __this->___m_offset_4;
+		Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17* L_11 = (&__this->___m_length_6);
 		int64_t L_12;
 		L_12 = Nullable_1_get_Value_mB475257F3012818AAA61B72B67DA701FACE716DC(L_11, Nullable_1_get_Value_mB475257F3012818AAA61B72B67DA701FACE716DC_RuntimeMethod_var);
 		V_3 = ((int64_t)il2cpp_codegen_add(L_10, L_12));
 		// if (m_position + count > endPosition)
-		int64_t L_13 = __this->___m_position_9;
+		int64_t L_13 = __this->___m_position_8;
 		int32_t L_14 = ___count2;
 		int64_t L_15 = V_3;
 		V_4 = (bool)((((int64_t)((int64_t)il2cpp_codegen_add(L_13, ((int64_t)L_14)))) > ((int64_t)L_15))? 1 : 0);
@@ -7907,7 +7907,7 @@ IL_003c:
 	{
 		// count = (int)(endPosition - m_position);
 		int64_t L_17 = V_3;
-		int64_t L_18 = __this->___m_position_9;
+		int64_t L_18 = __this->___m_position_8;
 		___count2 = ((int32_t)((int64_t)il2cpp_codegen_subtract(L_17, L_18)));
 	}
 
@@ -7918,7 +7918,7 @@ IL_007e:
 IL_007f:
 	{
 		// int bytesRead = m_actualStream.Read(buffer, offset, count);
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_19 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_19 = __this->___m_actualStream_7;
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_20 = ___buffer0;
 		int32_t L_21 = ___offset1;
 		int32_t L_22 = ___count2;
@@ -7927,9 +7927,9 @@ IL_007f:
 		L_23 = VirtualFuncInvoker3< int32_t, ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t, int32_t >::Invoke(33 /* System.Int32 System.IO.Stream::Read(System.Byte[],System.Int32,System.Int32) */, L_19, L_20, L_21, L_22);
 		V_0 = L_23;
 		// m_position += bytesRead;
-		int64_t L_24 = __this->___m_position_9;
+		int64_t L_24 = __this->___m_position_8;
 		int32_t L_25 = V_0;
-		__this->___m_position_9 = ((int64_t)il2cpp_codegen_add(L_24, ((int64_t)L_25)));
+		__this->___m_position_8 = ((int64_t)il2cpp_codegen_add(L_24, ((int64_t)L_25)));
 		// return bytesRead;
 		int32_t L_26 = V_0;
 		V_5 = L_26;
@@ -7963,13 +7963,13 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t SubReadOnlyStream_Seek_m0E09C9BE33E73
 	}
 	{
 		// m_position = m_actualStream.Seek(m_offset + offset, SeekOrigin.Begin);
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_2 = __this->___m_actualStream_8;
-		int64_t L_3 = __this->___m_offset_5;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_2 = __this->___m_actualStream_7;
+		int64_t L_3 = __this->___m_offset_4;
 		int64_t L_4 = ___offset0;
 		NullCheck(L_2);
 		int64_t L_5;
 		L_5 = VirtualFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(31 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_2, ((int64_t)il2cpp_codegen_add(L_3, L_4)), 0);
-		__this->___m_position_9 = L_5;
+		__this->___m_position_8 = L_5;
 		goto IL_0070;
 	}
 
@@ -7986,33 +7986,33 @@ IL_002e:
 	}
 	{
 		// m_position = m_actualStream.Seek(m_offset + Length + offset, SeekOrigin.End);
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_8 = __this->___m_actualStream_8;
-		int64_t L_9 = __this->___m_offset_5;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_8 = __this->___m_actualStream_7;
+		int64_t L_9 = __this->___m_offset_4;
 		int64_t L_10;
 		L_10 = VirtualFuncInvoker0< int64_t >::Invoke(11 /* System.Int64 System.IO.Stream::get_Length() */, __this);
 		int64_t L_11 = ___offset0;
 		NullCheck(L_8);
 		int64_t L_12;
 		L_12 = VirtualFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(31 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_8, ((int64_t)il2cpp_codegen_add(((int64_t)il2cpp_codegen_add(L_9, L_10)), L_11)), 2);
-		__this->___m_position_9 = L_12;
+		__this->___m_position_8 = L_12;
 		goto IL_0070;
 	}
 
 IL_005b:
 	{
 		// m_position = m_actualStream.Seek(offset, SeekOrigin.Current);
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_13 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_13 = __this->___m_actualStream_7;
 		int64_t L_14 = ___offset0;
 		NullCheck(L_13);
 		int64_t L_15;
 		L_15 = VirtualFuncInvoker2< int64_t, int64_t, int32_t >::Invoke(31 /* System.Int64 System.IO.Stream::Seek(System.Int64,System.IO.SeekOrigin) */, L_13, L_14, 1);
-		__this->___m_position_9 = L_15;
+		__this->___m_position_8 = L_15;
 	}
 
 IL_0070:
 	{
 		// return m_position;
-		int64_t L_16 = __this->___m_position_9;
+		int64_t L_16 = __this->___m_position_8;
 		V_2 = L_16;
 		goto IL_0079;
 	}
@@ -8075,7 +8075,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubReadOnlyStream_Dispose_mC912533099777
 	}
 	{
 		// if (m_actualStream != null)
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_2 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_2 = __this->___m_actualStream_7;
 		V_1 = (bool)((!(((RuntimeObject*)(Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)L_2) <= ((RuntimeObject*)(RuntimeObject*)NULL)))? 1 : 0);
 		bool L_3 = V_1;
 		if (!L_3)
@@ -8085,7 +8085,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubReadOnlyStream_Dispose_mC912533099777
 	}
 	{
 		// if (!m_leaveOpen)
-		bool L_4 = __this->___m_leaveOpen_6;
+		bool L_4 = __this->___m_leaveOpen_5;
 		V_2 = (bool)((((int32_t)L_4) == ((int32_t)0))? 1 : 0);
 		bool L_5 = V_2;
 		if (!L_5)
@@ -8095,7 +8095,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubReadOnlyStream_Dispose_mC912533099777
 	}
 	{
 		// m_actualStream.Dispose();
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_6 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_6 = __this->___m_actualStream_7;
 		NullCheck(L_6);
 		Stream_Dispose_mCDB42F32A17541CCA6D3A5906827A401570B07A8(L_6, NULL);
 	}
@@ -8103,8 +8103,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubReadOnlyStream_Dispose_mC912533099777
 IL_002e:
 	{
 		// m_actualStream = null;
-		__this->___m_actualStream_8 = (Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)NULL;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_actualStream_8), (void*)(Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)NULL);
+		__this->___m_actualStream_7 = (Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)NULL;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___m_actualStream_7), (void*)(Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)NULL);
 	}
 
 IL_0036:
@@ -8126,7 +8126,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void SubReadOnlyStream_ThrowIfDisposed_m2C05F
 	bool V_0 = false;
 	{
 		// if (m_actualStream == null)
-		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_8;
+		Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* L_0 = __this->___m_actualStream_7;
 		V_0 = (bool)((((RuntimeObject*)(Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE*)L_0) == ((RuntimeObject*)(RuntimeObject*)NULL))? 1 : 0);
 		bool L_1 = V_0;
 		if (!L_1)
@@ -12043,14 +12043,14 @@ IL_0021:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_7 = ___reader0;
 		NullCheck(L_7);
 		uint16_t L_8;
-		L_8 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_7);
+		L_8 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_7);
 		L_6->____tag_1 = L_8;
 		// field._size = reader.ReadUInt16();
 		ZipGenericExtraField_tA5DDC64B52FEA251F3EBC6AD73668A473BC2E0A5* L_9 = ___field2;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_10 = ___reader0;
 		NullCheck(L_10);
 		uint16_t L_11;
-		L_11 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_10);
+		L_11 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_10);
 		L_9->____size_2 = L_11;
 		// if ( endExtraField - reader.BaseStream.Position < field._size )
 		int64_t L_12 = ___endExtraField1;
@@ -12085,7 +12085,7 @@ IL_0057:
 		uint16_t L_22 = L_21->____size_2;
 		NullCheck(L_20);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_23;
-		L_23 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_20, L_22);
+		L_23 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_20, L_22);
 		L_19->____data_3 = L_23;
 		Il2CppCodeGenWriteBarrier((void**)(&L_19->____data_3), (void*)L_23);
 		// return true;
@@ -12825,7 +12825,7 @@ IL_00d4_2:
 						BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_41 = V_3;
 						NullCheck(L_41);
 						int64_t L_42;
-						L_42 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_41);
+						L_42 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_41);
 						Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 L_43;
 						memset((&L_43), 0, sizeof(L_43));
 						Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1((&L_43), L_42, /*hidden argument*/Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1_RuntimeMethod_var);
@@ -12849,7 +12849,7 @@ IL_00ed_2:
 						BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_47 = V_3;
 						NullCheck(L_47);
 						int64_t L_48;
-						L_48 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_47);
+						L_48 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_47);
 						Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 L_49;
 						memset((&L_49), 0, sizeof(L_49));
 						Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1((&L_49), L_48, /*hidden argument*/Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1_RuntimeMethod_var);
@@ -12873,7 +12873,7 @@ IL_0106_2:
 						BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_53 = V_3;
 						NullCheck(L_53);
 						int64_t L_54;
-						L_54 = VirtualFuncInvoker0< int64_t >::Invoke(18 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_53);
+						L_54 = VirtualFuncInvoker0< int64_t >::Invoke(17 /* System.Int64 System.IO.BinaryReader::ReadInt64() */, L_53);
 						Nullable_1_t365991B3904FDA7642A788423B28692FDC7CDB17 L_55;
 						memset((&L_55), 0, sizeof(L_55));
 						Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1((&L_55), L_54, /*hidden argument*/Nullable_1__ctor_m117BE9EF6DBC76B088B52AFB80634B9195D384A1_RuntimeMethod_var);
@@ -12897,7 +12897,7 @@ IL_011f_2:
 						BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_59 = V_3;
 						NullCheck(L_59);
 						int32_t L_60;
-						L_60 = VirtualFuncInvoker0< int32_t >::Invoke(16 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_59);
+						L_60 = VirtualFuncInvoker0< int32_t >::Invoke(15 /* System.Int32 System.IO.BinaryReader::ReadInt32() */, L_59);
 						Nullable_1_tCF32C56A2641879C053C86F273C0C6EC1B40BC28 L_61;
 						memset((&L_61), 0, sizeof(L_61));
 						Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703((&L_61), L_60, /*hidden argument*/Nullable_1__ctor_m141FA88563AC0B5179132FB929EABD02C47FF703_RuntimeMethod_var);
@@ -13059,7 +13059,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Zip64EndOfCentralDirectoryLocator_TryRea
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_1 = ___reader0;
 		NullCheck(L_1);
 		uint32_t L_2;
-		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
+		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
 		V_0 = (bool)((((int32_t)((((int32_t)L_2) == ((int32_t)((int32_t)117853008)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_3 = V_0;
 		if (!L_3)
@@ -13080,21 +13080,21 @@ IL_0020:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_5 = ___reader0;
 		NullCheck(L_5);
 		uint32_t L_6;
-		L_6 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_5);
+		L_6 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_5);
 		L_4->___NumberOfDiskWithZip64EOCD_2 = L_6;
 		// zip64EOCDLocator.OffsetOfZip64EOCD = reader.ReadUInt64();
 		Zip64EndOfCentralDirectoryLocator_t47B3405AA2D70DD81D2804321744EA6E8E91DA22* L_7 = ___zip64EOCDLocator1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_8 = ___reader0;
 		NullCheck(L_8);
 		uint64_t L_9;
-		L_9 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_8);
+		L_9 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_8);
 		L_7->___OffsetOfZip64EOCD_3 = L_9;
 		// zip64EOCDLocator.TotalNumberOfDisks = reader.ReadUInt32();
 		Zip64EndOfCentralDirectoryLocator_t47B3405AA2D70DD81D2804321744EA6E8E91DA22* L_10 = ___zip64EOCDLocator1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_11 = ___reader0;
 		NullCheck(L_11);
 		uint32_t L_12;
-		L_12 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_11);
+		L_12 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_11);
 		L_10->___TotalNumberOfDisks_4 = L_12;
 		// return true;
 		V_1 = (bool)1;
@@ -13129,7 +13129,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Zip64EndOfCentralDirectoryRecord_TryRead
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_1 = ___reader0;
 		NullCheck(L_1);
 		uint32_t L_2;
-		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
+		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
 		V_0 = (bool)((((int32_t)((((int32_t)L_2) == ((int32_t)((int32_t)101075792)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_3 = V_0;
 		if (!L_3)
@@ -13150,63 +13150,63 @@ IL_0020:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_5 = ___reader0;
 		NullCheck(L_5);
 		uint64_t L_6;
-		L_6 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_5);
+		L_6 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_5);
 		L_4->___SizeOfThisRecord_2 = L_6;
 		// zip64EOCDRecord.VersionMadeBy = reader.ReadUInt16();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_7 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_8 = ___reader0;
 		NullCheck(L_8);
 		uint16_t L_9;
-		L_9 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_8);
+		L_9 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_8);
 		L_7->___VersionMadeBy_3 = L_9;
 		// zip64EOCDRecord.VersionNeededToExtract = reader.ReadUInt16();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_10 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_11 = ___reader0;
 		NullCheck(L_11);
 		uint16_t L_12;
-		L_12 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_11);
+		L_12 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_11);
 		L_10->___VersionNeededToExtract_4 = L_12;
 		// zip64EOCDRecord.NumberOfThisDisk = reader.ReadUInt32();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_13 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_14 = ___reader0;
 		NullCheck(L_14);
 		uint32_t L_15;
-		L_15 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_14);
+		L_15 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_14);
 		L_13->___NumberOfThisDisk_5 = L_15;
 		// zip64EOCDRecord.NumberOfDiskWithStartOfCD = reader.ReadUInt32();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_16 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_17 = ___reader0;
 		NullCheck(L_17);
 		uint32_t L_18;
-		L_18 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_17);
+		L_18 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_17);
 		L_16->___NumberOfDiskWithStartOfCD_6 = L_18;
 		// zip64EOCDRecord.NumberOfEntriesOnThisDisk = reader.ReadUInt64();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_19 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_20 = ___reader0;
 		NullCheck(L_20);
 		uint64_t L_21;
-		L_21 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_20);
+		L_21 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_20);
 		L_19->___NumberOfEntriesOnThisDisk_7 = L_21;
 		// zip64EOCDRecord.NumberOfEntriesTotal = reader.ReadUInt64();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_22 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_23 = ___reader0;
 		NullCheck(L_23);
 		uint64_t L_24;
-		L_24 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_23);
+		L_24 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_23);
 		L_22->___NumberOfEntriesTotal_8 = L_24;
 		// zip64EOCDRecord.SizeOfCentralDirectory = reader.ReadUInt64();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_25 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_26 = ___reader0;
 		NullCheck(L_26);
 		uint64_t L_27;
-		L_27 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_26);
+		L_27 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_26);
 		L_25->___SizeOfCentralDirectory_9 = L_27;
 		// zip64EOCDRecord.OffsetOfCentralDirectory = reader.ReadUInt64();
 		Zip64EndOfCentralDirectoryRecord_t0A470C90CB5DE575ACEA4E02DD49E82A594B2F11* L_28 = ___zip64EOCDRecord1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_29 = ___reader0;
 		NullCheck(L_29);
 		uint64_t L_30;
-		L_30 = VirtualFuncInvoker0< uint64_t >::Invoke(19 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_29);
+		L_30 = VirtualFuncInvoker0< uint64_t >::Invoke(18 /* System.UInt64 System.IO.BinaryReader::ReadUInt64() */, L_29);
 		L_28->___OffsetOfCentralDirectory_10 = L_30;
 		// return true;
 		V_1 = (bool)1;
@@ -13242,7 +13242,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ZipLocalFileHeader_TrySkipBlock_m006FCAF
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_0 = ___reader0;
 		NullCheck(L_0);
 		uint32_t L_1;
-		L_1 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_0);
+		L_1 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_0);
 		V_2 = (bool)((((int32_t)((((int32_t)L_1) == ((int32_t)((int32_t)67324752)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_2 = V_2;
 		if (!L_2)
@@ -13300,13 +13300,13 @@ IL_0042:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_13 = ___reader0;
 		NullCheck(L_13);
 		uint16_t L_14;
-		L_14 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_13);
+		L_14 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_13);
 		V_0 = L_14;
 		// ushort extraFieldLength = reader.ReadUInt16();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_15 = ___reader0;
 		NullCheck(L_15);
 		uint16_t L_16;
-		L_16 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_15);
+		L_16 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_15);
 		V_1 = L_16;
 		// if ( reader.BaseStream.Length < reader.BaseStream.Position + filenameLength + extraFieldLength )
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_17 = ___reader0;
@@ -13456,7 +13456,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ZipCentralDirectoryFileHeader_TryReadBlo
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_1 = ___reader0;
 		NullCheck(L_1);
 		uint32_t L_2;
-		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
+		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
 		V_10 = (bool)((((int32_t)((((int32_t)L_2) == ((int32_t)((int32_t)33639248)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_3 = V_10;
 		if (!L_3)
@@ -13477,108 +13477,108 @@ IL_0026:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_5 = ___reader0;
 		NullCheck(L_5);
 		uint8_t L_6;
-		L_6 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_5);
+		L_6 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_5);
 		L_4->___VersionMadeBySpecification_2 = L_6;
 		// header.VersionMadeByCompatibility = reader.ReadByte();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_7 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_8 = ___reader0;
 		NullCheck(L_8);
 		uint8_t L_9;
-		L_9 = VirtualFuncInvoker0< uint8_t >::Invoke(11 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_8);
+		L_9 = VirtualFuncInvoker0< uint8_t >::Invoke(10 /* System.Byte System.IO.BinaryReader::ReadByte() */, L_8);
 		L_7->___VersionMadeByCompatibility_1 = L_9;
 		// header.VersionNeededToExtract = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_10 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_11 = ___reader0;
 		NullCheck(L_11);
 		uint16_t L_12;
-		L_12 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_11);
+		L_12 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_11);
 		L_10->___VersionNeededToExtract_3 = L_12;
 		// header.GeneralPurposeBitFlag = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_13 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_14 = ___reader0;
 		NullCheck(L_14);
 		uint16_t L_15;
-		L_15 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_14);
+		L_15 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_14);
 		L_13->___GeneralPurposeBitFlag_4 = L_15;
 		// header.CompressionMethod = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_16 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_17 = ___reader0;
 		NullCheck(L_17);
 		uint16_t L_18;
-		L_18 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_17);
+		L_18 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_17);
 		L_16->___CompressionMethod_5 = L_18;
 		// header.LastModified = reader.ReadUInt32();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_19 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_20 = ___reader0;
 		NullCheck(L_20);
 		uint32_t L_21;
-		L_21 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_20);
+		L_21 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_20);
 		L_19->___LastModified_6 = L_21;
 		// header.Crc32 = reader.ReadUInt32();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_22 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_23 = ___reader0;
 		NullCheck(L_23);
 		uint32_t L_24;
-		L_24 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_23);
+		L_24 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_23);
 		L_22->___Crc32_7 = L_24;
 		// uint compressedSizeSmall = reader.ReadUInt32();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_25 = ___reader0;
 		NullCheck(L_25);
 		uint32_t L_26;
-		L_26 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_25);
+		L_26 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_25);
 		V_0 = L_26;
 		// uint uncompressedSizeSmall = reader.ReadUInt32();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_27 = ___reader0;
 		NullCheck(L_27);
 		uint32_t L_28;
-		L_28 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_27);
+		L_28 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_27);
 		V_1 = L_28;
 		// header.FilenameLength = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_29 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_30 = ___reader0;
 		NullCheck(L_30);
 		uint16_t L_31;
-		L_31 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_30);
+		L_31 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_30);
 		L_29->___FilenameLength_10 = L_31;
 		// header.ExtraFieldLength = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_32 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_33 = ___reader0;
 		NullCheck(L_33);
 		uint16_t L_34;
-		L_34 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_33);
+		L_34 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_33);
 		L_32->___ExtraFieldLength_11 = L_34;
 		// header.FileCommentLength = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_35 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_36 = ___reader0;
 		NullCheck(L_36);
 		uint16_t L_37;
-		L_37 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_36);
+		L_37 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_36);
 		L_35->___FileCommentLength_12 = L_37;
 		// ushort diskNumberStartSmall = reader.ReadUInt16();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_38 = ___reader0;
 		NullCheck(L_38);
 		uint16_t L_39;
-		L_39 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_38);
+		L_39 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_38);
 		V_2 = L_39;
 		// header.InternalFileAttributes = reader.ReadUInt16();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_40 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_41 = ___reader0;
 		NullCheck(L_41);
 		uint16_t L_42;
-		L_42 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_41);
+		L_42 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_41);
 		L_40->___InternalFileAttributes_14 = L_42;
 		// header.ExternalFileAttributes = reader.ReadUInt32();
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_43 = ___header1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_44 = ___reader0;
 		NullCheck(L_44);
 		uint32_t L_45;
-		L_45 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_44);
+		L_45 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_44);
 		L_43->___ExternalFileAttributes_15 = L_45;
 		// uint relativeOffsetOfLocalHeaderSmall = reader.ReadUInt32();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_46 = ___reader0;
 		NullCheck(L_46);
 		uint32_t L_47;
-		L_47 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_46);
+		L_47 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_46);
 		V_3 = L_47;
 		// header.Filename = reader.ReadBytes(header.FilenameLength);
 		ZipCentralDirectoryFileHeader_t958ACF8B1192F806656F2CE076BC26584850B0E1* L_48 = ___header1;
@@ -13587,7 +13587,7 @@ IL_0026:
 		uint16_t L_51 = L_50->___FilenameLength_10;
 		NullCheck(L_49);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_52;
-		L_52 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_49, L_51);
+		L_52 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_49, L_51);
 		L_48->___Filename_17 = L_52;
 		Il2CppCodeGenWriteBarrier((void**)(&L_48->___Filename_17), (void*)L_52);
 		// bool uncompressedSizeInZip64 = uncompressedSizeSmall == ZipHelper.Mask32Bit;
@@ -13990,7 +13990,7 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool ZipEndOfCentralDirectoryBlock_TryReadBlo
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_1 = ___reader0;
 		NullCheck(L_1);
 		uint32_t L_2;
-		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
+		L_2 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_1);
 		V_1 = (bool)((((int32_t)((((int32_t)L_2) == ((int32_t)((int32_t)101010256)))? 1 : 0)) == ((int32_t)0))? 1 : 0);
 		bool L_3 = V_1;
 		if (!L_3)
@@ -14014,48 +14014,48 @@ IL_0020:
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_6 = ___reader0;
 		NullCheck(L_6);
 		uint16_t L_7;
-		L_7 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_6);
+		L_7 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_6);
 		L_5->___NumberOfThisDisk_3 = L_7;
 		// eocdBlock.NumberOfTheDiskWithTheStartOfTheCentralDirectory = reader.ReadUInt16();
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_8 = ___eocdBlock1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_9 = ___reader0;
 		NullCheck(L_9);
 		uint16_t L_10;
-		L_10 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_9);
+		L_10 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_9);
 		L_8->___NumberOfTheDiskWithTheStartOfTheCentralDirectory_4 = L_10;
 		// eocdBlock.NumberOfEntriesInTheCentralDirectoryOnThisDisk = reader.ReadUInt16();
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_11 = ___eocdBlock1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_12 = ___reader0;
 		NullCheck(L_12);
 		uint16_t L_13;
-		L_13 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_12);
+		L_13 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_12);
 		L_11->___NumberOfEntriesInTheCentralDirectoryOnThisDisk_5 = L_13;
 		// eocdBlock.NumberOfEntriesInTheCentralDirectory = reader.ReadUInt16();
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_14 = ___eocdBlock1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_15 = ___reader0;
 		NullCheck(L_15);
 		uint16_t L_16;
-		L_16 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_15);
+		L_16 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_15);
 		L_14->___NumberOfEntriesInTheCentralDirectory_6 = L_16;
 		// eocdBlock.SizeOfCentralDirectory = reader.ReadUInt32();
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_17 = ___eocdBlock1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_18 = ___reader0;
 		NullCheck(L_18);
 		uint32_t L_19;
-		L_19 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_18);
+		L_19 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_18);
 		L_17->___SizeOfCentralDirectory_7 = L_19;
 		// eocdBlock.OffsetOfStartOfCentralDirectoryWithRespectToTheStartingDiskNumber = reader.ReadUInt32();
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_20 = ___eocdBlock1;
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_21 = ___reader0;
 		NullCheck(L_21);
 		uint32_t L_22;
-		L_22 = VirtualFuncInvoker0< uint32_t >::Invoke(17 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_21);
+		L_22 = VirtualFuncInvoker0< uint32_t >::Invoke(16 /* System.UInt32 System.IO.BinaryReader::ReadUInt32() */, L_21);
 		L_20->___OffsetOfStartOfCentralDirectoryWithRespectToTheStartingDiskNumber_8 = L_22;
 		// ushort commentLength = reader.ReadUInt16();
 		BinaryReader_t9A6D85F0FE9AE4EBB5E8D66997DFD1D84939E158* L_23 = ___reader0;
 		NullCheck(L_23);
 		uint16_t L_24;
-		L_24 = VirtualFuncInvoker0< uint16_t >::Invoke(15 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_23);
+		L_24 = VirtualFuncInvoker0< uint16_t >::Invoke(14 /* System.UInt16 System.IO.BinaryReader::ReadUInt16() */, L_23);
 		V_0 = L_24;
 		// eocdBlock.ArchiveComment = reader.ReadBytes(commentLength);
 		ZipEndOfCentralDirectoryBlock_t87AE9826E6C07D76861707B6BC751CEE3682DD38* L_25 = ___eocdBlock1;
@@ -14063,7 +14063,7 @@ IL_0020:
 		uint16_t L_27 = V_0;
 		NullCheck(L_26);
 		ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* L_28;
-		L_28 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(26 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_26, L_27);
+		L_28 = VirtualFuncInvoker1< ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031*, int32_t >::Invoke(25 /* System.Byte[] System.IO.BinaryReader::ReadBytes(System.Int32) */, L_26, L_27);
 		L_25->___ArchiveComment_9 = L_28;
 		Il2CppCodeGenWriteBarrier((void**)(&L_25->___ArchiveComment_9), (void*)L_28);
 		// return true;

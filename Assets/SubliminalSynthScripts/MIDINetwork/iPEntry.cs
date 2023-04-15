@@ -4,14 +4,12 @@ using TMPro;
 
 public class iPEntry: MonoBehaviour, IPointerClickHandler
 {
-    public GameObject connectButton;
     public MidiConnectButton midiConnectButton;
     private TMP_InputField textMesh;
     public GameObject ipEntryO;
     // Start is called before the first frame update
     void Start()
     {
-        midiConnectButton = connectButton.GetComponent<MidiConnectButton>();
         textMesh = ipEntryO.GetComponent<TMP_InputField>();
     }
 

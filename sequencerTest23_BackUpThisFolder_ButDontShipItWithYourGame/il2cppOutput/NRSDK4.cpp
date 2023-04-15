@@ -3512,9 +3512,9 @@ struct SpriteState_tC8199570BE6337FB5C49347C97892B4222E5AACD_marshaled_com
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE  : public MarshalByRefObject_t8C2F4C5854177FD60439EB1FCCFC1B3CFAFE8DCE
 {
 	// System.IO.Stream/ReadWriteTask System.IO.Stream::_activeReadWriteTask
-	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_3;
+	ReadWriteTask_t0821BF49EE38596C7734E86E1A6A39D769BE2C05* ____activeReadWriteTask_2;
 	// System.Threading.SemaphoreSlim System.IO.Stream::_asyncActiveSemaphore
-	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_4;
+	SemaphoreSlim_t0D5CB5685D9BFA5BF95CEC6E7395490F933E8DB2* ____asyncActiveSemaphore_3;
 };
 
 struct Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE_StaticFields
@@ -4004,27 +4004,27 @@ struct Coroutine_t85EA685566A254C23F3FD77AB5BDFFFF8799596B_marshaled_com : publi
 struct DeflaterOutputStream_t1A33D4BC42D9AF34A523563436A1C6A1136CE259  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Boolean ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::<IsStreamOwner>k__BackingField
-	bool ___U3CIsStreamOwnerU3Ek__BackingField_5;
+	bool ___U3CIsStreamOwnerU3Ek__BackingField_4;
 	// System.String ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::password
-	String_t* ___password_6;
+	String_t* ___password_5;
 	// System.Security.Cryptography.ICryptoTransform ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::cryptoTransform_
-	RuntimeObject* ___cryptoTransform__7;
+	RuntimeObject* ___cryptoTransform__6;
 	// System.Byte[] ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::AESAuthCode
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___AESAuthCode_8;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___AESAuthCode_7;
 	// System.Byte[] ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::buffer_
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buffer__9;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buffer__8;
 	// ICSharpCode.SharpZipLib.Zip.Compression.Deflater ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::deflater_
-	Deflater_t8287F9AE01983279256AABA94642FF95CC633FB4* ___deflater__10;
+	Deflater_t8287F9AE01983279256AABA94642FF95CC633FB4* ___deflater__9;
 	// System.IO.Stream ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::baseOutputStream_
-	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___baseOutputStream__11;
+	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___baseOutputStream__10;
 	// System.Boolean ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::isClosed_
-	bool ___isClosed__12;
+	bool ___isClosed__11;
 };
 
 struct DeflaterOutputStream_t1A33D4BC42D9AF34A523563436A1C6A1136CE259_StaticFields
 {
 	// System.Security.Cryptography.RandomNumberGenerator ICSharpCode.SharpZipLib.Zip.Compression.Streams.DeflaterOutputStream::_aesRnd
-	RandomNumberGenerator_t4E862666A2F7D55324960670C7A1B4C2D40222F3* ____aesRnd_13;
+	RandomNumberGenerator_t4E862666A2F7D55324960670C7A1B4C2D40222F3* ____aesRnd_12;
 };
 
 // System.Delegate
@@ -4223,43 +4223,43 @@ struct FileStatus_tABB5F252F1E597EC95E9041035DC424EF66712A5_marshaled_com
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.FileStream::buf
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_8;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_6;
 	// System.String System.IO.FileStream::name
-	String_t* ___name_9;
+	String_t* ___name_7;
 	// Microsoft.Win32.SafeHandles.SafeFileHandle System.IO.FileStream::safeHandle
-	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_10;
+	SafeFileHandle_t033FA6AAAC65F4BB25F4CBA9A242A58C95CD406E* ___safeHandle_8;
 	// System.Boolean System.IO.FileStream::isExposed
-	bool ___isExposed_11;
+	bool ___isExposed_9;
 	// System.Int64 System.IO.FileStream::append_startpos
-	int64_t ___append_startpos_12;
+	int64_t ___append_startpos_10;
 	// System.IO.FileAccess System.IO.FileStream::access
-	int32_t ___access_13;
+	int32_t ___access_11;
 	// System.Boolean System.IO.FileStream::owner
-	bool ___owner_14;
+	bool ___owner_12;
 	// System.Boolean System.IO.FileStream::async
-	bool ___async_15;
+	bool ___async_13;
 	// System.Boolean System.IO.FileStream::canseek
-	bool ___canseek_16;
+	bool ___canseek_14;
 	// System.Boolean System.IO.FileStream::anonymous
-	bool ___anonymous_17;
+	bool ___anonymous_15;
 	// System.Boolean System.IO.FileStream::buf_dirty
-	bool ___buf_dirty_18;
+	bool ___buf_dirty_16;
 	// System.Int32 System.IO.FileStream::buf_size
-	int32_t ___buf_size_19;
+	int32_t ___buf_size_17;
 	// System.Int32 System.IO.FileStream::buf_length
-	int32_t ___buf_length_20;
+	int32_t ___buf_length_18;
 	// System.Int32 System.IO.FileStream::buf_offset
-	int32_t ___buf_offset_21;
+	int32_t ___buf_offset_19;
 	// System.Int64 System.IO.FileStream::buf_start
-	int64_t ___buf_start_22;
+	int64_t ___buf_start_20;
 };
 
 struct FileStream_t07C7222EE10B75F352B89B76E60820160FF10AD8_StaticFields
 {
 	// System.Byte[] System.IO.FileStream::buf_recycle
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_6;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___buf_recycle_4;
 	// System.Object System.IO.FileStream::buf_recycle_lock
-	RuntimeObject* ___buf_recycle_lock_7;
+	RuntimeObject* ___buf_recycle_lock_5;
 };
 
 // NRKernal.Record.FrameCaptureContext
@@ -4340,42 +4340,42 @@ struct ImageEncoder_t8DB23501255EEE659E957E37536360C89218C191  : public RuntimeO
 struct InflaterInputStream_t25453CA4D454447A9D30F0011CCE23037B465EA2  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Boolean ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::<IsStreamOwner>k__BackingField
-	bool ___U3CIsStreamOwnerU3Ek__BackingField_5;
+	bool ___U3CIsStreamOwnerU3Ek__BackingField_4;
 	// ICSharpCode.SharpZipLib.Zip.Compression.Inflater ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::inf
-	Inflater_t2F41C3E2608A77A69EDAB071BCA9752305595494* ___inf_6;
+	Inflater_t2F41C3E2608A77A69EDAB071BCA9752305595494* ___inf_5;
 	// ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputBuffer ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::inputBuffer
-	InflaterInputBuffer_t947724C1CD4D44B75584D59D1ECA71C121D62129* ___inputBuffer_7;
+	InflaterInputBuffer_t947724C1CD4D44B75584D59D1ECA71C121D62129* ___inputBuffer_6;
 	// System.IO.Stream ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::baseInputStream
-	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___baseInputStream_8;
+	Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE* ___baseInputStream_7;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::csize
-	int64_t ___csize_9;
+	int64_t ___csize_8;
 	// System.Boolean ICSharpCode.SharpZipLib.Zip.Compression.Streams.InflaterInputStream::isClosed
-	bool ___isClosed_10;
+	bool ___isClosed_9;
 };
 
 // System.IO.MemoryStream
 struct MemoryStream_tAAED1B42172E3390584E4194308AB878E786AAC2  : public Stream_tF844051B786E8F7F4244DBD218D74E8617B9A2DE
 {
 	// System.Byte[] System.IO.MemoryStream::_buffer
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____buffer_5;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ____buffer_4;
 	// System.Int32 System.IO.MemoryStream::_origin
-	int32_t ____origin_6;
+	int32_t ____origin_5;
 	// System.Int32 System.IO.MemoryStream::_position
-	int32_t ____position_7;
+	int32_t ____position_6;
 	// System.Int32 System.IO.MemoryStream::_length
-	int32_t ____length_8;
+	int32_t ____length_7;
 	// System.Int32 System.IO.MemoryStream::_capacity
-	int32_t ____capacity_9;
+	int32_t ____capacity_8;
 	// System.Boolean System.IO.MemoryStream::_expandable
-	bool ____expandable_10;
+	bool ____expandable_9;
 	// System.Boolean System.IO.MemoryStream::_writable
-	bool ____writable_11;
+	bool ____writable_10;
 	// System.Boolean System.IO.MemoryStream::_exposable
-	bool ____exposable_12;
+	bool ____exposable_11;
 	// System.Boolean System.IO.MemoryStream::_isOpen
-	bool ____isOpen_13;
+	bool ____isOpen_12;
 	// System.Threading.Tasks.Task`1<System.Int32> System.IO.MemoryStream::_lastReadTask
-	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_14;
+	Task_1_t4C228DE57804012969575431CFF12D57C875552D* ____lastReadTask_13;
 };
 
 // NRKernal.NRDeviceSubsystem
@@ -5169,48 +5169,48 @@ struct Type_t_StaticFields
 struct ZipInputStream_t28E1C3A0D16AF934AE233FA6264BDA9BD44BF294  : public InflaterInputStream_t25453CA4D454447A9D30F0011CCE23037B465EA2
 {
 	// ICSharpCode.SharpZipLib.Zip.ZipInputStream/ReadDataHandler ICSharpCode.SharpZipLib.Zip.ZipInputStream::internalReader
-	ReadDataHandler_t14FE17C332DEFB64312F2193AF0D1EB57825CFD6* ___internalReader_11;
+	ReadDataHandler_t14FE17C332DEFB64312F2193AF0D1EB57825CFD6* ___internalReader_10;
 	// ICSharpCode.SharpZipLib.Checksum.Crc32 ICSharpCode.SharpZipLib.Zip.ZipInputStream::crc
-	Crc32_t44597B0AB0A0CE01AB30303BA5EC0F6E4F51BF33* ___crc_12;
+	Crc32_t44597B0AB0A0CE01AB30303BA5EC0F6E4F51BF33* ___crc_11;
 	// ICSharpCode.SharpZipLib.Zip.ZipEntry ICSharpCode.SharpZipLib.Zip.ZipInputStream::entry
-	ZipEntry_t483CBFA9890036FAA5A865C33732D292A8F06BCC* ___entry_13;
+	ZipEntry_t483CBFA9890036FAA5A865C33732D292A8F06BCC* ___entry_12;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.ZipInputStream::size
-	int64_t ___size_14;
+	int64_t ___size_13;
 	// System.Int32 ICSharpCode.SharpZipLib.Zip.ZipInputStream::method
-	int32_t ___method_15;
+	int32_t ___method_14;
 	// System.Int32 ICSharpCode.SharpZipLib.Zip.ZipInputStream::flags
-	int32_t ___flags_16;
+	int32_t ___flags_15;
 	// System.String ICSharpCode.SharpZipLib.Zip.ZipInputStream::password
-	String_t* ___password_17;
+	String_t* ___password_16;
 };
 
 // ICSharpCode.SharpZipLib.Zip.ZipOutputStream
 struct ZipOutputStream_t72373D271802A21FE40589791BFB62A19ABA50A7  : public DeflaterOutputStream_t1A33D4BC42D9AF34A523563436A1C6A1136CE259
 {
 	// System.Collections.Generic.List`1<ICSharpCode.SharpZipLib.Zip.ZipEntry> ICSharpCode.SharpZipLib.Zip.ZipOutputStream::entries
-	List_1_tBD6A19CD695C1864780E20A273EE24977701641C* ___entries_14;
+	List_1_tBD6A19CD695C1864780E20A273EE24977701641C* ___entries_13;
 	// ICSharpCode.SharpZipLib.Checksum.Crc32 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::crc
-	Crc32_t44597B0AB0A0CE01AB30303BA5EC0F6E4F51BF33* ___crc_15;
+	Crc32_t44597B0AB0A0CE01AB30303BA5EC0F6E4F51BF33* ___crc_14;
 	// ICSharpCode.SharpZipLib.Zip.ZipEntry ICSharpCode.SharpZipLib.Zip.ZipOutputStream::curEntry
-	ZipEntry_t483CBFA9890036FAA5A865C33732D292A8F06BCC* ___curEntry_16;
+	ZipEntry_t483CBFA9890036FAA5A865C33732D292A8F06BCC* ___curEntry_15;
 	// System.Int32 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::defaultCompressionLevel
-	int32_t ___defaultCompressionLevel_17;
+	int32_t ___defaultCompressionLevel_16;
 	// ICSharpCode.SharpZipLib.Zip.CompressionMethod ICSharpCode.SharpZipLib.Zip.ZipOutputStream::curMethod
-	int32_t ___curMethod_18;
+	int32_t ___curMethod_17;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::size
-	int64_t ___size_19;
+	int64_t ___size_18;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::offset
-	int64_t ___offset_20;
+	int64_t ___offset_19;
 	// System.Byte[] ICSharpCode.SharpZipLib.Zip.ZipOutputStream::zipComment
-	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___zipComment_21;
+	ByteU5BU5D_tA6237BF417AE52AD70CFB4EF24A7A82613DF9031* ___zipComment_20;
 	// System.Boolean ICSharpCode.SharpZipLib.Zip.ZipOutputStream::patchEntryHeader
-	bool ___patchEntryHeader_22;
+	bool ___patchEntryHeader_21;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::crcPatchPos
-	int64_t ___crcPatchPos_23;
+	int64_t ___crcPatchPos_22;
 	// System.Int64 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::sizePatchPos
-	int64_t ___sizePatchPos_24;
+	int64_t ___sizePatchPos_23;
 	// ICSharpCode.SharpZipLib.Zip.UseZip64 ICSharpCode.SharpZipLib.Zip.ZipOutputStream::useZip64_
-	int32_t ___useZip64__25;
+	int32_t ___useZip64__24;
 };
 
 // System.Action`1<NRKernal.AndroidPermissionsRequestResult>
@@ -26913,7 +26913,7 @@ IL_001e:
 	{
 		NullCheck(G_B4_0);
 		DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* L_5;
-		L_5 = VirtualFuncInvoker0< DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* >::Invoke(10 /* System.Delegate[] System.Delegate::GetInvocationList() */, G_B4_0);
+		L_5 = VirtualFuncInvoker0< DelegateU5BU5D_tC5AB7E8F745616680F337909D3A8E6C722CDF771* >::Invoke(9 /* System.Delegate[] System.Delegate::GetInvocationList() */, G_B4_0);
 		G_B5_0 = L_5;
 	}
 
@@ -34387,8 +34387,8 @@ IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void ZipInputStream_set_Password_
 {
 	{
 		String_t* L_0 = ___value0;
-		__this->___password_17 = L_0;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->___password_17), (void*)L_0);
+		__this->___password_16 = L_0;
+		Il2CppCodeGenWriteBarrier((void**)(&__this->___password_16), (void*)L_0);
 		return;
 	}
 }

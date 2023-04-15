@@ -14,7 +14,7 @@ public class MenuDeactivator : MonoBehaviour
     public void DeactivateAllOtherMenus()
     {
         allMenus.ForEach(menu => {
-            if ((menu != selectedMenu) && (menu.activeSelf == true)) {
+            if ((menu.activeSelf == true)) {
                 menu.SetActive(false);
             }
         });

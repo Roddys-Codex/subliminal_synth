@@ -136,7 +136,6 @@ Library: lib_burst_generated
 --compilation-defines=MODULE_URP_ENABLED
 --compilation-defines=USE_LEGACY_INPUT_HELPERS
 --compilation-defines=UNITY_INPUT_SYSTEM
---compilation-defines=DISABLE_BUILTIN_INPUT_SYSTEM_OCULUS
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_VR
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_XR
 --compilation-defines=UNITY_INPUT_SYSTEM_ENABLE_PHYSICS
@@ -153,7 +152,6 @@ Library: lib_burst_generated
 --compilation-defines=MODULE_PHYSICS_EXISTS
 --compilation-defines=MODULE_PHYSICS_2D_EXISTS
 --compilation-defines=MODULE_PARTICLE_SYSTEM_EXISTS
---compilation-defines=XR_MGMT_GTE_320
 --compilation-defines=UNITY_ANALYTICS
 --compilation-defines=TIMELINE_FRAMEACCURATE
 --generate-link-xml=Temp/burst.link.xml
@@ -171,15 +169,12 @@ Library: lib_burst_generated
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Runtime.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Postprocessing.Runtime.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.VisualScripting.Flow.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/MIDIUnified.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.VisualScripting.Core.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.Oculus.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.Environments.Internal.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.TextMeshPro.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Burst.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.RenderPipeline.Universal.ShaderLibrary.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.Environments.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/ForieroEngine.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.Internal.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.ARCore.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.dll
@@ -198,9 +193,8 @@ Library: lib_burst_generated
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/UnityEngine.XR.LegacyInputHelpers.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.Networking.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Tutorials.Core.dll
+--root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Assembly-CSharp-firstpass.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.ConformanceAutomation.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/IntegratorTool2DRuntime.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Services.Core.Registration.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.MockRuntime.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.Subsystem.Registration.dll
@@ -209,7 +203,6 @@ Library: lib_burst_generated
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.RuntimeDebugger.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.RenderPipelines.Universal.Shaders.dll
 --root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Unity.XR.OpenXR.Features.OculusQuestSupport.dll
---root-assembly=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/Assembly-CSharp-firstpass.dll
 --assembly-folder=/Users/danielroddy/programming/repositories/SoundCube/Temp/StagingArea/Data/Managed/
 --pdb-search-paths=Temp/ManagedSymbols/
 --method=Unity.Jobs.IJobForExtensions+ForJobStruct`1[[UnityEngine.Rendering.Universal.SliceCullingJob, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null]], UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null::Execute(UnityEngine.Rendering.Universal.SliceCullingJob&, Unity.RenderPipelines.Universal.Runtime, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|System.IntPtr, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089|Unity.Jobs.LowLevel.Unsafe.JobRanges&, UnityEngine.CoreModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null|System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089)--1998da082e6413092f0e7bcd5a0e9331

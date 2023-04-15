@@ -4529,10 +4529,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_ArrayAdd_mE9D428CAF
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_ArrayAdd_mFC0F1ECF3221077B7F16449617ADCFF565C81847 (DataColumnCollection_t8F6538DA2E98DED6F9FBD06C4C475533A548630E* __this, DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* ___column0, const RuntimeMethod* method) ;
 // System.Void System.Data.DataColumnCollection::OnCollectionChanged(System.ComponentModel.CollectionChangeEventArgs)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_OnCollectionChanged_m6C8F127B27E119BDC146587907C36E3A6DFF00AC (DataColumnCollection_t8F6538DA2E98DED6F9FBD06C4C475533A548630E* __this, CollectionChangeEventArgs_t27A05C16B442D16E079F0932D315156EFD82AB1D* ___ccevent0, const RuntimeMethod* method) ;
-// System.Void System.Data.DataColumnCollection::Add(System.Data.DataColumn)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_Add_m61D5336A215C0A47FD227BD711D6307F168D7FEF (DataColumnCollection_t8F6538DA2E98DED6F9FBD06C4C475533A548630E* __this, DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* ___column0, const RuntimeMethod* method) ;
 // System.Void System.Data.DataColumn::.ctor(System.String,System.Type)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumn__ctor_m69E24C091530F84A75D27C7E5F8B40C24A3E9655 (DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* __this, String_t* ___columnName0, Type_t* ___dataType1, const RuntimeMethod* method) ;
+// System.Void System.Data.DataColumnCollection::Add(System.Data.DataColumn)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_Add_m61D5336A215C0A47FD227BD711D6307F168D7FEF (DataColumnCollection_t8F6538DA2E98DED6F9FBD06C4C475533A548630E* __this, DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* ___column0, const RuntimeMethod* method) ;
 // System.Delegate System.Delegate::Combine(System.Delegate,System.Delegate)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Delegate_t* Delegate_Combine_m1F725AEF318BE6F0426863490691A6F4606E7D00 (Delegate_t* ___a0, Delegate_t* ___b1, const RuntimeMethod* method) ;
 // System.Delegate System.Delegate::Remove(System.Delegate,System.Delegate)
@@ -17610,84 +17610,6 @@ IL_00e9:
 		NullCheck(L_45);
 		CollectionChangeEventArgs__ctor_m84C25CBEFBE5495FD3FDB74C9F7A749979472218(L_45, 1, L_44, NULL);
 		DataColumnCollection_OnCollectionChanged_m6C8F127B27E119BDC146587907C36E3A6DFF00AC(__this, L_45, NULL);
-		return;
-	}
-}
-// System.Void System.Data.DataColumnCollection::AddRange(System.Data.DataColumn[])
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void DataColumnCollection_AddRange_m3A4BB57AC1A6CAC1BD72A2C63BB5DFFF34E5E234 (DataColumnCollection_t8F6538DA2E98DED6F9FBD06C4C475533A548630E* __this, DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* ___columns0, const RuntimeMethod* method) 
-{
-	DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* V_0 = NULL;
-	int32_t V_1 = 0;
-	DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* V_2 = NULL;
-	{
-		DataTable_t9240A0D6726299C55832BF4EE085C864A1CCBB07* L_0 = __this->____table_1;
-		NullCheck(L_0);
-		bool L_1 = L_0->___fInitInProgress_50;
-		if (!L_1)
-		{
-			goto IL_0015;
-		}
-	}
-	{
-		DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* L_2 = ___columns0;
-		__this->____delayedAddRangeColumns_4 = L_2;
-		Il2CppCodeGenWriteBarrier((void**)(&__this->____delayedAddRangeColumns_4), (void*)L_2);
-		return;
-	}
-
-IL_0015:
-	{
-		DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* L_3 = ___columns0;
-		if (!L_3)
-		{
-			goto IL_0036;
-		}
-	}
-	{
-		DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* L_4 = ___columns0;
-		V_0 = L_4;
-		V_1 = 0;
-		goto IL_0030;
-	}
-
-IL_001e:
-	{
-		DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* L_5 = V_0;
-		int32_t L_6 = V_1;
-		NullCheck(L_5);
-		int32_t L_7 = L_6;
-		DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* L_8 = (L_5)->GetAt(static_cast<il2cpp_array_size_t>(L_7));
-		V_2 = L_8;
-		DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* L_9 = V_2;
-		if (!L_9)
-		{
-			goto IL_002c;
-		}
-	}
-	{
-		DataColumn_t07796C0DD83AD590E7C821E08FE04A38FE8B1A66* L_10 = V_2;
-		DataColumnCollection_Add_m61D5336A215C0A47FD227BD711D6307F168D7FEF(__this, L_10, NULL);
-	}
-
-IL_002c:
-	{
-		int32_t L_11 = V_1;
-		V_1 = ((int32_t)il2cpp_codegen_add(L_11, 1));
-	}
-
-IL_0030:
-	{
-		int32_t L_12 = V_1;
-		DataColumnU5BU5D_t4600ECA5C95E7699298FCD6D677AEAD7D9F5F0CA* L_13 = V_0;
-		NullCheck(L_13);
-		if ((((int32_t)L_12) < ((int32_t)((int32_t)(((RuntimeArray*)L_13)->max_length)))))
-		{
-			goto IL_001e;
-		}
-	}
-
-IL_0036:
-	{
 		return;
 	}
 }

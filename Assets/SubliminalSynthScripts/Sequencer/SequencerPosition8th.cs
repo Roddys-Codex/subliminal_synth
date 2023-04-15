@@ -35,11 +35,13 @@ public class SequencerPosition8th : MonoBehaviour, IPointerClickHandler
         renderer = GetComponent<MeshRenderer>();
 
         previousSequencerPosition = previousPositionObject.GetComponent<SequencerPosition8th>();
-        note = new Note();
-        note.note = noteValue;
-        note.start = positionObjectNumber;
-        note.end = positionObjectNumber + noteEndAddOn;
-        note.velocity = 1;
+        note = new Note
+        {
+            note = noteValue,
+            start = positionObjectNumber,
+            end = positionObjectNumber + noteEndAddOn,
+            velocity = 1
+        };
     }
 
     public void OnPointerClick(PointerEventData eventData)
