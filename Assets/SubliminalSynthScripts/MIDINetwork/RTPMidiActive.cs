@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 public class RTPMidiActive : MonoBehaviour, IPointerClickHandler
 {
     public bool midiEnabled = false;
+    public bool samplerMidi = false;
 
     public void OnPointerClick(PointerEventData eventData)
     {
@@ -13,6 +14,18 @@ public class RTPMidiActive : MonoBehaviour, IPointerClickHandler
         } else
         {
             midiEnabled = false;
+        }
+    }
+
+    public void SamplerRtpMidiSwitch()
+    {
+        if (samplerMidi)
+        {
+            samplerMidi = false;
+        }
+        else
+        {
+            samplerMidi = true;
         }
     }
 }
