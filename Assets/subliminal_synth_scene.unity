@@ -578,6 +578,7 @@ MonoBehaviour:
   allMenus:
   - {fileID: 1178445806}
   - {fileID: 1662727818}
+  - {fileID: 139140553}
   allButtons:
   - {fileID: 1799995054}
   - {fileID: 2095579849}
@@ -939,7 +940,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &27843872
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2708,6 +2709,8 @@ MonoBehaviour:
   - {fileID: 1136156097}
   - {fileID: 1178445806}
   - {fileID: 408496795}
+  - {fileID: 1345763701}
+  - {fileID: 1849053495}
   allButtons:
   - {fileID: 1846123983904332593}
   - {fileID: 1799995054}
@@ -4859,6 +4862,34 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169943237}
   m_CullTransparentMesh: 1
+--- !u!83 &180980759
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &182039458
 GameObject:
   m_ObjectHideFlags: 0
@@ -4945,7 +4976,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 466739156}
+  m_audioClip: {fileID: 1203314642}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11662,7 +11693,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 1047384427}
+  m_audioClip: {fileID: 180980759}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -13111,34 +13142,6 @@ RectTransform:
   m_AnchoredPosition: {x: 18.2, y: 0.62}
   m_SizeDelta: {x: 40.21, y: -1.25}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!83 &466739156
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &467350446
 GameObject:
   m_ObjectHideFlags: 0
@@ -14149,12 +14152,12 @@ GameObject:
   m_Component:
   - component: {fileID: 498738774}
   m_Layer: 0
-  m_Name: Sampler
+  m_Name: SamplerManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &498738774
 Transform:
   m_ObjectHideFlags: 0
@@ -17225,7 +17228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4808320353365586, guid: ad152f08ed7eb6e4abd93376a0203e38, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4808320353365586, guid: ad152f08ed7eb6e4abd93376a0203e38, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19352,7 +19355,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4279751068700536, guid: e0f440c4bb94be641af5dc113d3248f5, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4279751068700536, guid: e0f440c4bb94be641af5dc113d3248f5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21530,7 +21533,8 @@ MonoBehaviour:
   - {fileID: 709398605}
   - {fileID: 1136156097}
   - {fileID: 1178445806}
-  - {fileID: 408496795}
+  - {fileID: 1345763701}
+  - {fileID: 1849053495}
   allButtons:
   - {fileID: 1846123983904332593}
   - {fileID: 80198797}
@@ -21700,7 +21704,7 @@ MonoBehaviour:
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
-  m_Text: midisession
+  m_Text: MidiNetwork
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
@@ -22852,7 +22856,7 @@ Transform:
   - {fileID: 139140556}
   - {fileID: 498738774}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &786227300 stripped
 Transform:
@@ -23451,7 +23455,7 @@ PrefabInstance:
     - target: {fileID: 468861110017854842, guid: d2f2c1b2703f640a280da140a07ae0bb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 468861110017854842, guid: d2f2c1b2703f640a280da140a07ae0bb,
         type: 3}
@@ -26549,7 +26553,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &911874676
 GameObject:
@@ -29023,34 +29027,6 @@ Transform:
   m_Father: {fileID: 1658968072}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!83 &1047384427
-AudioClip:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: helm
-  m_LoadType: 0
-  m_Channels: 1
-  m_Frequency: 44100
-  m_BitsPerSample: 32
-  m_Length: 0
-  m_IsTrackerFormat: 0
-  m_Ambisonic: 0
-  m_SubsoundIndex: 0
-  m_PreloadAudioData: 1
-  m_LoadInBackground: 0
-  m_Legacy3D: 0
-  m_Resource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_CompressionFormat: 0
-  m_EditorResource:
-    m_Source: 
-    m_Offset: 0
-    m_Size: 0
-  m_EditorCompressionFormat: 0
 --- !u!1 &1049102504
 GameObject:
   m_ObjectHideFlags: 0
@@ -29727,7 +29703,7 @@ Transform:
   - {fileID: 1077432215}
   - {fileID: 1395897872}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1083055009
 GameObject:
@@ -33725,6 +33701,34 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1243524020}
   m_PrefabAsset: {fileID: 0}
+--- !u!83 &1203314642
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1001 &1205456083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34509,7 +34513,7 @@ Transform:
   - {fileID: 182039462}
   - {fileID: 427955772}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1229209547
 GameObject:
@@ -38266,7 +38270,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1345763702
 Transform:
   m_ObjectHideFlags: 0
@@ -45696,7 +45700,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 50, y: 3.773, z: 0}
 --- !u!1 &1629171166
 GameObject:
@@ -51175,6 +51179,7 @@ MonoBehaviour:
   allMenus:
   - {fileID: 1662727818}
   - {fileID: 27843871}
+  - {fileID: 139140553}
   allButtons:
   - {fileID: 2095579849}
   - {fileID: 22338924}
@@ -53341,7 +53346,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1849053496
 Transform:
   m_ObjectHideFlags: 0
@@ -54125,7 +54130,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1865853224
 MonoBehaviour:
@@ -56768,7 +56773,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4275651716754104, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4275651716754104, guid: 665d8158924bd2648a94fb3f87691bbb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -58756,7 +58761,7 @@ Transform:
   - {fileID: 1220548007}
   - {fileID: 27843872}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2017188812
 GameObject:
@@ -60640,7 +60645,6 @@ MonoBehaviour:
   targetObjectToActivate: {fileID: 139140553}
   targetObjectsToActivate:
   - {fileID: 139140553}
-  - {fileID: 779118188}
   - {fileID: 1662727818}
 --- !u!114 &2095579852
 MonoBehaviour:

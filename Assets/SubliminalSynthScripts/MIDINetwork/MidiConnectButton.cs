@@ -96,7 +96,6 @@ public class MidiConnectButton : MonoBehaviour
         MidiManager.Instance.StopRtpMidi(port);
         MidiManager.Instance.StopAllRtpMidi();
         MidiManager.Instance.TerminateMidi();
-        
     }
     
     public IEnumerator TemporarilyChangeColor(GameObject obj, Color color, float duration)
