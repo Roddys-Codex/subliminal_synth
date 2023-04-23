@@ -1,8 +1,4 @@
 # subliminal_synth
-SoundCube test project
+Subliminal Synth is an augmented reality synthesiser app made for Nreal Air, using Unity, AudioHelm, RTPMidiPlugin, SQLite and the NRSDK.
 
-Augmented Reality synthesiser project.
-
-Note: THIS PROJECT IS CURRENTLY IN PROGRESS. 'MASTER' BRANCH IS UNDERGOING A REFACTOR.
-
-THE BRANCH NAMED 'REFACTOR' IS THE CURRENT UP-TO-DATE BRANCH THAT WILL BE MERGED TO MASTER.
+ReadMe is under construction....
