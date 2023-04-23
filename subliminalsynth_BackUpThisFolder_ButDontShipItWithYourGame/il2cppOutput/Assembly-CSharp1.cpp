@@ -790,6 +790,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral0C83081BCF5B63F6A9047BC465DE0EA3D85F4FBD
 IL2CPP_EXTERN_C String_t* _stringLiteral0F0C40D94100AAE9F7B1F7C9DC08A39E00E5415E;
 IL2CPP_EXTERN_C String_t* _stringLiteral0F1AFD72EBFFBE056B3942B4348D0C91010A1234;
 IL2CPP_EXTERN_C String_t* _stringLiteral0F57E7BFB0853E433DC904FF383D680893EF81EF;
+IL2CPP_EXTERN_C String_t* _stringLiteral10C863F8BA688F6B929998D55CCB6E3D972A9F2C;
 IL2CPP_EXTERN_C String_t* _stringLiteral11B6806C9064A6287FAEEBD90D8B7E764C4BEAE9;
 IL2CPP_EXTERN_C String_t* _stringLiteral14A71F347E789C7305BAA82CFAA41290A7CA717A;
 IL2CPP_EXTERN_C String_t* _stringLiteral14C488114FBBE9A74E618082CC97D3D75E12F952;
@@ -818,6 +819,7 @@ IL2CPP_EXTERN_C String_t* _stringLiteral22E3410DDB1B08167883CA9022EB376B9BF116EF
 IL2CPP_EXTERN_C String_t* _stringLiteral22EF62B9B95A4B0D32694B4B270036D3CF70F587;
 IL2CPP_EXTERN_C String_t* _stringLiteral2386E77CF610F786B06A91AF2C1B3FD2282D2745;
 IL2CPP_EXTERN_C String_t* _stringLiteral25D5D91BE7A3D0007EA36E997178A685D3FA0422;
+IL2CPP_EXTERN_C String_t* _stringLiteral2732277E9D8A4846B7023B9ABCA3C260EFCD3ABA;
 IL2CPP_EXTERN_C String_t* _stringLiteral283BC71B7A94B6BD2723088DD988AECBD255F756;
 IL2CPP_EXTERN_C String_t* _stringLiteral294D1261A9B3CEEBBCD807E74E302F7AACE5884C;
 IL2CPP_EXTERN_C String_t* _stringLiteral2C22DA453C536A0C582C283F29CE62CE5250FBF9;
@@ -5141,6 +5143,14 @@ inline HelmPatchFormat_tBE0931362551773E035AAE9F1196BCD6214D919D* JsonUtility_Fr
 {
 	return ((  HelmPatchFormat_tBE0931362551773E035AAE9F1196BCD6214D919D* (*) (String_t*, const RuntimeMethod*))JsonUtility_FromJson_TisRuntimeObject_m0CCF0FE109BF4C85AECC9C5D0DBB43422A24FB40_gshared)(___json0, method);
 }
+// System.String AudioHelm.HelmPatch::ReadFileToString(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HelmPatch_ReadFileToString_m2049C9A2A15474A30CD8F62DE94C6D19926CA0A4 (HelmPatch_t10167C36E80A27280B2B3A71BCF27E1AEFFF4D04* __this, String_t* ___filePath0, const RuntimeMethod* method) ;
+// System.Boolean System.IO.Directory::Exists(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool Directory_Exists_m3D125E9E88C291CF11113444F961A64DD83AE1C7 (String_t* ___path0, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Debug::LogError(System.Object)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2 (RuntimeObject* ___message0, const RuntimeMethod* method) ;
+// System.String[] System.IO.Directory::GetFiles(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* Directory_GetFiles_m3E6AA407767C85CD62C5FD2750747274D1C4EA76 (String_t* ___path0, const RuntimeMethod* method) ;
 // System.String BSA_BetterStreamingAssets::ReadAllText(System.String)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* BSA_BetterStreamingAssets_ReadAllText_m32DC2D401AF137AD9D749531755524112C604D56 (String_t* ___path0, const RuntimeMethod* method) ;
 // System.Int32 System.String::get_Length()
@@ -22841,10 +22851,10 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelmPatch_LoadPatchDataAndroid_m49F82B96
 	}
 	String_t* V_0 = NULL;
 	{
-		// string patchText = BSA_BetterStreamingAssets.ReadAllText(filePath);
+		// string patchText = ReadFileToString(filePath);
 		String_t* L_0 = ___filePath0;
 		String_t* L_1;
-		L_1 = BSA_BetterStreamingAssets_ReadAllText_m32DC2D401AF137AD9D749531755524112C604D56(L_0, NULL);
+		L_1 = HelmPatch_ReadFileToString_m2049C9A2A15474A30CD8F62DE94C6D19926CA0A4(__this, L_0, NULL);
 		V_0 = L_1;
 		// patchData = JsonUtility.FromJson<HelmPatchFormat>(patchText);
 		String_t* L_2 = V_0;
@@ -22854,6 +22864,109 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void HelmPatch_LoadPatchDataAndroid_m49F82B96
 		Il2CppCodeGenWriteBarrier((void**)(&__this->___patchData_5), (void*)L_3);
 		// }
 		return;
+	}
+}
+// System.String[] AudioHelm.HelmPatch::ReadCustomFolder(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* HelmPatch_ReadCustomFolder_m47C5D848C4FC033240B735E59A8B8B2408E57CDF (String_t* ___filePath0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral10C863F8BA688F6B929998D55CCB6E3D972A9F2C);
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&_stringLiteral2732277E9D8A4846B7023B9ABCA3C260EFCD3ABA);
+		s_Il2CppMethodInitialized = true;
+	}
+	String_t* V_0 = NULL;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_1 = NULL;
+	bool V_2 = false;
+	StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* V_3 = NULL;
+	{
+		// string folderPath = Path.Combine(Application.persistentDataPath, "Custom");
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		il2cpp_codegen_runtime_class_init_inline(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		String_t* L_1;
+		L_1 = Path_Combine_m1ADAC05CDA2D1D61B172DF65A81E86592696BEAE(L_0, _stringLiteral2732277E9D8A4846B7023B9ABCA3C260EFCD3ABA, NULL);
+		V_0 = L_1;
+		// if (!Directory.Exists(folderPath))
+		String_t* L_2 = V_0;
+		bool L_3;
+		L_3 = Directory_Exists_m3D125E9E88C291CF11113444F961A64DD83AE1C7(L_2, NULL);
+		V_2 = (bool)((((int32_t)L_3) == ((int32_t)0))? 1 : 0);
+		bool L_4 = V_2;
+		if (!L_4)
+		{
+			goto IL_002e;
+		}
+	}
+	{
+		// Debug.LogError("Custom folder does not exist.");
+		il2cpp_codegen_runtime_class_init_inline(Debug_t8394C7EEAECA3689C2C9B9DE9C7166D73596276F_il2cpp_TypeInfo_var);
+		Debug_LogError_mB00B2B4468EF3CAF041B038D840820FB84C924B2(_stringLiteral10C863F8BA688F6B929998D55CCB6E3D972A9F2C, NULL);
+		// return null;
+		V_3 = (StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248*)NULL;
+		goto IL_0039;
+	}
+
+IL_002e:
+	{
+		// string[] fileNames = Directory.GetFiles(folderPath);
+		String_t* L_5 = V_0;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_6;
+		L_6 = Directory_GetFiles_m3E6AA407767C85CD62C5FD2750747274D1C4EA76(L_5, NULL);
+		V_1 = L_6;
+		// return fileNames;
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_7 = V_1;
+		V_3 = L_7;
+		goto IL_0039;
+	}
+
+IL_0039:
+	{
+		// }
+		StringU5BU5D_t7674CD946EC0CE7B3AE0BE70E6EE85F2ECD9F248* L_8 = V_3;
+		return L_8;
+	}
+}
+// System.String AudioHelm.HelmPatch::ReadFileToString(System.String)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR String_t* HelmPatch_ReadFileToString_m2049C9A2A15474A30CD8F62DE94C6D19926CA0A4 (HelmPatch_t10167C36E80A27280B2B3A71BCF27E1AEFFF4D04* __this, String_t* ___filePath0, const RuntimeMethod* method) 
+{
+	static bool s_Il2CppMethodInitialized;
+	if (!s_Il2CppMethodInitialized)
+	{
+		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		s_Il2CppMethodInitialized = true;
+	}
+	String_t* V_0 = NULL;
+	String_t* V_1 = NULL;
+	String_t* V_2 = NULL;
+	{
+		// string fullPath = Path.Combine(Application.persistentDataPath, filePath);
+		String_t* L_0;
+		L_0 = Application_get_persistentDataPath_mC58BD3E1A20732E0A536491DBCAE6505B1624399(NULL);
+		String_t* L_1 = ___filePath0;
+		il2cpp_codegen_runtime_class_init_inline(Path_t8A38A801D0219E8209C1B1D90D82D4D755D998BC_il2cpp_TypeInfo_var);
+		String_t* L_2;
+		L_2 = Path_Combine_m1ADAC05CDA2D1D61B172DF65A81E86592696BEAE(L_0, L_1, NULL);
+		V_0 = L_2;
+		// string fileContents = File.ReadAllText(fullPath);
+		String_t* L_3 = V_0;
+		String_t* L_4;
+		L_4 = File_ReadAllText_mA4A939F853D573379F7129AFDC469B91E9747BAA(L_3, NULL);
+		V_1 = L_4;
+		// return fileContents;
+		String_t* L_5 = V_1;
+		V_2 = L_5;
+		goto IL_0018;
+	}
+
+IL_0018:
+	{
+		// }
+		String_t* L_6 = V_2;
+		return L_6;
 	}
 }
 // AudioHelm.HelmPatchFormat AudioHelm.HelmPatch::GetDataHelmPatchFormat(System.String)

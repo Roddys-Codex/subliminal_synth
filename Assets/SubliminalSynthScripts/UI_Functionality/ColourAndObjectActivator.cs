@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -52,5 +53,18 @@ public class ColourAndObjectActivator : MonoBehaviour
                 item.SetActive(false);
             }
         });
+    }
+
+    public void ChangeColorTemporarily()
+    {
+        StartCoroutine(ChangeColorCoroutine());
+    }
+
+    private IEnumerator ChangeColorCoroutine()
+    {
+        MeshRenderer meshRenderer = targetObjectToActivate.GetComponent<MeshRenderer>();
+        meshRenderer.material.color = activeColor;
+        yield return new WaitForSeconds(1.5f);
+        meshRenderer.material.color = Color.white;
     }
 }

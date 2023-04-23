@@ -1720,6 +1720,7 @@ GameObject:
   - component: {fileID: 60974238}
   - component: {fileID: 60974237}
   - component: {fileID: 60974236}
+  - component: {fileID: 60974241}
   m_Layer: 0
   m_Name: save pattern
   m_TagString: Untagged
@@ -1786,6 +1787,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1865853224}
         m_TargetAssemblyTypeName: DbConnection, Assembly-CSharp
         m_MethodName: PrintSeqPatternsSavedInDb
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 60974241}
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: ChangeColorTemporarily
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1873,6 +1886,21 @@ Transform:
   m_Father: {fileID: 1217743043}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &60974241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60974235}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
+  targetObjectToActivate: {fileID: 60974235}
+  targetObjectsToActivate: []
 --- !u!1 &63101949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4819,6 +4847,34 @@ RectTransform:
   m_AnchoredPosition: {x: 0.3, y: -104.5}
   m_SizeDelta: {x: 65.29999, y: 76.98692}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!83 &168491195
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &169943237
 GameObject:
   m_ObjectHideFlags: 0
@@ -4981,7 +5037,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 168491195}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -11698,7 +11754,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 24300002, guid: e946804b690dc497d9b010e568382133,
     type: 2}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 1638346624}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -16950,6 +17006,7 @@ GameObject:
   - component: {fileID: 602774537}
   - component: {fileID: 602774536}
   - component: {fileID: 602774535}
+  - component: {fileID: 602774539}
   m_Layer: 0
   m_Name: SavePresetButton
   m_TagString: Untagged
@@ -17025,8 +17082,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 467350447}
-        m_TargetAssemblyTypeName: JSON_Map, Assembly-CSharp
-        m_MethodName: WritePresetToAssets
+        m_TargetAssemblyTypeName: JsonPresetMapper, Assembly-CSharp
+        m_MethodName: WritePresetToPersistentDataPath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17036,9 +17093,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 467350447}
-        m_TargetAssemblyTypeName: JSON_Map, Assembly-CSharp
-        m_MethodName: WritePresetToAndroid
+      - m_Target: {fileID: 602774539}
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: ChangeColorTemporarily
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -17112,6 +17169,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 602774533}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &602774539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 602774533}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
+  targetObjectToActivate: {fileID: 602774533}
+  targetObjectsToActivate: []
 --- !u!1 &602990935
 GameObject:
   m_ObjectHideFlags: 0
@@ -33072,7 +33144,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1178445807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39112,6 +39184,7 @@ GameObject:
   - component: {fileID: 1362090701}
   - component: {fileID: 1362090700}
   - component: {fileID: 1362090699}
+  - component: {fileID: 1362090704}
   m_Layer: 0
   m_Name: save pattern
   m_TagString: Untagged
@@ -39204,6 +39277,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1362090704}
+        m_TargetAssemblyTypeName: ColourAndObjectActivator, Assembly-CSharp
+        m_MethodName: ChangeColorTemporarily
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1362090701
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -39267,6 +39352,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362090697}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1362090704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362090697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fc6803ae8e2d4ec4b2fe392735f1aad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activeColor: {r: 0.012682426, g: 0.8962264, b: 0.7966944, a: 1}
+  targetObjectToActivate: {fileID: 1362090697}
+  targetObjectsToActivate: []
 --- !u!1 &1364119067
 GameObject:
   m_ObjectHideFlags: 0
@@ -46154,6 +46254,34 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!83 &1638346624
+AudioClip:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: helm
+  m_LoadType: 0
+  m_Channels: 1
+  m_Frequency: 44100
+  m_BitsPerSample: 32
+  m_Length: 0
+  m_IsTrackerFormat: 0
+  m_Ambisonic: 0
+  m_SubsoundIndex: 0
+  m_PreloadAudioData: 1
+  m_LoadInBackground: 0
+  m_Legacy3D: 0
+  m_Resource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_CompressionFormat: 0
+  m_EditorResource:
+    m_Source: 
+    m_Offset: 0
+    m_Size: 0
+  m_EditorCompressionFormat: 0
 --- !u!1 &1639976917
 GameObject:
   m_ObjectHideFlags: 0
@@ -47969,7 +48097,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Connecton \nstatus"
+  m_text: "Connection \nstatus"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 56f513aba19f74cafb6444889d7ff979, type: 2}
   m_sharedMaterial: {fileID: -6070111128436608514, guid: 56f513aba19f74cafb6444889d7ff979,
@@ -53928,8 +54056,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1216737333}
-        m_TargetAssemblyTypeName: parameterScript, Assembly-CSharp
-        m_MethodName: UpdateFolder
+        m_TargetAssemblyTypeName: PresetUtil, Assembly-CSharp
+        m_MethodName: ReadFromPersistentDataPath
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -60181,8 +60309,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.89, y: 0.32}
-  m_SizeDelta: {x: 13.413, y: 7.486}
+  m_AnchoredPosition: {x: -2.697, y: 0.333}
+  m_SizeDelta: {x: 17.281, y: 7.225}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2061706835
 MonoBehaviour:

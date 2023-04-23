@@ -438,13 +438,21 @@ public class DbConnection : MonoBehaviour
 
     public void LoadSeqPattern()
     {
-        Debug.Log("Clearing pattern.");
+        Debug.Log("Clearing 16th pattern.");
         synthManager16th.sequencer.AllNotesOff();
         synthManager16th.sequencerPositions.ForEach(position =>
         {
             position.noteActive = false;
             position.renderer.material.color = Color.white;
             synthManager16th.sequencer.RemoveNote(position.note);
+        });
+        Debug.Log("Clearing 8th pattern.");
+        synthManager8th.sequencer.AllNotesOff();
+        synthManager8th.sequencerPositions.ForEach(position =>
+        {
+            position.noteActive = false;
+            position.renderer.material.color = Color.white;
+            synthManager8th.sequencer.RemoveNote(position.note);
         });
         Debug.Log("Setting pattern.");
 
